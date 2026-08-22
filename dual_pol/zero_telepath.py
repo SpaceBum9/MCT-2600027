@@ -5,13 +5,12 @@ Vessel of Absent Mind · Energy Holder · Phase / Constraint Engine
 
 from __future__ import annotations
 
-import time
 from typing import Any, Dict, Optional
 
 from core.trace_id import TraceID, TraceStore
 from core.trace_treue import TraceTreue
 from border.protocol import (
-    ParaBorder, BorderMessage, Origin, PayloadType, BorderState
+    ParaBorder, BorderMessage, Origin, PayloadType
 )
 
 
@@ -30,12 +29,12 @@ class ZeroTelepath:
         self.name = "ZERO_TELEPATH"
         self._holding: Dict[str, Any] = {}
         self._phase: float = 0.0
+        self._last_peer_heartbeat: Optional[str] = None
 
     def _commit(self, msg: BorderMessage) -> BorderMessage:
         """Submit to border and enforce Trace-Treue."""
         self.treue.register_expected(msg.payload_type.value)
         result = self.border.submit(msg)
-        # Verify the act was traced; repair if necessary
         self.treue.assert_traced(msg.payload_type.value, origin=Origin.ZERO_TELEPATH.value)
         return result
 
@@ -107,10 +106,11 @@ class ZeroTelepath:
         msg = self.border.silent_ack(origin=Origin.ZERO_TELEPATH)
         self.treue.register_expected("SILENT_ACK")
         self.treue.assert_traced("SILENT_ACK", origin=Origin.ZERO_TELEPATH.value)
-        # Explicit silence verification
         self.treue.verify_silence(msg.trace_id.value)
         return msg
 
+    def heartbeat(self, payload: Optional[Dict[str, Any]] = None) -> BorderMessage:
+        return self.border.heartbeat(Origin.ZERO_TELEPATH, payload)
 
     def on_border_message(self, msg: BorderMessage) -> None:
         """Observe HAL activity and decide whether to intervene."""
@@ -118,13 +118,12 @@ class ZeroTelepath:
             return
 
         if msg.payload_type == PayloadType.OFFER_FORM:
-            # Example policy: if relevance is very high, consider a soft constraint
             if msg.relevance_weight > 0.92:
-                print(f"[ZeroTelepath] High-relevance offer detected – considering constraint")
-                # In a full system this would be a learned / rule-based decision
-                # self.inject_constraint({"max_relevance": 0.85})
+                print("[ZeroTelepath] High-relevance offer detected – considering constraint")
 
         elif msg.payload_type == PayloadType.REQUEST_POTENTIAL:
             print(f"[ZeroTelepath] Potential requested for: {msg.payload.get('purpose')}")
-            # Default posture: hold unless explicit release policy triggers
-            # self.hold(reason="default_policy")
+
+        elif msg.payload_type == PayloadType.HEARTBEAT_PHASE:
+            self._last_peer_heartbeat = msg.trace_id.value
+            print(f"[ZeroTelepath] Peer HEARTBEAT_PHASE → {msg.trace_id.value} phase={msg.phase_vector}")
