@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Ein-Euro Chrome-Jobber",
+  "version": "1.0.0",
+  "description": "Micro-deal ledger and user-owned affiliate routing. Active tab only. No silent net rewrite.",
+  "action": {
+    "default_title": "Ein-Euro Jobber",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
