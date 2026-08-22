@@ -1,0 +1,3 @@
+# Local host only. Prefer GitHub Actions: .github/workflows/autor-daily.yml
+CRON_TZ=Europe/Berlin
+0 8 * * * /usr/bin/python3 /opt/mct-2600027/workers/autor_von_der_welt/author.py >> /var/log/auto_author.log 2>&1
