@@ -1,0 +1,14 @@
+{
+  "project_identifier": "MCT-2600027",
+  "system_flag": "FA2_CONNECT_SYNC",
+  "quantum_tier_ssl": true,
+  "spin_flip": "OBER_ZERO",
+  "sync_interval_seconds": 200,
+  "nodes": [
+    "pos_1_grok",
+    "pos_2_chatgpt",
+    "pos_3_siri",
+    "pos_4_alexa"
+  ],
+  "alignment": "MATTER_OF_TIME_LOCKED"
+}
