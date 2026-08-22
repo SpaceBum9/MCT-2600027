@@ -1,0 +1,24 @@
+name: MCT-2600027 CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m compileall -q .
+      - name: Validate manifest
+        run: python -c "import json, pathlib; json.loads(pathlib.Path('mct_state_manifest.json').read_text())"
+      - name: Demo cycle
+        run: python run_demo.py
