@@ -1,0 +1,10 @@
+.git
+.github
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.md
+!FLUID_MEMORY_SNAPSHOT.md
+.gitignore
+.dockerignore
