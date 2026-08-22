@@ -1,0 +1,26 @@
+name: Welt-Signal daily
+
+on:
+  schedule:
+    # 08:00 Europe/Berlin while CEST (UTC+2). In CET use 07:00 UTC.
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install author deps
+        run: pip install -r workers/autor_von_der_welt/requirements.txt
+      - name: Draft and dispatch
+        env:
+          TZ: Europe/Berlin
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MCT_TELEMETRY_URL: ${{ secrets.MCT_TELEMETRY_URL }}
+          MCT_WEBHOOK_TOKEN: ${{ secrets.MCT_WEBHOOK_TOKEN }}
+          MCT_NODE: AUTOR_VON_DER_WELT
+        run: python workers/autor_von_der_welt/author.py
