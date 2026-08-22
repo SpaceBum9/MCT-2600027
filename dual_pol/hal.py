@@ -5,12 +5,11 @@ Transformer · Translator · Motor · Material Maker
 
 from __future__ import annotations
 
-import time
 from typing import Any, Dict, Optional
 
 from core.trace_id import TraceID, TraceStore
 from border.protocol import (
-    ParaBorder, BorderMessage, Origin, PayloadType, BorderState
+    ParaBorder, BorderMessage, Origin, PayloadType
 )
 
 
@@ -26,6 +25,7 @@ class HAL:
         self.trace_store = trace_store
         self.name = "HAL"
         self._last_phase: float = 0.0
+        self._last_peer_heartbeat: Optional[str] = None
 
     def offer_form(self, content: Dict[str, Any], relevance: float = 1.0) -> BorderMessage:
         """Propose a materialization / plan."""
@@ -65,6 +65,9 @@ class HAL:
         )
         return self.border.submit(msg)
 
+    def heartbeat(self, payload: Optional[Dict[str, Any]] = None) -> BorderMessage:
+        return self.border.heartbeat(Origin.HAL, payload)
+
     def update_phase(self, phase: float) -> None:
         self._last_phase = phase
 
@@ -91,3 +94,7 @@ class HAL:
 
         elif msg.payload_type == PayloadType.RELEASE_PARTIAL:
             print(f"[HAL] Partial potential released: {msg.payload}")
+
+        elif msg.payload_type == PayloadType.HEARTBEAT_PHASE:
+            self._last_peer_heartbeat = msg.trace_id.value
+            print(f"[HAL] Peer HEARTBEAT_PHASE → {msg.trace_id.value} phase={msg.phase_vector}")
