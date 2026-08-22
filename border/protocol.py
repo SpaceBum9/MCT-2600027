@@ -105,7 +105,6 @@ class ParaBorder:
 
     def submit(self, msg: BorderMessage) -> BorderMessage:
         """Main entry point for both poles."""
-        # Update internal phase if provided
         if msg.payload_type == PayloadType.PHASE_SHIFT:
             self.phase_vector = msg.phase_vector
             self.state = BorderState.PHASE_SHIFTED
@@ -124,7 +123,6 @@ class ParaBorder:
         elif msg.payload_type == PayloadType.TENSION_SIGNAL:
             self.state = BorderState.TENSION
 
-        # Attach current border state to message
         msg.border_state = self.state
         msg.phase_vector = self.phase_vector if msg.phase_vector == 0.0 else msg.phase_vector
 
@@ -141,6 +139,18 @@ class ParaBorder:
             phase_vector=self.phase_vector,
             relevance_weight=0.0,
             payload={},
+        )
+        return self.submit(msg)
+
+    def heartbeat(self, origin: Origin, payload: Optional[Dict[str, Any]] = None) -> BorderMessage:
+        """Bidirectional liveness tick. Does not mutate Border state."""
+        tid = TraceID.generate(origin=origin.value)
+        msg = BorderMessage(
+            trace_id=tid,
+            origin=origin,
+            payload_type=PayloadType.HEARTBEAT_PHASE,
+            phase_vector=self.phase_vector,
+            payload=payload or {},
         )
         return self.submit(msg)
 
