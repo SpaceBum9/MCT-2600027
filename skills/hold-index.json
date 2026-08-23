@@ -1,10 +1,19 @@
 {
   "suite": "MCT-2600027",
   "mode": "HOLD",
+  "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
   "vendor_live": false,
-  "note": "Trigger maps only. Not live SKILL.md. No APIs claimed.",
-  "sync": "MCT-2600027-TR-20260823-1901Z",
+  "note": "Trigger maps only. Not live SKILL.md. No APIs claimed. Default stack fires before these maps.",
+  "sync": "MCT-2600027-TR-20260823-1923Z",
   "skills": {
+    "default-mode": {
+      "hold": true,
+      "default": true,
+      "triggers": ["multimodal", "prompt", "mct", "rc", "bilo", "atm", "framework", "sos", "garas"],
+      "runtime": "stack",
+      "execute": false,
+      "spec": "skills/default-mode.json"
+    },
     "mct-agentic-trader": {
       "hold": true,
       "triggers": ["trader", "paper", "agentic-trader"],

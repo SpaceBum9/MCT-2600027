@@ -4,12 +4,14 @@
   "former_label": "Aber Hallos",
   "former_label_status": "retargeted_no_artifacts",
   "mode": "HOLD",
-  "op": "MESH_EXPAND",
+  "op": "DEFAULT_MODE",
+  "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
+  "default_for": "every_multimodal_prompt",
   "framework_declared": "GARAS SoS v3.0",
   "framework_requested": "GARAS SoS v3.2",
   "framework_drift": "v3.2 not present; keep v3.0 axes",
   "bilo": "BILO 2026 core-label (crystal-galaxy + CMD flow); public paths only; not statute",
-  "hal_routing": "session-role via SAI: operator → Crystal Mike → HAL → Zielknoten → Reinforcement; dual_pol/hal.py; not a daemon",
+  "hal_routing": "session-role via SAI: operator → Crystal Mike → HAL → Zielknoten → Reinforcement; dual_pol/hal.py; not a daemon; sub-route after default stack",
   "automaton_command": {
     "adoption": "optional",
     "overlay": "schema/automaton_command.json",
@@ -55,5 +57,5 @@
   "trigger_map_coverage": "11/11 maps; 2 previously empty filled 1901Z",
   "catalog_drift": true,
   "expansion_node": "MCT-Universe (created 2026-08-23T18:52:04Z)",
-  "sync": "MCT-2600027-TR-20260823-1907Z"
+  "sync": "MCT-2600027-TR-20260823-1923Z"
 }

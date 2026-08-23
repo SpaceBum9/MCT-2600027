@@ -1,0 +1,25 @@
+{
+  "mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
+  "suite": "MCT-2600027",
+  "default_for": "every_multimodal_prompt",
+  "modalities": ["text", "image", "audio", "video", "canvas", "tool"],
+  "adoption": "default",
+  "forced_protocol": false,
+  "execute": false,
+  "vendor_live": false,
+  "storesCredentials": false,
+  "credentialState": "not_stored",
+  "hold": true,
+  "layers": {
+    "MCT": "this repo (supersedes MCT-1700021)",
+    "RC": "crystal-galaxy reinforce.ts + sai.ts",
+    "BILO": "BILO 2026 public core-label",
+    "ATM": "schema/automaton_command.json",
+    "FRAMEWORK": "GARAS SoS v3.0",
+    "SOS": "dual_pol + border + core/trace_id"
+  },
+  "semantic_anchoring": true,
+  "detectTargetNode": "sub_route_after_stack",
+  "universe_spec": "SpaceBum9/MCT-Universe/05-DEFAULT-MODE.md",
+  "sync": "MCT-2600027-TR-20260823-1923Z"
+}
