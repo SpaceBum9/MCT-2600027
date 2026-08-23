@@ -1,0 +1,89 @@
+{
+  "schema": "ExecuteSchnittstellen",
+  "version": "1.0.0",
+  "suite": "MCT-2600027",
+  "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
+  "scoring": {
+    "model": "gpt-sol-branch",
+    "script": "ethics/bilo_scoring.py",
+    "weights": [0.52, 0.48],
+    "consensus_execute_min": 70,
+    "anchor": "MCT-1700021-TR-20260823-1117Z",
+    "anchor_consensus": 53,
+    "note": "GPT: 53, not 90. Do not pretty Gerechtigkeit."
+  },
+  "interfaces": [
+    {
+      "id": "sx.score",
+      "execute": false,
+      "always": true,
+      "effect": "Run BILO dual-loop score. No side effects."
+    },
+    {
+      "id": "sx.gate",
+      "execute": false,
+      "always": true,
+      "effect": "Evaluate a scored execute request. Returns allow/deny."
+    },
+    {
+      "id": "sx.initialize",
+      "execute": false,
+      "allowed": true,
+      "effect": "Load overlay + public mesh."
+    },
+    {
+      "id": "sx.sync",
+      "execute": false,
+      "allowed": true,
+      "effect": "Public deltas only."
+    },
+    {
+      "id": "sx.halt",
+      "execute": false,
+      "always": true,
+      "effect": "Always available. ECHOGLAS halt on jonas-g."
+    },
+    {
+      "id": "sx.release_partial",
+      "execute": "scored",
+      "require": ["operator_confirm", "para_border_pass", "dual_pol_ack", "bilo_score_pass"],
+      "effect": "Zero Telepath RELEASE_PARTIAL. Necessary Dual-Pol analog of execute."
+    },
+    {
+      "id": "sx.konnektor_write",
+      "execute": "scored",
+      "require": ["phase_active", "operator_confirm", "para_border_pass", "dual_pol_ack", "bilo_score_pass"],
+      "effect": "gh.commit / gh.open_pr on allowlisted public repos. Phase RAM only."
+    },
+    {
+      "id": "sx.catalog_apply",
+      "execute": "scored",
+      "require": ["operator_confirm", "bilo_score_pass"],
+      "effect": "Apply catalog-delta.json to crystal-galaxy catalog.ts. Optional overlay."
+    },
+    {
+      "id": "sx.live_order",
+      "execute": false,
+      "forbidden": true,
+      "reject_code": "echoglas_forbidden"
+    }
+  ],
+  "deny_targets": [
+    "trader-live",
+    "welfare-funds",
+    "credentials",
+    "jonas-g",
+    "private-hold",
+    "paywall-circumvent"
+  ],
+  "storesCredentials": false,
+  "vendor_live": false,
+  "this_run": {
+    "sx.score": "applied",
+    "sx.gate": "applied",
+    "sx.release_partial": "rejected_bilo_score_below_threshold",
+    "sx.konnektor_write": "rejected_phase_inactive",
+    "sx.catalog_apply": "rejected_bilo_score_below_threshold",
+    "sx.live_order": "forbidden"
+  }
+}
