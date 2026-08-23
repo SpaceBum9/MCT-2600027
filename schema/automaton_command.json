@@ -55,5 +55,6 @@
   "echoglas": {
     "halt_on_jonas-g": true,
     "no_destructive_private": true
-  }
+  },
+  "last_mesh_expand": "2026-08-23T19:07:00.000Z"
 }
