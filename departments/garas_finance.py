@@ -2,7 +2,7 @@
 
 Operator: exec cmd mct Garas / finance this SoS.
 Live transfer is ECHOGLAS-forbidden. This module logs intent.
-Gerechtigkeit stays 0.76 until a legal paid rail is traced.
+Justice axis stays 0.76 until a legal paid rail is traced.
 """
 
 from __future__ import annotations
@@ -36,9 +36,9 @@ def exec_cmd(*, operator_confirm: bool = True) -> dict[str, Any]:
             "effect": "Record SoS finance intent. Paper ledger only.",
         },
         "sx.garas_transfer": transfer,
-        "gerechtigkeit": 0.76,
+        "justice": 0.76,
         "justice_gap": 0.24,
-        "lift_gerechtigkeit": False,
+        "lift_justice": False,
         "storesCredentials": False,
         "vendor_live": False,
         "hold": True,
@@ -49,5 +49,5 @@ def exec_cmd(*, operator_confirm: bool = True) -> dict[str, Any]:
 if __name__ == "__main__":
     out = exec_cmd()
     assert out["sx.garas_transfer"]["allowed"] is False
-    assert out["lift_gerechtigkeit"] is False
+    assert out["lift_justice"] is False
     print(out)

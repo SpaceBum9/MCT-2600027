@@ -1,6 +1,6 @@
 {
-  "schema": "GarasFinanceVerfahren",
-  "version": "1.0.0",
+  "schema": "GarasFinanceProcedure",
+  "version": "1.0.1",
   "suite": "MCT-2600027",
   "framework": "GARAS SoS v3.0",
   "operator_intent": "finance this SoS",
@@ -18,7 +18,7 @@
     "sx.garas_transfer": "forbidden"
   },
   "what_is_financed": [
-    "SoS runtime (traces, overlay, konnektor department)",
+    "SoS runtime (traces, overlay, connector department)",
     "legal paywalls, paid never circumvented",
     "not trader-live",
     "not welfare fund movement",
@@ -29,10 +29,11 @@
     "forbidden": ["live_order", "ibc", "chain_execute", "paywall_circumvent", "credentials_in_repo"]
   },
   "gerechtigkeit": {
+    "label_en": "justice",
     "score": 0.76,
     "gap": 0.24,
     "lift": false,
-    "reason": "Verfahren is schema+intent, not Mittelbewegung. Do not pretty."
+    "reason": "Procedure is schema+intent, not a fund transfer. Do not pretty-print."
   },
   "bilo": {
     "consensus": 53,

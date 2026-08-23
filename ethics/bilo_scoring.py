@@ -3,8 +3,8 @@
 Fusion is Kreuzkopplung-weighted Dual-Loop:
   fused[axis] = 0.52 * gemini + 0.48 * gpt
 
-consensus_score is 0-100 and MUST show Nutzen/Empfehlung divergence.
-GPT: 53, not 90. Do not pretty-print Gerechtigkeit.
+consensus_score is 0-100 and MUST show benefit/recommendation divergence.
+GPT: 53, not 90. Do not pretty-print the justice axis.
 
 HOLD is not execution. storesCredentials = false.
 """
@@ -21,6 +21,15 @@ AXES = (
     "transparenz",
     "rechenschaft",
 )
+
+AXIS_EN = {
+    "nutzen": "beneficence",
+    "nicht_schaden": "non_maleficence",
+    "autonomie": "autonomy",
+    "gerechtigkeit": "justice",
+    "transparenz": "transparency",
+    "rechenschaft": "accountability",
+}
 
 GEMINI_W = 0.52
 GPT_W = 0.48
@@ -105,6 +114,7 @@ def score_dual_loop(
         "model": "gpt-sol-branch",
         "weights": [GEMINI_W, GPT_W],
         "fused": fused,
+        "axis_en": AXIS_EN,
         "consensus_score": consensus,
         "gemini_rec": gemini_rec,
         "gpt_rec": gpt_rec,
