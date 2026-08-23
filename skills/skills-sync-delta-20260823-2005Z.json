@@ -1,0 +1,10 @@
+{
+  "op": "SKILLS_SYNC",
+  "suite": "MCT-2600027",
+  "timestamp": "2026-08-23T20:05:09.000Z",
+  "parent_trace_id": "2a2297bb4d01dc3ec323c381b0e5e168e6b436b655feff7af731c353d4fde6a4",
+  "trace_id": "f241f87ed0607c42854983931f7bf901c99704de3a68a85c744d6335a8a85fc8",
+  "execute": "rejected",
+  "catalog_drift": true,
+  "hf": "404"
+}
