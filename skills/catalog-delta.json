@@ -2,7 +2,7 @@
   "target": "SpaceBum9/crystal-galaxy/catalog.ts",
   "adoption": "optional",
   "forced_protocol": false,
-  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core + MCT-1700021; detectTargetNode still maps generic mct/mesh to mct-170021",
+  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe; detectTargetNode maps generic mct/mesh to mct-170021 and 2600027 queries to mct-2600027-cmd",
   "add_nodes": [
     {
       "id": "mct-2600027",
@@ -22,13 +22,24 @@
       "owner": "SpaceBum9",
       "lang": null,
       "status": "superseded"
+    },
+    {
+      "id": "mct-universe",
+      "title": "MCT-Universe",
+      "kind": "mesh",
+      "href": "https://github.com/SpaceBum9/MCT-Universe",
+      "summary": "Gemini ingest pack + GitHub Konnektor blueprint. No credentials stored. Phase memory only.",
+      "owner": "SpaceBum9",
+      "lang": null,
+      "created": "2026-08-23T18:52:04Z"
     }
   ],
   "add_to_GITHUB_REPOS": [
     "MCT-2600027",
-    "MCT-1700021"
+    "MCT-1700021",
+    "MCT-Universe"
   ],
-  "detectTargetNode_patch": "prefer 2600027 over 170021 for queries containing mct/mesh/sos",
+  "detectTargetNode_patch": "prefer 2600027 core over 170021 for queries containing mct/mesh/sos; map universe/konnektor/gemini-ingest to mct-universe; keep cmd for lumen/apple-intelligence",
   "do_not_publish": [
     "private repo contents",
     "ECHOGLAS raw evidence",
