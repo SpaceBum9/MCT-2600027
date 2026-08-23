@@ -1,130 +1,47 @@
 {
   "suite": "MCT-2600027",
   "supersedes": "MCT-1700021",
+  "former_label": "Aber Hallos",
+  "former_label_status": "retargeted_no_artifacts",
   "mode": "HOLD",
+  "op": "MESH_EXPAND",
   "framework_declared": "GARAS SoS v3.0",
   "framework_requested": "GARAS SoS v3.2",
-  "framework_drift": "v3.2 not present in SpaceBum9 repos; keep v3.0 axes",
-  "bilo": "BILO 2026 core-label (crystal-galaxy); not statute",
+  "framework_drift": "v3.2 not present; keep v3.0 axes",
+  "bilo": "BILO 2026 core-label (crystal-galaxy); public paths only; not statute",
   "hal_routing": "session-role via SAI: operator → Crystal Mike → HAL → Zielknoten → Reinforcement; not a daemon",
+  "automaton_command": {
+    "adoption": "optional",
+    "overlay": "schema/automaton_command.json",
+    "source": "crystal-galaxy/orchestrator.ts",
+    "execute": "rejected"
+  },
   "secrets": "none",
   "vendor_live": false,
-  "skills": {
-    "mct-2600027-core": {
-      "presence": "live",
-      "path": "skills/mct-2600027-core/SKILL.md",
-      "triggers": [
-        "MCT system architecture",
-        "dual-pol",
-        "trace-id",
-        "para Border",
-        "HAL",
-        "Zero Telepath"
-      ],
-      "runtime": "python-core",
-      "hold": false
-    },
-    "mct-agentic-trader": {
-      "presence": "label-only",
-      "triggers": [],
-      "runtime": "paper",
-      "hold": true,
-      "note": "no SKILL.md; no live orders"
-    },
-    "wohlstandsumverteilung-finance-manager": {
-      "presence": "label-only",
-      "triggers": [],
-      "runtime": "schema",
-      "hold": true,
-      "note": "SoS v3.0 axes declarative; v3.2 absent"
-    },
-    "welfare-ibc-middleware": {
-      "presence": "label-only",
-      "triggers": [],
-      "runtime": "intent-only",
-      "hold": true
-    },
-    "multilingual-greeting": {
-      "presence": "label-only",
-      "triggers": [],
-      "runtime": "available",
-      "hold": true
-    },
-    "grok-blackbox-history": {
-      "presence": "partial",
-      "triggers": [],
-      "runtime": "traces",
-      "hold": true,
-      "note": "GitHub traces + Drive MCT-1700021-traces"
-    },
-    "grok-imagine-api": {
-      "presence": "platform-overlap",
-      "triggers": [
-        "imagine tools when listed"
-      ],
-      "runtime": "session",
-      "hold": true,
-      "note": "workspace .grok/skills/imagine; no vendor keys invented"
-    },
-    "grok-imagine-full-history": {
-      "presence": "label-only",
-      "triggers": [],
-      "runtime": "session-store",
-      "hold": true
-    },
-    "imagine-media-access": {
-      "presence": "label-only",
-      "triggers": [],
-      "runtime": "session",
-      "hold": true
-    },
-    "kassenbeleg-parser": {
-      "presence": "label-only",
-      "triggers": [],
-      "runtime": "session",
-      "hold": true
-    },
-    "sat-track-3d-ios": {
-      "presence": "related-repo",
-      "triggers": [],
-      "runtime": "related-repo",
-      "hold": true,
-      "note": "MCT-2600027-CMD / ios-apple-intelligence"
-    },
-    "telegram-ios-app": {
-      "presence": "label-only",
-      "triggers": [],
-      "runtime": "intent-only",
-      "hold": true,
-      "note": "no third-party messenger IP clone"
-    }
+  "public_github": [
+    "crystal-galaxy",
+    "kreuzkopplung",
+    "MCT-2600027",
+    "MCT-2600027-CMD",
+    "MCT-1700021",
+    "mct-170021-zero-tier-quantum-skills-tools-mcp-connectors",
+    "plasma-toxogon"
+  ],
+  "private_github_count": 3,
+  "private_github_policy": "names withheld from ingest; contents not read",
+  "drive": {
+    "folder": "MCT-2600027-traces",
+    "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
+    "files_at_parent": [
+      "MCT-2600027-mesh-manifest.json",
+      "MCT-2600027-TR-20260823-1800Z.json"
+    ]
   },
-  "extra_not_in_request": {
-    "gpt-sol-branch": {
-      "presence": "protocol-live",
-      "hold": true,
-      "runtime": "protocol-adapter",
-      "vendor_live": false
-    }
+  "huggingface": {
+    "profile": "404",
+    "space_kreuzkopplung": "absent_or_401"
   },
-  "workspace_grok_skills": [
-    "auth",
-    "building-games",
-    "controls",
-    "design-ui",
-    "game-animation-frames",
-    "game-asset-core",
-    "game-character-consistency",
-    "game-tilesets",
-    "game-ui-icons",
-    "generate2dmap",
-    "generate2dsprite",
-    "imagine",
-    "multiplayer-p2p",
-    "neon",
-    "og",
-    "threejs",
-    "video2dsprite",
-    "xai-api"
-  ]
+  "skills_live": ["mct-2600027-core"],
+  "skills_hold": 11,
+  "catalog_drift": true
 }

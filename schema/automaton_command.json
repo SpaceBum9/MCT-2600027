@@ -1,0 +1,59 @@
+{
+  "schema": "AutomatonCommand",
+  "version": "1.0.0-overlay",
+  "suite": "MCT-2600027",
+  "adoption": "optional",
+  "forced_protocol": false,
+  "source_of_truth": {
+    "repo": "SpaceBum9/crystal-galaxy",
+    "path": "orchestrator.ts",
+    "types": [
+      "AutomatonCommand",
+      "AutomatonAction"
+    ],
+    "actions": [
+      "initialize",
+      "sync",
+      "execute",
+      "halt"
+    ]
+  },
+  "note": "Overlay only. Does not rewrite crystal-galaxy. Operator may adopt.",
+  "commands": {
+    "initialize": {
+      "allowed": true,
+      "effect": "Load schema + public mesh index. No side effects.",
+      "this_run": "applied"
+    },
+    "sync": {
+      "allowed": true,
+      "effect": "Ingest public deltas only. No credentials. No private blobs.",
+      "this_run": "applied"
+    },
+    "execute": {
+      "allowed": false,
+      "this_run": "rejected",
+      "reject_code": "coercive_unilateral_activation",
+      "require": [
+        "operator_confirm",
+        "para_border_pass",
+        "dual_pol_ack"
+      ],
+      "reason": "crystal-galaxy dispatchLocal currently returns SUCCESS for execute. Overlay gates execute until operator opt-in."
+    },
+    "halt": {
+      "allowed": true,
+      "always": true,
+      "this_run": "available"
+    }
+  },
+  "id_pattern": "^[a-zA-Z0-9._:-]{1,64}$",
+  "parameters": {
+    "target_node": "required string",
+    "stability_threshold": "optional number in [0,1]"
+  },
+  "echoglas": {
+    "halt_on_jonas-g": true,
+    "no_destructive_private": true
+  }
+}

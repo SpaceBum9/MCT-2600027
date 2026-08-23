@@ -1,0 +1,66 @@
+{
+  "suite": "MCT-2600027",
+  "mode": "HOLD",
+  "vendor_live": false,
+  "note": "Trigger maps only. Not live SKILL.md. No APIs claimed.",
+  "skills": {
+    "mct-agentic-trader": {
+      "hold": true,
+      "triggers": ["trader", "paper"],
+      "runtime": "paper"
+    },
+    "wohlstandsumverteilung-finance-manager": {
+      "hold": true,
+      "triggers": ["welfare", "intent"],
+      "runtime": "schema"
+    },
+    "welfare-ibc-middleware": {
+      "hold": true,
+      "triggers": ["welfare", "ibc"],
+      "runtime": "intent-only"
+    },
+    "multilingual-greeting": {
+      "hold": true,
+      "triggers": ["greeting", "locale"],
+      "runtime": "available"
+    },
+    "grok-blackbox-history": {
+      "hold": true,
+      "triggers": ["trace", "history"],
+      "runtime": "traces"
+    },
+    "grok-imagine-api": {
+      "hold": true,
+      "triggers": ["imagine"],
+      "runtime": "session",
+      "note": "use workspace imagine skill when listed"
+    },
+    "grok-imagine-full-history": {
+      "hold": true,
+      "triggers": [],
+      "runtime": "session-store"
+    },
+    "imagine-media-access": {
+      "hold": true,
+      "triggers": [],
+      "runtime": "session"
+    },
+    "kassenbeleg-parser": {
+      "hold": true,
+      "triggers": ["kassenbeleg", "DE receipt"],
+      "runtime": "session"
+    },
+    "sat-track-3d-ios": {
+      "hold": true,
+      "triggers": ["sat-track"],
+      "runtime": "related-repo",
+      "note": "MCT-2600027-CMD"
+    },
+    "telegram-ios-app": {
+      "hold": true,
+      "triggers": ["telegram"],
+      "runtime": "intent-only",
+      "note": "no messenger IP clone"
+    }
+  }
+}
