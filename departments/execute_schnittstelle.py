@@ -1,6 +1,6 @@
-"""Execute Schnittstellen — department layer, not Dual-Pol core.
+"""Execute interfaces — department layer, not Dual-Pol core.
 
-Opens a scored gate where necessary. Does not call dispatchLocal(execute)
+Scored gate where necessary. Does not call dispatchLocal(execute)
 on live orders. HOLD is not execution.
 """
 
@@ -22,7 +22,21 @@ ALLOWED_SCORED = frozenset(
     }
 )
 
-ALWAYS = frozenset({"sx.score", "sx.gate", "sx.sync", "sx.halt", "sx.initialize"})
+ALWAYS = frozenset(
+    {
+        "sx.score",
+        "sx.gate",
+        "sx.sync",
+        "sx.halt",
+        "sx.initialize",
+        "sx.garas_intent",
+    }
+)
+
+FORBIDDEN = frozenset({"sx.live_order", "sx.garas_transfer"})
+
+STABLE = "STABLE"
+RAILS = frozenset({"MAX_COUPLING_LIMIT", "MIN_COUPLING_LIMIT"})
 
 
 def gate(
@@ -42,7 +56,9 @@ def gate(
     score = score_dual_loop(gemini_ethics, gpt_ethics, gemini_rec, gpt_rec)
     denied: Optional[str] = None
 
-    if schnittstelle in ALWAYS and schnittstelle != "sx.gate":
+    if schnittstelle in FORBIDDEN or target_node in DENY_TARGETS:
+        denied = "echoglas_forbidden"
+    elif schnittstelle in ALWAYS and schnittstelle != "sx.gate":
         return {
             "schnittstelle": schnittstelle,
             "allowed": True,
@@ -51,9 +67,6 @@ def gate(
             "reason": "always",
             "storesCredentials": False,
         }
-
-    if target_node in DENY_TARGETS or schnittstelle == "sx.live_order":
-        denied = "echoglas_forbidden"
     elif schnittstelle not in ALLOWED_SCORED and schnittstelle != "sx.gate":
         denied = "unknown_schnittstelle"
     elif not operator_confirm:
@@ -64,8 +77,10 @@ def gate(
         denied = "dual_pol_ack_missing"
     elif schnittstelle == "sx.konnektor_write" and not phase_active:
         denied = "phase_inactive"
-    elif kreuzkopplung_phase in {"MAX_COUPLING_LIMIT", "MIN_COUPLING_LIMIT"}:
+    elif kreuzkopplung_phase in RAILS:
         denied = "kreuzkopplung_rail"
+    elif kreuzkopplung_phase != STABLE:
+        denied = "kreuzkopplung_not_stable"
     else:
         passed, reason = bilo_score_pass(
             score["fused"],
@@ -89,6 +104,7 @@ def gate(
             "para_border_pass",
             "dual_pol_ack",
             "bilo_score_pass",
+            "kreuzkopplung_stable",
         ],
         "storesCredentials": False,
         "vendor_live": False,
