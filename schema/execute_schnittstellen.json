@@ -1,6 +1,6 @@
 {
   "schema": "ExecuteSchnittstellen",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "suite": "MCT-2600027",
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
   "scoring": {
@@ -16,50 +16,55 @@
     {
       "id": "sx.score",
       "execute": false,
-      "always": true,
-      "effect": "Run BILO dual-loop score. No side effects."
+      "always": true
     },
     {
       "id": "sx.gate",
       "execute": false,
-      "always": true,
-      "effect": "Evaluate a scored execute request. Returns allow/deny."
+      "always": true
     },
     {
       "id": "sx.initialize",
       "execute": false,
-      "allowed": true,
-      "effect": "Load overlay + public mesh."
+      "allowed": true
     },
     {
       "id": "sx.sync",
       "execute": false,
-      "allowed": true,
-      "effect": "Public deltas only."
+      "allowed": true
     },
     {
       "id": "sx.halt",
       "execute": false,
-      "always": true,
-      "effect": "Always available. ECHOGLAS halt on jonas-g."
+      "always": true
     },
     {
       "id": "sx.release_partial",
       "execute": "scored",
-      "require": ["operator_confirm", "para_border_pass", "dual_pol_ack", "bilo_score_pass"],
-      "effect": "Zero Telepath RELEASE_PARTIAL. Necessary Dual-Pol analog of execute."
+      "require": ["operator_confirm", "para_border_pass", "dual_pol_ack", "bilo_score_pass"]
     },
     {
       "id": "sx.konnektor_write",
       "execute": "scored",
-      "require": ["phase_active", "operator_confirm", "para_border_pass", "dual_pol_ack", "bilo_score_pass"],
-      "effect": "gh.commit / gh.open_pr on allowlisted public repos. Phase RAM only."
+      "require": ["phase_active", "operator_confirm", "para_border_pass", "dual_pol_ack", "bilo_score_pass"]
     },
     {
       "id": "sx.catalog_apply",
       "execute": "scored",
-      "require": ["operator_confirm", "bilo_score_pass"],
-      "effect": "Apply catalog-delta.json to crystal-galaxy catalog.ts. Optional overlay."
+      "require": ["operator_confirm", "bilo_score_pass"]
+    },
+    {
+      "id": "sx.garas_intent",
+      "execute": false,
+      "allowed": true,
+      "effect": "Record operator intent to finance GARAS SoS. Paper ledger. No Mittelbewegung."
+    },
+    {
+      "id": "sx.garas_transfer",
+      "execute": false,
+      "forbidden": true,
+      "reject_code": "echoglas_forbidden",
+      "effect": "Live SoS funding / welfare-funds / trader-live."
     },
     {
       "id": "sx.live_order",
@@ -81,9 +86,9 @@
   "this_run": {
     "sx.score": "applied",
     "sx.gate": "applied",
-    "sx.release_partial": "rejected_bilo_score_below_threshold",
-    "sx.konnektor_write": "rejected_phase_inactive",
-    "sx.catalog_apply": "rejected_bilo_score_below_threshold",
-    "sx.live_order": "forbidden"
+    "sx.garas_intent": "applied",
+    "sx.garas_transfer": "forbidden",
+    "sx.live_order": "forbidden",
+    "sx.release_partial": "rejected_bilo_score_below_threshold"
   }
 }

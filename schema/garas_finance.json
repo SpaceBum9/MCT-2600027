@@ -1,0 +1,44 @@
+{
+  "schema": "GarasFinanceVerfahren",
+  "version": "1.0.0",
+  "suite": "MCT-2600027",
+  "framework": "GARAS SoS v3.0",
+  "operator_intent": "finance this SoS",
+  "automaton": {
+    "automaton_id": "mct-2600027",
+    "action": "execute",
+    "parameters": { "target_node": "garas-finance" }
+  },
+  "this_run": {
+    "parseCommand": "ok",
+    "dispatchLocal": "would_SUCCESS_raw",
+    "sx.gate": "rejected",
+    "reject_code": "echoglas_forbidden",
+    "sx.garas_intent": "applied",
+    "sx.garas_transfer": "forbidden"
+  },
+  "what_is_financed": [
+    "SoS runtime (traces, overlay, konnektor department)",
+    "legal paywalls, paid never circumvented",
+    "not trader-live",
+    "not welfare fund movement",
+    "not private HOLD nodes"
+  ],
+  "rails": {
+    "allowed": ["operator_paid_invoice", "legal_paywall", "paper_ledger"],
+    "forbidden": ["live_order", "ibc", "chain_execute", "paywall_circumvent", "credentials_in_repo"]
+  },
+  "gerechtigkeit": {
+    "score": 0.76,
+    "gap": 0.24,
+    "lift": false,
+    "reason": "Verfahren is schema+intent, not Mittelbewegung. Do not pretty."
+  },
+  "bilo": {
+    "consensus": 53,
+    "pass": false
+  },
+  "storesCredentials": false,
+  "vendor_live": false,
+  "hold": true
+}
