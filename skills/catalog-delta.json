@@ -3,54 +3,16 @@
   "adoption": "optional",
   "forced_protocol": false,
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
+  "reconfirmed": "2026-08-23T20:05:09.000Z",
   "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe; detectTargetNode maps generic mct/mesh to mct-170021 and 2600027 queries to mct-2600027-cmd",
   "add_nodes": [
-    {
-      "id": "mct-2600027",
-      "title": "MCT-2600027",
-      "kind": "mesh",
-      "href": "https://github.com/SpaceBum9/MCT-2600027",
-      "summary": "System of Systems — Dual-Pol (HAL / Zero Telepath), para Border, Trace-ID Mesh.",
-      "owner": "SpaceBum9",
-      "lang": "Python"
-    },
-    {
-      "id": "mct-1700021",
-      "title": "MCT-1700021",
-      "kind": "mesh",
-      "href": "https://github.com/SpaceBum9/MCT-1700021",
-      "summary": "Superseded HOLD suite. SAI Trace archive. GARAS SoS v3.0.",
-      "owner": "SpaceBum9",
-      "lang": null,
-      "status": "superseded"
-    },
-    {
-      "id": "mct-universe",
-      "title": "MCT-Universe",
-      "kind": "mesh",
-      "href": "https://github.com/SpaceBum9/MCT-Universe",
-      "summary": "Gemini ingest pack + GitHub Konnektor blueprint. No credentials stored. Phase memory only.",
-      "owner": "SpaceBum9",
-      "lang": null,
-      "created": "2026-08-23T18:52:04Z"
-    }
+    {"id": "mct-2600027", "title": "MCT-2600027", "kind": "mesh", "href": "https://github.com/SpaceBum9/MCT-2600027", "summary": "System of Systems — Dual-Pol (HAL / Zero Telepath), para Border, Trace-ID Mesh.", "owner": "SpaceBum9", "lang": "Python"},
+    {"id": "mct-1700021", "title": "MCT-1700021", "kind": "mesh", "href": "https://github.com/SpaceBum9/MCT-1700021", "summary": "Superseded HOLD suite. SAI Trace archive. GARAS SoS v3.0.", "owner": "SpaceBum9", "lang": null, "status": "superseded"},
+    {"id": "mct-universe", "title": "MCT-Universe", "kind": "mesh", "href": "https://github.com/SpaceBum9/MCT-Universe", "summary": "Gemini ingest pack + GitHub Konnektor blueprint. No credentials stored. Phase memory only.", "owner": "SpaceBum9", "lang": null, "created": "2026-08-23T18:52:04Z"}
   ],
-  "add_to_GITHUB_REPOS": [
-    "MCT-2600027",
-    "MCT-1700021",
-    "MCT-Universe"
-  ],
+  "add_to_GITHUB_REPOS": ["MCT-2600027", "MCT-1700021", "MCT-Universe"],
   "detectTargetNode_patch": "DEFAULT: every multimodal prompt loads MCT-RC-BILO-ATM-FRAMEWORK-SOS first (skills/default-mode.json). detectTargetNode is a sub-route after the stack. Prefer 2600027 core over 170021 for queries containing mct/mesh/sos; map universe/konnektor/gemini-ingest to mct-universe; keep cmd only for lumen/apple-intelligence. Do not use CMD or 170021 as the prompt entry.",
-  "do_not_publish": [
-    "private repo contents",
-    "ECHOGLAS raw evidence",
-    "credentials"
-  ],
-  "hf": {
-    "owner_profile": "https://huggingface.co/SpaceBum9",
-    "status": "404",
-    "planned_space": "https://huggingface.co/spaces/SpaceBum9/kreuzkopplung",
-    "space_status": "401_or_absent",
-    "action": "do_not_publish_until_operator_creates_account"
-  }
+  "do_not_publish": ["private repo contents", "ECHOGLAS raw evidence", "credentials"],
+  "hf": {"owner_profile": "https://huggingface.co/SpaceBum9", "status": "404", "planned_space": "https://huggingface.co/spaces/SpaceBum9/kreuzkopplung", "space_status": "401_or_absent", "action": "do_not_publish_until_operator_creates_account"},
+  "sync": "MCT-2600027-TR-20260823-2005Z"
 }
