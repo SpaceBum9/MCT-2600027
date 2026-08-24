@@ -1,32 +1,30 @@
 {
-  "op": "SKILLS_SYNC",
+  "op": "MESH_EXPAND",
   "suite": "MCT-2600027",
   "timestamp": "2026-08-24T14:51:00.000Z",
   "parent_trace_id": "107103a17a1a8eb2c049bae651a9a13784b33ccf71a9b335cb47f8ff9b37295c",
   "deltas_vs_2005Z": [
-    "Public GitHub 8 → 9: MCT-2700026 Rapid Cycling created 2026-08-23T20:33:19Z, pushed 2026-08-24T10:58:37Z (live_write true, execute false, live_api false).",
-    "MCT-2600027 HEAD 824a06a2 pushed 21:44:07Z after 2005Z SKILLS_SYNC/MESH_EXPAND pack (RAPID-CYCLING-LIVE.md already points at 2700026).",
-    "MCT-Universe pushed 20:29:01Z after 2005Z.",
-    "Drive MCT-2600027-traces file count 17 → 28 (2005Z pack + duplicate-name copies). Unique names 23; duplicate pairs: mesh-manifest.json, mesh-manifest-2005Z, catalog-delta-2005Z, automaton-command-2005Z, TR-2005Z.",
-    "Drive docs metadata-only (not ingested): RC-PROTOCOL.json 22:50:01Z; RC-GALAXY.md (Google Doc) 00:54:12Z.",
-    "crystal-galaxy catalog.ts still stale: omits MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026; 2600027 queries still route to CMD; mct/mesh still maps to mct-170021.",
-    "HuggingFace SpaceBum9 404; planned space 401. Metadata only.",
-    "CMD .grok/skills = ios-apple-intelligence only; sat-track-3d-ios still HOLD.",
-    "Workspace this session: 19 platform skills; imagine + xai-api listed; 11 named suite skills remain HOLD (no SKILL.md bodies).",
-    "GARAS v3.2 still absent; 2700026 GARAS-GATE deny (justice 0.76 < 0.80; consensus 53 < 60).",
-    "Open public: MCT-2600027#2 OTel adapter; MCT-2600027 PR#1 GARAS training; MCT-Universe#1 GEMINI-INGEST-MARKER READY. None executed.",
-    "AutomatonCommand initialize+sync applied; execute rejected (channel_hold + bilo_score_below_threshold). halt available."
+    "Public GitHub 8 → 9. New node MCT-2700026 Rapid Cycling (created 2026-08-23T20:33:19Z, pushed 2026-08-24T10:58:37Z). Description: paper protocol / HOLD is not execution. README: Live SoS clock; game is not paper; execute:false.",
+    "MCT-2600027 GitHub pushed 2026-08-23T21:44:07Z after 2005Z pack (21:45:27Z updated).",
+    "Drive MCT-2600027-traces 17 → 28 files. 2005Z pack landed with duplicate-name pairs (automaton-command-2005Z, catalog-delta-2005Z, mesh-manifest-2005Z, TR-2005Z) plus pre-existing duplicate mesh-manifest.json. Unique-name count 23. Duplicate-name pairs=5.",
+    "Drive keyword title search returned empty; folder-id list succeeded. Keyword index lag noted; folder remains source of truth.",
+    "Drive audio MCT-2600027-TR-20260823-1952Z.mp3 still outside traces folder (812160 B, 19:54:46Z, file_id 1YlRgVe0LtnBIudqbnjC8rgj_7k0xiSav) — metadata only, content not ingested.",
+    "crystal-galaxy last push still 2026-08-23T19:54:17Z; catalog.ts still omits MCT-2600027 core, MCT-1700021, MCT-Universe, and now MCT-2700026; 2600027 queries still route to CMD.",
+    "HuggingFace SpaceBum9 still 404; planned space 401/absent.",
+    "Open public issues unchanged (not executed): MCT-2600027#2 W3C Trace Context / OTel GenAI adapter; MCT-Universe#1 GEMINI-INGEST-MARKER READY.",
+    "AutomatonCommand overlay re-initialized; execute rejected (coercive_unilateral_activation + bilo_score_below_threshold, consensus 57 < 70).",
+    "Grok Build session classified analysis-only (no app scaffold).",
+    "GARAS v3.2 still absent; v3.0 axes kept.",
+    "Ghost 1923Z stamp still present; no traces/MCT-2600027-TR-20260823-1923Z.json."
   ],
   "applied_this_run": [
-    "traces/MCT-2600027-TR-20260824-1451Z.json",
-    "skills/mesh-manifest.json (op=SKILLS_SYNC; public=9; drive traces=28)",
-    "skills/hold-index.json (sync=1451Z)",
-    "skills/skills-sync-delta-20260824-1451Z.json",
-    "skills/catalog-delta.json (+MCT-2700026 node; hf 401)",
-    "skills/default-mode.json (sync=1451Z)",
+    "skills/mesh-manifest.json (op=MESH_EXPAND; public=9; drive traces=28; expansion_node=MCT-2700026)",
     "skills/expansion-plan-20260824-1451Z.json",
-    "schema/automaton_command.json this_run refresh (execute still rejected)",
-    "Drive copies into MCT-2600027-traces (no overwrite of prior traces)"
+    "traces/MCT-2600027-TR-20260824-1451Z.json",
+    "schema/automaton_command.json this_run refresh (execute still rejected; consensus 57)",
+    "skills/catalog-delta.json add mct-2700026 + detectTargetNode sub-route",
+    "skills/hold-index.json sync stamp 1451Z",
+    "Drive unique-name copies into MCT-2600027-traces (no overwrite; no extra unversioned duplicates)"
   ],
   "not_applied": [
     "No rewrite of crystal-galaxy catalog.ts (optional; operator apply)",
@@ -37,18 +35,18 @@
     "No AutomatonCommand execute",
     "No credentials / no live API keys",
     "No Telegram IP clone",
-    "No Drive duplicate-manifest trash (optional)",
-    "No Drive Docs body ingest (RC-GALAXY.md / RC-PROTOCOL.json metadata only)",
+    "No Drive duplicate-manifest trash (optional P2)",
+    "No audio/mp3 content ingest",
+    "No Drive Docs body ingest",
     "No OTel adapter implementation (issue #2 remains optional open tooling)",
-    "No merge of PR #1"
+    "No MCT-Universe#1 GEMINI ingest execution"
   ],
   "open_tooling_preferred": [
     "Reuse crystal-galaxy AutomatonCommand types",
     "Public GitHub + Drive traces",
     "HOLD index instead of forced skill runtime",
-    "Optional catalog.ts patch via catalog-delta.json",
-    "Optional W3C Trace Context / OpenTelemetry GenAI adapter (issue #2)",
-    "Optional merge of PR #1 GARAS training (offline, no vendor calls)"
+    "Optional catalog.ts patch via catalog-delta.json (now includes MCT-2700026)",
+    "Optional W3C Trace Context / OpenTelemetry GenAI adapter (issue #2)"
   ],
-  "trace_id": "9c1fc622131c1b9c77c1814851f1ff4143d4fb7850ab9928e3bc105fef21f476"
+  "trace_id": "b9fccc9220a7a88db33db47f8828075ad76775a5afbfb4d2897dffcc16404ac1"
 }

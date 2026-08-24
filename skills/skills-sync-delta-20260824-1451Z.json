@@ -2,107 +2,13 @@
   "op": "SKILLS_SYNC",
   "suite": "MCT-2600027",
   "timestamp": "2026-08-24T14:51:00.000Z",
-  "parent_trace_id": "107103a17a1a8eb2c049bae651a9a13784b33ccf71a9b335cb47f8ff9b37295c",
-  "skills_sync_parent": "f241f87ed0607c42854983931f7bf901c99704de3a68a85c744d6335a8a85fc8",
-  "deltas_vs_2005Z": [
-    "Public GitHub 8 → 9: MCT-2700026 Rapid Cycling created 2026-08-23T20:33:19Z, pushed 2026-08-24T10:58:37Z (live_write true, execute false, live_api false).",
-    "MCT-2600027 HEAD 824a06a2 pushed 21:44:07Z after 2005Z SKILLS_SYNC/MESH_EXPAND pack (RAPID-CYCLING-LIVE.md already points at 2700026).",
-    "MCT-Universe pushed 20:29:01Z after 2005Z.",
-    "Drive MCT-2600027-traces file count 17 → 28 (2005Z pack + duplicate-name copies). Unique names 23; duplicate pairs: mesh-manifest.json, mesh-manifest-2005Z, catalog-delta-2005Z, automaton-command-2005Z, TR-2005Z.",
-    "Drive docs metadata-only (not ingested): RC-PROTOCOL.json 22:50:01Z; RC-GALAXY.md (Google Doc) 00:54:12Z.",
-    "crystal-galaxy catalog.ts still stale: omits MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026; 2600027 queries still route to CMD; mct/mesh still maps to mct-170021.",
-    "HuggingFace SpaceBum9 404; planned space 401. Metadata only.",
-    "CMD .grok/skills = ios-apple-intelligence only; sat-track-3d-ios still HOLD.",
-    "Workspace this session: 19 platform skills; imagine + xai-api listed; 11 named suite skills remain HOLD (no SKILL.md bodies).",
-    "GARAS v3.2 still absent; 2700026 GARAS-GATE deny (justice 0.76 < 0.80; consensus 53 < 60).",
-    "Open public: MCT-2600027#2 OTel adapter; MCT-2600027 PR#1 GARAS training; MCT-Universe#1 GEMINI-INGEST-MARKER READY. None executed.",
-    "AutomatonCommand initialize+sync applied; execute rejected (channel_hold + bilo_score_below_threshold). halt available."
+  "from": "MCT-2600027-TR-20260823-2005Z",
+  "to": "MCT-2600027-TR-20260824-1451Z",
+  "changes": [
+    "public_github_count 8→9 (MCT-2700026)",
+    "catalog-delta add_nodes + mct-2700026",
+    "hold-index sync stamp only; maps unchanged",
+    "skills_live still 1/12 (mct-2600027-core)"
   ],
-  "required_patches": [
-    {
-      "id": "P1",
-      "target": "traces/MCT-2600027-TR-20260824-1451Z.json",
-      "action": "emit this SKILLS_SYNC trace",
-      "this_run": true
-    },
-    {
-      "id": "P2",
-      "target": "skills/mesh-manifest.json",
-      "action": "op=SKILLS_SYNC; public_github_count=9; drive traces_file_count=28; expansion_node=MCT-2700026; sync=1451Z",
-      "this_run": true
-    },
-    {
-      "id": "P3",
-      "target": "skills/hold-index.json",
-      "action": "sync=1451Z; keep skills_hold=11; default-mode not counted",
-      "this_run": true
-    },
-    {
-      "id": "P4",
-      "target": "skills/catalog-delta.json",
-      "action": "add MCT-2700026 node; reconfirm catalog drift",
-      "this_run": true
-    },
-    {
-      "id": "P5",
-      "target": "SpaceBum9/crystal-galaxy/catalog.ts",
-      "action": "optional operator apply of skills/catalog-delta.json",
-      "this_run": false
-    },
-    {
-      "id": "P6",
-      "target": "Drive duplicate filenames",
-      "action": "optional trash of duplicate names (5 pairs)",
-      "this_run": false
-    },
-    {
-      "id": "P7",
-      "target": "11 HOLD SKILL.md bodies",
-      "action": "do not invent; would imply live APIs",
-      "this_run": false
-    },
-    {
-      "id": "P8",
-      "target": "GARAS v3.2",
-      "action": "do not invent axes; 2700026 GARAS-GATE deny",
-      "this_run": false
-    },
-    {
-      "id": "P9",
-      "target": "HuggingFace SpaceBum9",
-      "action": "do not publish until operator creates account",
-      "this_run": false
-    }
-  ],
-  "applied_this_run": [
-    "traces/MCT-2600027-TR-20260824-1451Z.json",
-    "skills/mesh-manifest.json (op=SKILLS_SYNC; public=9; drive traces=28)",
-    "skills/hold-index.json (sync=1451Z)",
-    "skills/skills-sync-delta-20260824-1451Z.json",
-    "skills/catalog-delta.json (+MCT-2700026 node; hf 401)",
-    "skills/default-mode.json (sync=1451Z)",
-    "skills/expansion-plan-20260824-1451Z.json",
-    "schema/automaton_command.json this_run refresh (execute still rejected)",
-    "Drive copies into MCT-2600027-traces (no overwrite of prior traces)"
-  ],
-  "not_applied": [
-    "No rewrite of crystal-galaxy catalog.ts (optional; operator apply)",
-    "No SKILL.md invention claiming live APIs",
-    "No GARAS v3.2 axes invented",
-    "No HuggingFace Space publish",
-    "No private repo ingest",
-    "No AutomatonCommand execute",
-    "No credentials / no live API keys",
-    "No Telegram IP clone",
-    "No Drive duplicate-manifest trash (optional)",
-    "No Drive Docs body ingest (RC-GALAXY.md / RC-PROTOCOL.json metadata only)",
-    "No OTel adapter implementation (issue #2 remains optional open tooling)",
-    "No merge of PR #1"
-  ],
-  "execute": "rejected",
-  "catalog_drift": true,
-  "hf": "404",
-  "public_github_count": 9,
-  "drive_traces_file_count": 28,
-  "trace_id": "9c1fc622131c1b9c77c1814851f1ff4143d4fb7850ab9928e3bc105fef21f476"
+  "execute": false
 }

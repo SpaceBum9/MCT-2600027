@@ -4,13 +4,13 @@
   "former_label": "Aber Hallos",
   "former_label_status": "retargeted_no_artifacts",
   "mode": "HOLD",
-  "op": "SKILLS_SYNC",
+  "op": "MESH_EXPAND",
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
   "default_for": "every_multimodal_prompt",
   "framework_declared": "GARAS SoS v3.0",
   "framework_requested": "GARAS SoS v3.2",
-  "framework_drift": "v3.2 not present; keep v3.0 axes; MCT-2700026 GARAS-GATE deny",
-  "bilo": "BILO 2026 core-label (crystal-galaxy + CMD flow + ethics/bilo_scoring.py); public paths only; not statute",
+  "framework_drift": "v3.2 not present; keep v3.0 axes",
+  "bilo": "BILO 2026 core-label (crystal-galaxy + CMD flow); public paths only; not statute",
   "hal_routing": "session-role via SAI: operator → Crystal Mike → HAL → Zielknoten → Reinforcement; dual_pol/hal.py; not a daemon; sub-route after default stack",
   "automaton_command": {
     "adoption": "optional",
@@ -40,17 +40,19 @@
     "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
     "universe_pack_folder_id": "1WMOCO228dPtywucly2Xfha0ibQrHvkhl",
     "traces_file_count": 28,
-    "unique_names": 23,
-    "duplicate_name_pairs": [
-      "mesh-manifest.json",
-      "mesh-manifest-2005Z.json",
-      "catalog-delta-2005Z.json",
-      "automaton-command-2005Z.json",
-      "TR-2005Z.json"
-    ],
+    "duplicate_name_pairs": 5,
+    "duplicate_mesh_manifest": true,
+    "audio_trace_metadata_only": {
+      "name": "MCT-2600027-TR-20260823-1952Z.mp3",
+      "file_id": "1YlRgVe0LtnBIudqbnjC8rgj_7k0xiSav",
+      "size_bytes": 812160,
+      "modified": "2026-08-23T19:54:46.694Z",
+      "ingested": false,
+      "in_traces_folder": false
+    },
     "docs_metadata_only": [
-      "RC-PROTOCOL.json",
-      "RC-GALAXY.md"
+      "MCT Master Repository - Complete System Kernel & Session Memory",
+      "MCT Repository - Integrated System Kernel & Ingestion Flags"
     ]
   },
   "huggingface": {
@@ -61,14 +63,13 @@
     "mct-2600027-core"
   ],
   "skills_hold": 11,
-  "default_mode_stack": "default-mode",
   "skill_md_coverage": "1/12",
-  "trigger_map_coverage": "11/11 suite maps; default-mode stack mapped",
+  "trigger_map_coverage": "11/11 maps; 2 previously empty filled 1901Z",
   "catalog_drift": true,
-  "expansion_node": "MCT-2700026 (created 2026-08-23T20:33:19Z)",
+  "ghost_sync_stamp": "MCT-2600027-TR-20260823-1923Z (no matching traces/ file)",
+  "expansion_node": "MCT-2700026 (created 2026-08-23T20:33:19Z; pushed 2026-08-24T10:58:37Z)",
   "open_issues_public": [
     "SpaceBum9/MCT-2600027#2 Interoperability: W3C Trace Context and OpenTelemetry GenAI adapter",
-    "SpaceBum9/MCT-2600027#1 feat: add auditable GARAS agent training (PR)",
     "SpaceBum9/MCT-Universe#1 GEMINI-INGEST-MARKER · READY"
   ],
   "sync": "MCT-2600027-TR-20260824-1451Z"
