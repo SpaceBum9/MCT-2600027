@@ -5,98 +5,25 @@
   "vendor_live": false,
   "live_rail": false,
   "hello": "Hallo",
-  "note": "Operator dismissed HOLD. Chrona is live SKILL.md. Execute remains false. No live rail.",
-  "sync": "MCT-2600027-TR-20260824-1855Z",
+  "note": "Operator dismissed HOLD. Chrona is live SKILL.md. Payload ingested whole. Execute remains false. No live rail.",
+  "sync": "MCT-2600027-TR-20260824-1904Z",
   "hold": false,
   "hold_dismissed": true,
   "hold_dismissed_by": "operator",
   "hold_dismissed_at": "2026-08-24T18:55:00.000Z",
   "skills": {
-    "default-mode": {
-      "hold": false,
-      "default": true,
-      "triggers": ["multimodal", "prompt", "mct", "rc", "bilo", "atm", "framework", "sos", "garas"],
-      "runtime": "stack",
-      "execute": false,
-      "spec": "skills/default-mode.json",
-      "counted_in_skills_hold": false
-    },
-    "mct-agentic-trader": {
-      "hold": true,
-      "triggers": ["trader", "paper", "agentic-trader"],
-      "runtime": "paper",
-      "execute": false,
-      "rail": "none"
-    },
-    "wohlstandsumverteilung-finance-manager": {
-      "hold": true,
-      "triggers": ["welfare", "intent", "wohlstandsumverteilung"],
-      "runtime": "schema",
-      "framework": "GARAS SoS v3.0 (v3.2 requested, absent)",
-      "rail": "none"
-    },
-    "welfare-ibc-middleware": {
-      "hold": true,
-      "triggers": ["welfare", "ibc", "middleware"],
-      "runtime": "intent-only",
-      "rail": "none"
-    },
-    "multilingual-greeting": {
-      "hold": true,
-      "triggers": ["greeting", "locale", "hallo"],
-      "runtime": "available",
-      "hello": "Hallo",
-      "note": "no SKILL.md body; HELLO Hallo this run"
-    },
-    "grok-blackbox-history": {
-      "hold": true,
-      "triggers": ["trace", "history", "blackbox"],
-      "runtime": "traces"
-    },
-    "grok-imagine-api": {
-      "hold": true,
-      "triggers": ["imagine", "imagine-api", "text-to-image"],
-      "runtime": "session",
-      "note": "workspace imagine skill listed this session; not a live vendor key"
-    },
-    "grok-imagine-full-history": {
-      "hold": true,
-      "triggers": ["imagine-history", "full-history", "blackbox-media"],
-      "runtime": "session-store",
-      "note": "no durable imagine history store in mesh"
-    },
-    "imagine-media-access": {
-      "hold": true,
-      "triggers": ["imagine-media", "media-access", "render_file"],
-      "runtime": "session",
-      "note": "session tools only; no persistent media catalog"
-    },
-    "kassenbeleg-parser": {
-      "hold": true,
-      "triggers": ["kassenbeleg", "DE receipt", "beleg"],
-      "runtime": "session"
-    },
-    "sat-track-3d-ios": {
-      "hold": true,
-      "triggers": ["sat-track", "satellite", "ios-3d"],
-      "runtime": "related-repo",
-      "note": "MCT-2600027-CMD has ios-apple-intelligence SKILL.md only; no sat-track SKILL.md"
-    },
-    "telegram-ios-app": {
-      "hold": true,
-      "triggers": ["telegram", "ios-app"],
-      "runtime": "intent-only",
-      "note": "no messenger IP clone"
-    },
-    "chrona": {
-      "hold": false,
-      "triggers": ["chrona", "palette", "farbe", "contrast", "wcag", "apca", "sos-token"],
-      "runtime": "live",
-      "execute": false,
-      "rail": "none",
-      "spec": "skills/chrona/SKILL.md",
-      "node": "nodes/chrona",
-      "note": "HOLD dismissed; CSS/JSON export; no live rail; execute false"
-    }
+    "default-mode": {"hold": false, "default": true, "triggers": ["multimodal", "prompt", "mct", "rc", "bilo", "atm", "framework", "sos", "garas"], "runtime": "stack", "execute": false, "spec": "skills/default-mode.json", "counted_in_skills_hold": false},
+    "mct-agentic-trader": {"hold": true, "triggers": ["trader", "paper", "agentic-trader"], "runtime": "paper", "execute": false, "rail": "none"},
+    "wohlstandsumverteilung-finance-manager": {"hold": true, "triggers": ["welfare", "intent", "wohlstandsumverteilung"], "runtime": "schema", "framework": "GARAS SoS v3.0 (v3.2 requested, absent)", "rail": "none"},
+    "welfare-ibc-middleware": {"hold": true, "triggers": ["welfare", "ibc", "middleware"], "runtime": "intent-only", "rail": "none"},
+    "multilingual-greeting": {"hold": true, "triggers": ["greeting", "locale", "hallo"], "runtime": "available", "hello": "Hallo", "note": "no SKILL.md body; HELLO Hallo this run"},
+    "grok-blackbox-history": {"hold": true, "triggers": ["trace", "history", "blackbox"], "runtime": "traces"},
+    "grok-imagine-api": {"hold": true, "triggers": ["imagine", "imagine-api", "text-to-image"], "runtime": "session", "note": "workspace imagine skill listed this session; not a live vendor key"},
+    "grok-imagine-full-history": {"hold": true, "triggers": ["imagine-history", "full-history", "blackbox-media"], "runtime": "session-store", "note": "no durable imagine history store in mesh"},
+    "imagine-media-access": {"hold": true, "triggers": ["imagine-media", "media-access", "render_file"], "runtime": "session", "note": "session tools only; no persistent media catalog"},
+    "kassenbeleg-parser": {"hold": true, "triggers": ["kassenbeleg", "DE receipt", "beleg"], "runtime": "session"},
+    "sat-track-3d-ios": {"hold": true, "triggers": ["sat-track", "satellite", "ios-3d"], "runtime": "related-repo", "note": "MCT-2600027-CMD has ios-apple-intelligence SKILL.md only; no sat-track SKILL.md"},
+    "telegram-ios-app": {"hold": true, "triggers": ["telegram", "ios-app"], "runtime": "intent-only", "note": "no messenger IP clone"},
+    "chrona": {"hold": false, "triggers": ["chrona", "palette", "farbe", "contrast", "wcag", "apca", "sos-token"], "runtime": "live", "execute": false, "rail": "none", "spec": "skills/chrona/SKILL.md", "node": "nodes/chrona", "note": "HOLD dismissed; CSS/JSON export; no live rail; execute false"}
   }
 }
