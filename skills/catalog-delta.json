@@ -3,7 +3,7 @@
   "adoption": "optional",
   "forced_protocol": false,
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
-  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026, Chrona. Reconfirmed 2106Z. Chrona is a node inside MCT-2600027, not a new public repo. Payload ingested whole. Skills do not open a live rail. GR-1 HOLD.",
+  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026, Chrona. Reconfirmed 2211Z. Chrona is a node inside MCT-2600027, not a new public repo. Payload ingested whole. Skills do not open a live rail. GR-1 HOLD.",
   "add_nodes": [
     {
       "id": "mct-2600027",
@@ -72,5 +72,5 @@
     "this_run": "not_reprobed",
     "action": "do_not_publish_until_operator_creates_account"
   },
-  "sync": "MCT-2600027-TR-20260824-2106Z"
+  "sync": "MCT-2600027-TR-20260824-2211Z"
 }
