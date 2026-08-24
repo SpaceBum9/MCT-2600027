@@ -6,7 +6,7 @@
   "former_label": "Aber Hallos",
   "former_label_status": "retargeted_no_artifacts",
   "mode": "HOLD",
-  "op": "MESH_EXPAND",
+  "op": "SKILLS_SYNC",
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
   "default_for": "every_multimodal_prompt",
   "framework_declared": "GARAS SoS v3.0",
@@ -42,7 +42,7 @@
     "folder": "MCT-2600027-traces",
     "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
     "universe_pack_folder_id": "1WMOCO228dPtywucly2Xfha0ibQrHvkhl",
-    "latest_pack": "20260824-1701Z",
+    "latest_pack": "20260824-1712Z",
     "audio_trace_metadata_only": {
       "name": "MCT-2600027-TR-20260823-1952Z.mp3",
       "file_id": "1YlRgVe0LtnBIudqbnjC8rgj_7k0xiSav",
@@ -57,7 +57,9 @@
     "profile": "404",
     "space_kreuzkopplung": "absent"
   },
-  "skills_live": ["mct-2600027-core"],
+  "skills_live": [
+    "mct-2600027-core"
+  ],
   "skills_hold": 11,
   "skill_md_coverage": "1/12",
   "trigger_map_coverage": "11/11 maps; bodies absent",
@@ -74,5 +76,5 @@
   "hello": "Hallo",
   "rail": "none",
   "live_rail": false,
-  "sync": "MCT-2600027-TR-20260824-1701Z"
+  "sync": "MCT-2600027-TR-20260824-1712Z"
 }
