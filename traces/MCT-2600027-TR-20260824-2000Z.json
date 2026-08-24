@@ -253,7 +253,7 @@
     "execute rejected without operator opt-in",
     "No welfare rail to a bank",
     "MCT-1700021 is payload, not parent of this chain",
-    "RC\u2192GARAS allocated, not expense; no double posting",
+    "RC→GARAS allocated, not expense; no double posting",
     "RC snapshot in payload is umlage-after-RC, not a second live clock",
     "1855Z/1904Z RELEASE superseded by this ORDER; GR-1 HOLD incl SOLO"
   ],
