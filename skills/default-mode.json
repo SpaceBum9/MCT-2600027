@@ -13,7 +13,7 @@
   "hold": false,
   "hold_dismissed": true,
   "layers": {
-    "MCT": "this repo (payload MCT-1700021 label stands; not superseded; lineage vs MCT-2700026 live clock)",
+    "MCT": "this repo (payload MCT-1700021 label stands; not superseded; ingested whole; lineage vs MCT-2700026 live clock)",
     "RC": "crystal-galaxy reinforce.ts + sai.ts; live-write SpaceBum9/MCT-2700026",
     "BILO": "BILO 2026 public core-label",
     "ATM": "schema/automaton_command.json",
@@ -25,5 +25,5 @@
   "universe_spec": "SpaceBum9/MCT-Universe/05-DEFAULT-MODE.md",
   "live_clock": "SpaceBum9/MCT-2700026",
   "palette_node": "nodes/chrona",
-  "sync": "MCT-2600027-TR-20260824-1855Z"
+  "sync": "MCT-2600027-TR-20260824-1904Z"
 }
