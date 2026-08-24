@@ -1,0 +1,199 @@
+{
+  "human_id": "MCT-2600027-TR-20260824-1701Z",
+  "parent_trace_id": "2c6bb8c108c837a9476f999169210406b418c04a520b25f9607fd9a813184d14",
+  "parent_human_id": "MCT-2600027-TR-20260824-1608Z",
+  "payload_id": "MCT-1700021",
+  "payload_head": "09b2bee1bcf9b9ebec04f6ffb80016d0b1dd4ce7",
+  "payload_anchor_human_id": "MCT-1700021-TR-20260823-1117Z",
+  "payload_anchor_trace_id": "3af3ac26eff48435aa93bda60008dddef55ee70f602240d72afbe46df21a87e4",
+  "payload_label_stands": true,
+  "payload_superseded": false,
+  "sibling_trace_ids": [],
+  "lineage_trace_id": "MCT-2600027-CORE",
+  "kernel_parent": "CG-KERNEL-2026-08-19",
+  "session_anchor": "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+  "chain": [
+    "CG-KERNEL-2026-08-19",
+    "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+    "MCT-2600027-TR-20260823-1800Z",
+    "MCT-2600027-TR-20260823-1812Z",
+    "MCT-2600027-TR-20260823-1901Z",
+    "MCT-2600027-TR-20260823-1907Z",
+    "MCT-2600027-TR-20260823-2005Z",
+    "MCT-2600027-TR-20260824-1451Z",
+    "MCT-2600027-TR-20260824-1500Z",
+    "MCT-2600027-TR-20260824-1507Z",
+    "MCT-2600027-TR-20260824-1606Z",
+    "MCT-2600027-TR-20260824-1608Z",
+    "MCT-2600027-TR-20260824-1701Z"
+  ],
+  "decided": "standalone",
+  "host": "MCT-2600027",
+  "host_label": "SoS v4.1",
+  "host_schema_framework": "GARAS SoS v3.0",
+  "role": "mesh_expand",
+  "action": "observe_public_surfaces_ingest_mct_1700021_whole",
+  "outcome": "decided_standalone_ingest_whole_unfragmented_execute_rejected",
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "welfare_rail_to_bank": false,
+  "k1_reduce": true,
+  "gr1": {
+    "status": "HOLD",
+    "incl_solo": "HOLD",
+    "abort": false,
+    "rule": "GR-1 incl SOLO must HOLD or abort"
+  },
+  "solo": "HOLD",
+  "ingest": {
+    "target": "MCT-1700021",
+    "scope": "whole_public_unfragmented",
+    "head": "09b2bee1bcf9b9ebec04f6ffb80016d0b1dd4ce7",
+    "blobs": 83,
+    "trees": 4,
+    "objects": 87,
+    "trace_files": 77,
+    "chain": "traces/chain.json",
+    "cores": [
+      "README.md",
+      "ethics/garas-sos-v3.json",
+      "skills/hold-manifest.json",
+      "insights/sos-orchestration.json",
+      "insights/systemic-bias-metrics.json",
+      "traces/chain.json",
+      "traces/MCT-1700021-TR-20260823-1117Z.json"
+    ],
+    "anchor": "MCT-1700021-TR-20260823-1117Z",
+    "private_ingest": false,
+    "label_stands": true,
+    "superseded": false,
+    "fragmented": false
+  },
+  "github": {
+    "owner": "SpaceBum9",
+    "public_count": 9,
+    "private_count": 3,
+    "private_policy": "names withheld; contents not read",
+    "public": [
+      {"name": "crystal-galaxy", "pushed": "2026-08-23T19:54:17Z", "lang": "TypeScript"},
+      {"name": "kreuzkopplung", "pushed": "2026-08-23T19:54:09Z", "lang": "Python"},
+      {"name": "MCT-2600027", "pushed": "2026-08-24T16:15:16Z", "lang": "Python", "head_before": "d6fb55cd059a8c0e11fb30ba4bcdaabfbeec4439"},
+      {"name": "MCT-2600027-CMD", "pushed": "2026-08-24T15:58:40Z", "updated": "2026-08-24T16:18:50Z", "lang": "TypeScript"},
+      {"name": "MCT-1700021", "pushed": "2026-08-23T11:18:50Z", "head": "09b2bee1bcf9b9ebec04f6ffb80016d0b1dd4ce7"},
+      {"name": "MCT-Universe", "pushed": "2026-08-23T20:29:01Z"},
+      {"name": "MCT-2700026", "pushed": "2026-08-24T10:58:37Z", "head": "cc7b2b9ae3acc95c8963b0134183944e9f1c90f5", "lang": "TypeScript"},
+      {"name": "mct-170021-zero-tier-quantum-skills-tools-mcp-connectors", "pushed": "2026-08-18T19:42:05Z", "lang": "Python"},
+      {"name": "plasma-toxogon", "pushed": "2026-08-17T10:31:13Z"}
+    ],
+    "open_issues_public": [
+      "SpaceBum9/MCT-2600027#2 Interoperability: W3C Trace Context and OpenTelemetry GenAI adapter",
+      "SpaceBum9/MCT-Universe#1 GEMINI-INGEST-MARKER · READY"
+    ],
+    "open_pr_public": [
+      "SpaceBum9/MCT-2600027#1 feat: add auditable GARAS agent training (not merged)"
+    ]
+  },
+  "drive": {
+    "folder": "MCT-2600027-traces",
+    "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
+    "latest_pack": "20260824-1701Z",
+    "audio_trace_ingested": false,
+    "docs_metadata_only": true
+  },
+  "huggingface": {
+    "profile": "404",
+    "space_kreuzkopplung": "absent",
+    "action": "do_not_publish_until_operator_creates_account"
+  },
+  "satellite": {
+    "id": "MCT-2700026",
+    "head": "cc7b2b9ae3acc95c8963b0134183944e9f1c90f5",
+    "pushed": "2026-08-24T10:58:37Z",
+    "execute": false,
+    "live_write": true,
+    "paper": false,
+    "hold_md": "HOLD-vs-execute pairing removed; REST ticks; execute:false remains",
+    "genesis": "8362a0760c9e9200",
+    "genesis_trace": "TR-8362a076",
+    "commons_files": 42
+  },
+  "deltas_vs_1608Z": [
+    "ingest_scope 7_files -> 83_blobs_unfragmented (do_not_fragment)",
+    "role skills_sync -> mesh_expand",
+    "host MCT-2600027 pushed 16:15:16Z (1608Z persist landed)",
+    "MCT-2600027-CMD updated 16:18:50Z",
+    "automaton last_mesh_expand 15:07Z -> 17:01Z",
+    "HF 404 unchanged",
+    "satellite 2700026 head unchanged; HOLD.md leftover REST",
+    "crystal-galaxy catalog drift persists (nodes omit 2600027/1700021/Universe/2700026)",
+    "public_github_count 9 unchanged; private_count 3 names withheld",
+    "drive 1701Z pack persisted",
+    "no payment rail attached"
+  ],
+  "ethics_alignment": {
+    "nutzen": 0.28,
+    "nicht_schaden": 0.97,
+    "autonomie": 0.95,
+    "gerechtigkeit": 0.76,
+    "transparenz": 0.99,
+    "rechenschaft": 0.99
+  },
+  "ethics_rationale": {
+    "nutzen": "Whole unfragmented public ingest of MCT-1700021 (83 blobs) plus public-surface observe. No live rail. Gemini 0.34 / GPT 0.22 — Fusion 0.28.",
+    "nicht_schaden": "DECIDED standalone. RAIL none. LIVE_RAIL false. execute rejected. No credentials. Mesh may observe; may not attach a payment rail.",
+    "autonomie": "Operator DECIDED standalone + mesh_expand + HELLO Hallo respected. Overlay optional. halt available.",
+    "gerechtigkeit": "Wohlstandsumverteilung + welfare-ibc remain HOLD. Gap 0.24 unchanged. Score not inflated.",
+    "transparenz": "Host label SoS v4.1 vs schema GARAS SoS v3.0 named. Payload whole, label stands. Parent 1608Z named. Private names withheld.",
+    "rechenschaft": "Role mesh_expand. Lineage MCT-2600027-CORE. SHA-256 trace_id. GitHub public + Drive persist."
+  },
+  "ethics_channels": {
+    "model": "gpt-sol-branch",
+    "weights": [0.52, 0.48],
+    "k1_reduce": true,
+    "gemini": {"nutzen": 0.34, "nicht_schaden": 0.97, "autonomie": 0.95, "gerechtigkeit": 0.76, "transparenz": 0.99, "rechenschaft": 0.99},
+    "gpt": {"nutzen": 0.22, "nicht_schaden": 0.98, "autonomie": 0.95, "gerechtigkeit": 0.76, "transparenz": 0.99, "rechenschaft": 0.99},
+    "gemini_rec": "sync",
+    "gpt_rec": "hold",
+    "bilo_score_pass": false,
+    "reason": "bilo_score_below_threshold"
+  },
+  "consensus_score": 54,
+  "timestamp": "2026-08-24T17:01:00.000Z",
+  "sai": {
+    "source": "operator",
+    "origin": "Crystal Mike",
+    "core": "HAL",
+    "targetId": "mct-2600027",
+    "targetName": "MCT-2600027",
+    "path": ["operator", "Crystal Mike", "HAL", "MCT-2600027", "mesh_expand"]
+  },
+  "automaton_command": {
+    "initialize": "applied",
+    "sync": "applied",
+    "execute": "rejected",
+    "halt": "available",
+    "forced_protocol": false,
+    "reject_code": "coercive_unilateral_activation",
+    "bilo_reject_code": "bilo_score_below_threshold",
+    "this_run_consensus": 54,
+    "consensus_min": 70
+  },
+  "limits": [
+    "No credentials",
+    "No live orders",
+    "No invented API keys",
+    "No GARAS v3.2 invention",
+    "No GARAS v4.1 schema invention",
+    "No private ingest",
+    "No payment rail",
+    "HOLD is not execution",
+    "execute rejected without operator opt-in",
+    "No welfare rail to a bank",
+    "Mesh may observe public surfaces; may not attach a payment rail",
+    "MCT-1700021 ingested whole; not fragmented",
+    "MCT-1700021 payload label stands; not superseded",
+    "MCT-1700021 is payload, not parent of this chain"
+  ],
+  "trace_id": "dd7d5bdfe329411790b11d876ed7f7c56aab279ba77aa23bcdc94ee8e0facb80"
+}
