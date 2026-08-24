@@ -5,8 +5,8 @@
   "payload_superseded": false,
   "former_label": "Aber Hallos",
   "former_label_status": "retargeted_no_artifacts",
-  "mode": "HOLD",
-  "op": "MESH_EXPAND",
+  "mode": "RELEASE",
+  "op": "HOLD_DISMISS",
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
   "default_for": "every_multimodal_prompt",
   "framework_declared": "GARAS SoS v3.0",
@@ -43,25 +43,24 @@
     "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
     "universe_pack_folder_id": "1WMOCO228dPtywucly2Xfha0ibQrHvkhl",
     "file_count_prior": 76,
-    "latest_pack": "20260824-1847Z",
+    "latest_pack": "20260824-1855Z",
     "audio_trace_metadata_only": {
       "name": "MCT-2600027-TR-20260823-1952Z.mp3",
       "file_id": "1YlRgVe0LtnBIudqbnjC8rgj_7k0xiSav",
       "ingested": false
     }
   },
-  "huggingface": {
-    "profile": "404",
-    "space_kreuzkopplung": "absent"
-  },
-  "skills_live": ["mct-2600027-core"],
-  "skills_hold": 12,
+  "huggingface": { "profile": "404", "space_kreuzkopplung": "absent" },
+  "skills_live": ["mct-2600027-core", "chrona"],
+  "skills_hold": 11,
   "skill_md_coverage": "2/13",
-  "trigger_map_coverage": "12/12 maps; bodies 2 (core, chrona)",
+  "trigger_map_coverage": "11 hold maps; 2 live bodies (core, chrona)",
   "catalog_drift": true,
   "expansion_node": "Chrona SoS palette (nodes/chrona) + MCT-2700026 Rapid Cycling satellite",
   "hello": "Hallo",
   "rail": "none",
   "live_rail": false,
-  "sync": "MCT-2600027-TR-20260824-1847Z"
+  "sync": "MCT-2600027-TR-20260824-1855Z",
+  "hold_dismissed": true,
+  "hold_dismissed_by": "operator"
 }

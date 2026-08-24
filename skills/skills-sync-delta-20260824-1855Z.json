@@ -1,0 +1,24 @@
+{
+  "op": "HOLD_DISMISS",
+  "suite": "MCT-2600027",
+  "timestamp": "2026-08-24T18:55:00.000Z",
+  "from": "MCT-2600027-TR-20260824-1847Z",
+  "to": "MCT-2600027-TR-20260824-1855Z",
+  "parent_trace_id": "f5fefc630c756aa1d34510550578e32d69142351da599ed6b8e15fbdcb6db6e5",
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "hold": false,
+  "hold_dismissed": true,
+  "hold_dismissed_by": "operator",
+  "decided": "standalone",
+  "changes": [
+    "Operator dismissed HOLD status",
+    "Chrona moved skills_live (core + chrona)",
+    "Suite mode RELEASE; GR-1 SOLO RELEASE",
+    "ATM execute still rejected",
+    "No live rail; no credentials; no live orders"
+  ],
+  "execute": false,
+  "trace_id": "f5bcb3f7ae105f71ef3db3aabe5c0561ebd3e5818a8d5ea97c7d8be78cea0d4d"
+}

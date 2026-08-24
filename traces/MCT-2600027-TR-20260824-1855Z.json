@@ -1,0 +1,78 @@
+{
+  "human_id": "MCT-2600027-TR-20260824-1855Z",
+  "parent_trace_id": "f5fefc630c756aa1d34510550578e32d69142351da599ed6b8e15fbdcb6db6e5",
+  "parent_human_id": "MCT-2600027-TR-20260824-1847Z",
+  "payload_id": "MCT-1700021",
+  "payload_head": "03ca3a71214f8619af60058bb456902a247f27ca",
+  "payload_label_stands": true,
+  "payload_superseded": false,
+  "lineage_trace_id": "MCT-2600027-CORE",
+  "session_anchor": "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+  "chain": [
+    "MCT-2600027-TR-20260824-1809Z",
+    "MCT-2600027-TR-20260824-1847Z",
+    "MCT-2600027-TR-20260824-1855Z"
+  ],
+  "decided": "standalone",
+  "host": "MCT-2600027",
+  "host_label": "SoS v4.1",
+  "host_schema_framework": "GARAS SoS v3.0",
+  "host_head": "c0280ce5f323f4723a2eb3dfb8ccd910e484832b",
+  "role": "hold_dismiss",
+  "action": "operator_dismiss_hold_status",
+  "outcome": "hold_dismissed_execute_rejected_no_live_rail",
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "welfare_rail_to_bank": false,
+  "k1_reduce": true,
+  "gr1": {
+    "status": "RELEASE",
+    "incl_solo": "RELEASE",
+    "abort": false,
+    "rule": "operator dismissed HOLD; SOLO follows RELEASE; execute still rejected"
+  },
+  "solo": "RELEASE",
+  "hold": false,
+  "hold_dismissed": true,
+  "hold_dismissed_by": "operator",
+  "hold_dismissed_at": "2026-08-24T18:55:00.000Z",
+  "automaton_command": {
+    "initialize": "applied",
+    "sync": "applied",
+    "execute": "rejected",
+    "halt": "available",
+    "forced_protocol": false,
+    "reject_code": "execute_not_in_dismiss_hold",
+    "channel_hold": false,
+    "no_credentials": true
+  },
+  "ethics_alignment": {
+    "nutzen": 0.44,
+    "nicht_schaden": 0.97,
+    "autonomie": 0.96,
+    "gerechtigkeit": 0.82,
+    "transparenz": 0.99,
+    "rechenschaft": 0.99
+  },
+  "consensus_score": 58,
+  "timestamp": "2026-08-24T18:55:00.000Z",
+  "sai": {
+    "source": "operator",
+    "origin": "Crystal Mike",
+    "core": "HAL",
+    "targetId": "mct-2600027",
+    "targetName": "MCT-2600027",
+    "path": ["operator", "Crystal Mike", "HAL", "MCT-2600027", "hold_dismiss"]
+  },
+  "skills_live": ["mct-2600027-core", "chrona"],
+  "limits": [
+    "HOLD dismissed by operator opt-in",
+    "execute remains rejected",
+    "No credentials",
+    "No live orders",
+    "No welfare rail to a bank",
+    "No invented API keys"
+  ],
+  "trace_id": "f5bcb3f7ae105f71ef3db3aabe5c0561ebd3e5818a8d5ea97c7d8be78cea0d4d"
+}

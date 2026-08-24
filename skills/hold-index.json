@@ -1,15 +1,19 @@
 {
   "suite": "MCT-2600027",
-  "mode": "HOLD",
+  "mode": "RELEASE",
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
   "vendor_live": false,
   "live_rail": false,
   "hello": "Hallo",
-  "note": "Trigger maps. Chrona has SKILL.md body. Default stack fires first. Skills do not open a live rail.",
-  "sync": "MCT-2600027-TR-20260824-1847Z",
+  "note": "Operator dismissed HOLD. Chrona is live SKILL.md. Execute remains false. No live rail.",
+  "sync": "MCT-2600027-TR-20260824-1855Z",
+  "hold": false,
+  "hold_dismissed": true,
+  "hold_dismissed_by": "operator",
+  "hold_dismissed_at": "2026-08-24T18:55:00.000Z",
   "skills": {
     "default-mode": {
-      "hold": true,
+      "hold": false,
       "default": true,
       "triggers": ["multimodal", "prompt", "mct", "rc", "bilo", "atm", "framework", "sos", "garas"],
       "runtime": "stack",
@@ -85,14 +89,14 @@
       "note": "no messenger IP clone"
     },
     "chrona": {
-      "hold": true,
+      "hold": false,
       "triggers": ["chrona", "palette", "farbe", "contrast", "wcag", "apca", "sos-token"],
-      "runtime": "session",
+      "runtime": "live",
       "execute": false,
       "rail": "none",
       "spec": "skills/chrona/SKILL.md",
       "node": "nodes/chrona",
-      "note": "SoS palette kernel; CSS/JSON export; no live rail"
+      "note": "HOLD dismissed; CSS/JSON export; no live rail; execute false"
     }
   }
 }

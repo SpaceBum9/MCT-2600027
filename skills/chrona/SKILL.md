@@ -9,7 +9,7 @@ Five constituent systems (Tinte, Erde, Marke, Dunst, Papier). Contrast is the co
 
 ## Rules
 
-1. HOLD. execute stays false.
+1. HOLD dismissed by operator. execute stays false.
 2. No credentials. No live rail. Export is CSS and JSON only.
 3. Do not invent GARAS v3.2 or v4.1 schema.
 4. Default stack `MCT-RC-BILO-ATM-FRAMEWORK-SOS` loads first.
@@ -28,4 +28,4 @@ Five constituent systems (Tinte, Erde, Marke, Dunst, Papier). Contrast is the co
 
 AA pairs are undirected edges. Recommended pair prefers I on V.
 
-**Session Trace:** MCT-2600027-TR-20260824-1847Z
+**Session Trace:** MCT-2600027-TR-20260824-1855Z

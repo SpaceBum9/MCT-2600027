@@ -10,7 +10,8 @@
   "live_rail": false,
   "storesCredentials": false,
   "credentialState": "not_stored",
-  "hold": true,
+  "hold": false,
+  "hold_dismissed": true,
   "layers": {
     "MCT": "this repo (payload MCT-1700021 label stands; not superseded; lineage vs MCT-2700026 live clock)",
     "RC": "crystal-galaxy reinforce.ts + sai.ts; live-write SpaceBum9/MCT-2700026",
@@ -24,5 +25,5 @@
   "universe_spec": "SpaceBum9/MCT-Universe/05-DEFAULT-MODE.md",
   "live_clock": "SpaceBum9/MCT-2700026",
   "palette_node": "nodes/chrona",
-  "sync": "MCT-2600027-TR-20260824-1847Z"
+  "sync": "MCT-2600027-TR-20260824-1855Z"
 }

@@ -19,9 +19,10 @@
     { "id": "vision", "label": "CVD Machado 2009" }
   ],
   "tokens": ["--sos-i", "--sos-ii", "--sos-iii", "--sos-iv", "--sos-v", "--sos-fg", "--sos-bg", "--sos-brand"],
-  "hold": true,
+  "hold": false,
+  "hold_dismissed": true,
   "execute": false,
   "live_rail": false,
   "secrets": "none",
-  "sync": "MCT-2600027-TR-20260824-1847Z"
+  "sync": "MCT-2600027-TR-20260824-1855Z"
 }
