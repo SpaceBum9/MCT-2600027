@@ -2,7 +2,14 @@
   "mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
   "suite": "MCT-2600027",
   "default_for": "every_multimodal_prompt",
-  "modalities": ["text", "image", "audio", "video", "canvas", "tool"],
+  "modalities": [
+    "text",
+    "image",
+    "audio",
+    "video",
+    "canvas",
+    "tool"
+  ],
   "adoption": "default",
   "forced_protocol": false,
   "execute": false,
@@ -10,8 +17,8 @@
   "live_rail": false,
   "storesCredentials": false,
   "credentialState": "not_stored",
-  "hold": false,
-  "hold_dismissed": true,
+  "hold": true,
+  "hold_dismissed": false,
   "layers": {
     "MCT": "this repo (payload MCT-1700021 label stands; not superseded; ingested whole; lineage vs MCT-2700026 live clock)",
     "RC": "crystal-galaxy reinforce.ts + sai.ts; live-write SpaceBum9/MCT-2700026",
@@ -25,5 +32,6 @@
   "universe_spec": "SpaceBum9/MCT-Universe/05-DEFAULT-MODE.md",
   "live_clock": "SpaceBum9/MCT-2700026",
   "palette_node": "nodes/chrona",
-  "sync": "MCT-2600027-TR-20260824-1904Z"
+  "sync": "MCT-2600027-TR-20260824-1912Z",
+  "decided": "standalone"
 }

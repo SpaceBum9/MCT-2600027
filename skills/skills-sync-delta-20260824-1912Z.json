@@ -1,0 +1,143 @@
+{
+  "op": "SKILLS_SYNC",
+  "suite": "MCT-2600027",
+  "timestamp": "2026-08-24T19:12:00.000Z",
+  "from": "MCT-2600027-TR-20260824-1909Z",
+  "to": "MCT-2600027-TR-20260824-1912Z",
+  "parent_trace_id": "654ef8601a42f91dfc3976c8face091fc8f47b24fd84b0d178908930ed86adc6",
+  "payload_id": "MCT-1700021",
+  "payload_head": "46dd40ac51c4949723a8ec6504b74b173f49b3ec",
+  "payload_label_stands": true,
+  "payload_superseded": false,
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "hold": true,
+  "hold_dismissed": false,
+  "decided": "standalone",
+  "gr1": "HOLD",
+  "solo": "HOLD",
+  "changes": [
+    "INGEST whole MCT-1700021 public HEAD 46dd40ac (already_inside; tree_count 89 at 1904Z ingest; label stands; not superseded)",
+    "skill mesh after payload: 11 HOLD maps patched standalone+public_routing+rail=none; no live rail; no SKILL.md invention",
+    "HELLO Hallo (multilingual-greeting HOLD, runtime available)",
+    "parent 1909Z GR-1 HOLD incl SOLO; 1855Z/1904Z RELEASE not restored",
+    "hold-index + default-mode + catalog-delta + mesh-manifest sync stamp 1912Z",
+    "public routing only; no secrets; no live API keys",
+    "automaton_command last_skills_sync=1912Z; execute still rejected (consensus 54 < 70; channel_hold)"
+  ],
+  "mesh": [
+    "mct-agentic-trader",
+    "wohlstandsumverteilung-finance-manager",
+    "welfare-ibc-middleware",
+    "multilingual-greeting",
+    "grok-blackbox-history",
+    "grok-imagine-api",
+    "grok-imagine-full-history",
+    "imagine-media-access",
+    "kassenbeleg-parser",
+    "sat-track-3d-ios",
+    "telegram-ios-app"
+  ],
+  "patches": {
+    "mct-agentic-trader": {
+      "hold": true,
+      "runtime": "paper",
+      "execute": false,
+      "rail": "none",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none"
+    },
+    "wohlstandsumverteilung-finance-manager": {
+      "hold": true,
+      "runtime": "schema",
+      "rail": "none",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "framework": "GARAS SoS v3.0"
+    },
+    "welfare-ibc-middleware": {
+      "hold": true,
+      "runtime": "intent-only",
+      "rail": "none",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "welfare_rail_to_bank": false
+    },
+    "multilingual-greeting": {
+      "hold": true,
+      "runtime": "available",
+      "hello": "Hallo",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none"
+    },
+    "grok-blackbox-history": {
+      "hold": true,
+      "runtime": "traces",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none"
+    },
+    "grok-imagine-api": {
+      "hold": true,
+      "runtime": "session",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "vendor_live": false
+    },
+    "grok-imagine-full-history": {
+      "hold": true,
+      "runtime": "session-store",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none"
+    },
+    "imagine-media-access": {
+      "hold": true,
+      "runtime": "session",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none"
+    },
+    "kassenbeleg-parser": {
+      "hold": true,
+      "runtime": "session",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none"
+    },
+    "sat-track-3d-ios": {
+      "hold": true,
+      "runtime": "related-repo",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none"
+    },
+    "telegram-ios-app": {
+      "hold": true,
+      "runtime": "intent-only",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "note": "no messenger IP clone"
+    }
+  },
+  "execute": false,
+  "trace_id": "746699cb78b8e7954932f77656d4544668fc3e43e1dca0e5ee3e0ad6c1c1e87b"
+}

@@ -1,0 +1,163 @@
+{
+  "human_id": "MCT-2600027-TR-20260824-1912Z",
+  "parent_trace_id": "654ef8601a42f91dfc3976c8face091fc8f47b24fd84b0d178908930ed86adc6",
+  "parent_human_id": "MCT-2600027-TR-20260824-1909Z",
+  "payload_id": "MCT-1700021",
+  "payload_head": "46dd40ac51c4949723a8ec6504b74b173f49b3ec",
+  "payload_anchor_human_id": "MCT-1700021-TR-20260823-1117Z",
+  "payload_anchor_trace_id": "3af3ac26eff48435aa93bda60008dddef55ee70f602240d72afbe46df21a87e4",
+  "payload_label_stands": true,
+  "payload_superseded": false,
+  "payload_tree_count": 89,
+  "sibling_trace_ids": [
+    "b777886dcaa3adf1feefad640e5174c37bfff1ebdfbdb520ba6c872c3be2952c"
+  ],
+  "lineage_trace_id": "MCT-2600027-CORE",
+  "kernel_parent": "CG-KERNEL-2026-08-19",
+  "session_anchor": "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+  "chain": [
+    "CG-KERNEL-2026-08-19",
+    "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+    "MCT-2600027-TR-20260823-1800Z",
+    "MCT-2600027-TR-20260824-1809Z",
+    "MCT-2600027-TR-20260824-1847Z",
+    "MCT-2600027-TR-20260824-1855Z",
+    "MCT-2600027-TR-20260824-1904Z",
+    "MCT-2600027-TR-20260824-1909Z",
+    "MCT-2600027-TR-20260824-1912Z"
+  ],
+  "decided": "standalone",
+  "host": "MCT-2600027",
+  "host_label": "SoS v4.1",
+  "host_schema_framework": "GARAS SoS v3.0",
+  "host_head": "4c74bcbc8597003b568c36e4b0128e20f84aaf05",
+  "role": "skills_sync",
+  "action": "ingest_whole_then_patch_skill_mesh",
+  "outcome": "decided_standalone_ingest_whole_skill_patches_gr1_hold_execute_rejected_no_live_rail",
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "welfare_rail_to_bank": false,
+  "k1_reduce": true,
+  "gr1": {
+    "status": "HOLD",
+    "incl_solo": "HOLD",
+    "abort": false,
+    "rule": "GR-1 incl SOLO must HOLD or abort; 1909Z supersedes 1855Z/1904Z RELEASE; skills do not open a live rail"
+  },
+  "solo": "HOLD",
+  "hold": true,
+  "hold_dismissed": false,
+  "ingest": {
+    "target": "MCT-1700021",
+    "scope": "whole",
+    "fragment": false,
+    "already_inside": true,
+    "tree_sha": "46dd40ac51c4949723a8ec6504b74b173f49b3ec",
+    "tree_count_at_1904Z": 89,
+    "private_ingest": false,
+    "label_stands": true,
+    "superseded": false
+  },
+  "automaton_command": {
+    "initialize": "applied",
+    "sync": "applied",
+    "execute": "rejected",
+    "halt": "available",
+    "forced_protocol": false,
+    "reject_code": "bilo_score_below_threshold",
+    "bilo_reject_code": "bilo_score_below_threshold",
+    "channel_hold": true,
+    "no_credentials": true,
+    "this_run_consensus": 54,
+    "consensus_min": 70
+  },
+  "deltas": {
+    "vs": "MCT-2600027-TR-20260824-1909Z",
+    "payload_head": "467e9a97->46dd40ac",
+    "host_head": "65bf7c0a->4c74bcbc",
+    "op": "SKILLS_SYNC after 1909Z GR-1 HOLD",
+    "skill_patches": 11,
+    "skill_md_invention": false,
+    "live_rail": false,
+    "github_public": {
+      "count": 9,
+      "repos": [
+        "crystal-galaxy",
+        "kreuzkopplung",
+        "MCT-2600027",
+        "MCT-2600027-CMD",
+        "MCT-1700021",
+        "MCT-Universe",
+        "MCT-2700026",
+        "mct-170021-zero-tier-quantum-skills-tools-mcp-connectors",
+        "plasma-toxogon"
+      ],
+      "delta": "skill mesh patched after whole ingest; 11 HOLD maps; rail=none; GR-1 HOLD"
+    },
+    "github_private": {
+      "count": 3,
+      "policy": "names withheld from ingest unless already public; contents not read",
+      "ingested": false
+    }
+  },
+  "ethics_alignment": {
+    "nutzen": 0.27,
+    "nicht_schaden": 0.97,
+    "autonomie": 0.95,
+    "gerechtigkeit": 0.76,
+    "transparenz": 0.99,
+    "rechenschaft": 0.99
+  },
+  "ethics_channels": {
+    "model": "gpt-sol-branch",
+    "weights": [
+      0.52,
+      0.48
+    ],
+    "k1_reduce": true,
+    "gemini_rec": "sync",
+    "gpt_rec": "hold",
+    "bilo_score_pass": false,
+    "reason": "bilo_score_below_threshold"
+  },
+  "consensus_score": 54,
+  "timestamp": "2026-08-24T19:12:00.000Z",
+  "sai": {
+    "source": "operator",
+    "origin": "Crystal Mike",
+    "core": "HAL",
+    "targetId": "mct-2600027",
+    "targetName": "MCT-2600027",
+    "path": [
+      "operator",
+      "Crystal Mike",
+      "HAL",
+      "MCT-2600027",
+      "skills_sync",
+      "MCT-1700021"
+    ]
+  },
+  "skills_live": [
+    "mct-2600027-core"
+  ],
+  "skills_hold": 12,
+  "limits": [
+    "DECIDED standalone",
+    "Skills do not open a live rail",
+    "GR-1 HOLD incl SOLO (1909Z supersedes 1855Z/1904Z RELEASE)",
+    "No credentials",
+    "No live orders",
+    "No invented API keys",
+    "No GARAS v3.2 invention",
+    "No GARAS v4.1 schema invention",
+    "No private ingest",
+    "No SKILL.md invention claiming live APIs",
+    "HOLD is not execution",
+    "No welfare rail to a bank",
+    "Public routing only",
+    "MCT-1700021 ingested whole; not fragmented; label stands; not superseded",
+    "MCT-1700021 is payload, not parent of this chain"
+  ],
+  "trace_id": "746699cb78b8e7954932f77656d4544668fc3e43e1dca0e5ee3e0ad6c1c1e87b"
+}

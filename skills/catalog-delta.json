@@ -3,17 +3,73 @@
   "adoption": "optional",
   "forced_protocol": false,
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
-  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026, Chrona. Reconfirmed 1904Z. Chrona is a node inside MCT-2600027, not a new public repo. Payload ingested whole.",
+  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026, Chrona. Reconfirmed 1912Z. Chrona is a node inside MCT-2600027, not a new public repo. Payload ingested whole. Skills do not open a live rail. GR-1 HOLD.",
   "add_nodes": [
-    {"id": "mct-2600027", "title": "MCT-2600027", "kind": "mesh", "href": "https://github.com/SpaceBum9/MCT-2600027", "summary": "System of Systems — Dual-Pol, para Border, Trace-ID Mesh, Chrona palette node. Host SoS v4.1 label; schema GARAS SoS v3.0.", "owner": "SpaceBum9", "lang": "Python"},
-    {"id": "mct-1700021", "title": "MCT-1700021", "kind": "mesh", "href": "https://github.com/SpaceBum9/MCT-1700021", "summary": "HOLD suite. SAI Trace archive. GARAS SoS v3.0. Payload label stands; not superseded. Ingested whole.", "owner": "SpaceBum9", "lang": null, "status": "payload_label_stands"},
-    {"id": "mct-universe", "title": "MCT-Universe", "kind": "mesh", "href": "https://github.com/SpaceBum9/MCT-Universe", "summary": "Gemini ingest pack + GitHub Konnektor blueprint. No credentials stored. Phase memory only.", "owner": "SpaceBum9", "lang": null},
-    {"id": "mct-2700026", "title": "MCT-2700026", "kind": "mesh", "href": "https://github.com/SpaceBum9/MCT-2700026", "summary": "Rapid Cycling — SAI orchestrator + prompt designer. execute:false. Satellite.", "owner": "SpaceBum9", "lang": "TypeScript"},
-    {"id": "chrona", "title": "Chrona", "kind": "node", "href": "https://github.com/SpaceBum9/MCT-2600027/tree/main/nodes/chrona", "summary": "Five-clock SoS palette. Contrast coupling. CVD overlay. CSS/JSON tokens --sos-*. HOLD dismissed; execute false.", "owner": "SpaceBum9", "lang": "TypeScript", "parent": "MCT-2600027"}
+    {
+      "id": "mct-2600027",
+      "title": "MCT-2600027",
+      "kind": "mesh",
+      "href": "https://github.com/SpaceBum9/MCT-2600027",
+      "summary": "System of Systems — Dual-Pol, para Border, Trace-ID Mesh, Chrona palette node. Host SoS v4.1 label; schema GARAS SoS v3.0.",
+      "owner": "SpaceBum9",
+      "lang": "Python"
+    },
+    {
+      "id": "mct-1700021",
+      "title": "MCT-1700021",
+      "kind": "mesh",
+      "href": "https://github.com/SpaceBum9/MCT-1700021",
+      "summary": "HOLD suite. SAI Trace archive. GARAS SoS v3.0. Payload label stands; not superseded. Ingested whole.",
+      "owner": "SpaceBum9",
+      "lang": null,
+      "status": "payload_label_stands"
+    },
+    {
+      "id": "mct-universe",
+      "title": "MCT-Universe",
+      "kind": "mesh",
+      "href": "https://github.com/SpaceBum9/MCT-Universe",
+      "summary": "Gemini ingest pack + GitHub Konnektor blueprint. No credentials stored. Phase memory only.",
+      "owner": "SpaceBum9",
+      "lang": null
+    },
+    {
+      "id": "mct-2700026",
+      "title": "MCT-2700026",
+      "kind": "mesh",
+      "href": "https://github.com/SpaceBum9/MCT-2700026",
+      "summary": "Rapid Cycling — SAI orchestrator + prompt designer. execute:false. Satellite.",
+      "owner": "SpaceBum9",
+      "lang": "TypeScript"
+    },
+    {
+      "id": "chrona",
+      "title": "Chrona",
+      "kind": "node",
+      "href": "https://github.com/SpaceBum9/MCT-2600027/tree/main/nodes/chrona",
+      "summary": "Five-clock SoS palette. Contrast coupling. CVD overlay. CSS/JSON tokens --sos-*. HOLD dismissed; execute false.",
+      "owner": "SpaceBum9",
+      "lang": "TypeScript",
+      "parent": "MCT-2600027"
+    }
   ],
-  "add_to_GITHUB_REPOS": ["MCT-2600027", "MCT-1700021", "MCT-Universe", "MCT-2700026"],
-  "detectTargetNode_patch": "DEFAULT: every multimodal prompt loads MCT-RC-BILO-ATM-FRAMEWORK-SOS first. Map chrona/palette/wcag/apca/--sos- to chrona node under 2600027. Prefer 2600027 core over 170021 for mct/mesh/sos. Map rapid-cycling/2700026 to mct-2700026. ATM stays schema/automaton_command.json execute=rejected.",
-  "do_not_publish": ["private repo contents", "ECHOGLAS raw evidence", "credentials"],
-  "hf": {"owner_profile": "https://huggingface.co/SpaceBum9", "status": "404", "space_status": "absent", "action": "do_not_publish_until_operator_creates_account"},
-  "sync": "MCT-2600027-TR-20260824-1904Z"
+  "add_to_GITHUB_REPOS": [
+    "MCT-2600027",
+    "MCT-1700021",
+    "MCT-Universe",
+    "MCT-2700026"
+  ],
+  "detectTargetNode_patch": "DEFAULT: every multimodal prompt loads MCT-RC-BILO-ATM-FRAMEWORK-SOS first. Map chrona/palette/wcag/apca/--sos- to chrona node under 2600027. Prefer 2600027 core over 170021 for mct/mesh/sos. Map rapid-cycling/2700026 to mct-2700026. ATM stays schema/automaton_command.json execute=rejected. Skills do not open a live rail.",
+  "do_not_publish": [
+    "private repo contents",
+    "ECHOGLAS raw evidence",
+    "credentials"
+  ],
+  "hf": {
+    "owner_profile": "https://huggingface.co/SpaceBum9",
+    "status": "404",
+    "space_status": "absent",
+    "action": "do_not_publish_until_operator_creates_account"
+  },
+  "sync": "MCT-2600027-TR-20260824-1912Z"
 }

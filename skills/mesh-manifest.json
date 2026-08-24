@@ -5,8 +5,8 @@
   "payload_superseded": false,
   "former_label": "Aber Hallos",
   "former_label_status": "retargeted_no_artifacts",
-  "mode": "RELEASE",
-  "op": "MESH_EXPAND",
+  "mode": "HOLD",
+  "op": "SKILLS_SYNC",
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
   "default_for": "every_multimodal_prompt",
   "framework_declared": "GARAS SoS v3.0",
@@ -24,7 +24,17 @@
   },
   "secrets": "none",
   "vendor_live": false,
-  "public_github": ["crystal-galaxy", "kreuzkopplung", "MCT-2600027", "MCT-2600027-CMD", "MCT-1700021", "MCT-Universe", "MCT-2700026", "mct-170021-zero-tier-quantum-skills-tools-mcp-connectors", "plasma-toxogon"],
+  "public_github": [
+    "crystal-galaxy",
+    "kreuzkopplung",
+    "MCT-2600027",
+    "MCT-2600027-CMD",
+    "MCT-1700021",
+    "MCT-Universe",
+    "MCT-2700026",
+    "mct-170021-zero-tier-quantum-skills-tools-mcp-connectors",
+    "plasma-toxogon"
+  ],
   "public_github_count": 9,
   "private_github_count": 3,
   "private_github_policy": "names withheld from ingest unless already public; contents not read",
@@ -33,7 +43,7 @@
     "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
     "universe_pack_folder_id": "1WMOCO228dPtywucly2Xfha0ibQrHvkhl",
     "file_count_prior": 76,
-    "latest_pack": "20260824-1904Z",
+    "latest_pack": "20260824-1912Z",
     "latest_in_folder_observed": "20260824-1809Z",
     "audio_trace_metadata_only": {
       "name": "MCT-2600027-TR-20260823-1952Z.mp3",
@@ -41,17 +51,25 @@
       "ingested": false
     }
   },
-  "huggingface": { "profile": "404", "space_kreuzkopplung": "absent" },
-  "skills_live": ["mct-2600027-core", "chrona"],
-  "skills_hold": 11,
+  "huggingface": {
+    "profile": "404",
+    "space_kreuzkopplung": "absent"
+  },
+  "skills_live": [
+    "mct-2600027-core"
+  ],
+  "skills_hold": 12,
   "skill_md_coverage": "2/13",
-  "trigger_map_coverage": "11 hold maps; 2 live bodies (core, chrona)",
+  "trigger_map_coverage": "11 hold maps patched standalone+public_routing; chrona HOLDed per GR-1; core live body",
   "catalog_drift": true,
   "expansion_node": "Chrona SoS palette (nodes/chrona) + MCT-2700026 Rapid Cycling satellite",
   "hello": "Hallo",
   "rail": "none",
   "live_rail": false,
-  "sync": "MCT-2600027-TR-20260824-1904Z",
-  "hold_dismissed": true,
-  "hold_dismissed_by": "operator"
+  "sync": "MCT-2600027-TR-20260824-1912Z",
+  "hold_dismissed": false,
+  "hold_dismissed_by": "operator",
+  "decided": "standalone",
+  "gr1": "HOLD",
+  "solo": "HOLD"
 }
