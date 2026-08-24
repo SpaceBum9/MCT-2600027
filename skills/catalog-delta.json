@@ -3,7 +3,7 @@
   "adoption": "optional",
   "forced_protocol": false,
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
-  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026; detectTargetNode maps generic mct/mesh to mct-170021 and 2600027 queries to mct-2600027-cmd. Reconfirmed 1500Z. crystal-galaxy last push still 2026-08-23T19:54:17Z.",
+  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026; detectTargetNode maps generic mct/mesh to mct-170021 and 2600027 queries to mct-2600027-cmd. Reconfirmed 1507Z. crystal-galaxy last push still 2026-08-23T19:54:17Z. Drive keyword index recovered this run.",
   "add_nodes": [
     {
       "id": "mct-2600027",
@@ -61,8 +61,8 @@
     "owner_profile": "https://huggingface.co/SpaceBum9",
     "status": "404",
     "planned_space": "https://huggingface.co/spaces/SpaceBum9/kreuzkopplung",
-    "space_status": "401_or_absent",
+    "space_status": "absent",
     "action": "do_not_publish_until_operator_creates_account"
   },
-  "sync": "MCT-2600027-TR-20260824-1500Z"
+  "sync": "MCT-2600027-TR-20260824-1507Z"
 }

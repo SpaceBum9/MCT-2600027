@@ -4,7 +4,7 @@
   "former_label": "Aber Hallos",
   "former_label_status": "retargeted_no_artifacts",
   "mode": "HOLD",
-  "op": "SKILLS_SYNC",
+  "op": "MESH_EXPAND",
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
   "default_for": "every_multimodal_prompt",
   "framework_declared": "GARAS SoS v3.0",
@@ -43,7 +43,8 @@
     "unique_name_count": 31,
     "duplicate_name_pairs": 12,
     "duplicate_mesh_manifest": true,
-    "count_drift_vs_1451Z": "28→43; 1451Z pack landed with extra same-name copies",
+    "keyword_index": "recovered_1507Z",
+    "count_drift_vs_1451Z": "28→43 recorded by sibling SKILLS_SYNC 1500Z; 1451Z pack landed with extra same-name copies",
     "audio_trace_metadata_only": {
       "name": "MCT-2600027-TR-20260823-1952Z.mp3",
       "file_id": "1YlRgVe0LtnBIudqbnjC8rgj_7k0xiSav",
@@ -59,7 +60,7 @@
   },
   "huggingface": {
     "profile": "404",
-    "space_kreuzkopplung": "401_or_absent"
+    "space_kreuzkopplung": "absent"
   },
   "skills_live": [
     "mct-2600027-core"
@@ -78,5 +79,5 @@
   "open_pr_public": [
     "SpaceBum9/MCT-2600027#1 feat: add auditable GARAS agent training (not merged)"
   ],
-  "sync": "MCT-2600027-TR-20260824-1500Z"
+  "sync": "MCT-2600027-TR-20260824-1507Z"
 }
