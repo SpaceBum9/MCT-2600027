@@ -6,7 +6,7 @@
   "former_label": "Aber Hallos",
   "former_label_status": "retargeted_no_artifacts",
   "mode": "RELEASE",
-  "op": "HOLD_DISMISS",
+  "op": "MESH_EXPAND",
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
   "default_for": "every_multimodal_prompt",
   "framework_declared": "GARAS SoS v3.0",
@@ -24,17 +24,7 @@
   },
   "secrets": "none",
   "vendor_live": false,
-  "public_github": [
-    "crystal-galaxy",
-    "kreuzkopplung",
-    "MCT-2600027",
-    "MCT-2600027-CMD",
-    "MCT-1700021",
-    "MCT-Universe",
-    "MCT-2700026",
-    "mct-170021-zero-tier-quantum-skills-tools-mcp-connectors",
-    "plasma-toxogon"
-  ],
+  "public_github": ["crystal-galaxy", "kreuzkopplung", "MCT-2600027", "MCT-2600027-CMD", "MCT-1700021", "MCT-Universe", "MCT-2700026", "mct-170021-zero-tier-quantum-skills-tools-mcp-connectors", "plasma-toxogon"],
   "public_github_count": 9,
   "private_github_count": 3,
   "private_github_policy": "names withheld from ingest unless already public; contents not read",
@@ -43,7 +33,8 @@
     "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
     "universe_pack_folder_id": "1WMOCO228dPtywucly2Xfha0ibQrHvkhl",
     "file_count_prior": 76,
-    "latest_pack": "20260824-1855Z",
+    "latest_pack": "20260824-1904Z",
+    "latest_in_folder_observed": "20260824-1809Z",
     "audio_trace_metadata_only": {
       "name": "MCT-2600027-TR-20260823-1952Z.mp3",
       "file_id": "1YlRgVe0LtnBIudqbnjC8rgj_7k0xiSav",
@@ -60,7 +51,7 @@
   "hello": "Hallo",
   "rail": "none",
   "live_rail": false,
-  "sync": "MCT-2600027-TR-20260824-1855Z",
+  "sync": "MCT-2600027-TR-20260824-1904Z",
   "hold_dismissed": true,
   "hold_dismissed_by": "operator"
 }
