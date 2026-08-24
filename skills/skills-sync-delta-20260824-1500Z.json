@@ -1,0 +1,14 @@
+{
+  "op": "SKILLS_SYNC",
+  "suite": "MCT-2600027",
+  "timestamp": "2026-08-24T15:00:00.000Z",
+  "from": "MCT-2600027-TR-20260824-1451Z",
+  "to": "MCT-2600027-TR-20260824-1500Z",
+  "changes": [
+    "drive traces_file_count 28→43 (unique 23→31; duplicate pairs 5→12)",
+    "1451Z pack confirmed on GitHub HEAD 81622733",
+    "hold-index maps unchanged; skills_live still 1/12"
+  ],
+  "execute": false,
+  "trace_id": "e9b8e4d721b110e503ff1febfe991c25ef07d9557b693b34ac407c5672660d0a"
+}
