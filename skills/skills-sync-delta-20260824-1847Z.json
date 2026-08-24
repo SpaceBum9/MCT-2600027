@@ -1,0 +1,41 @@
+{
+  "op": "SKILLS_SYNC",
+  "suite": "MCT-2600027",
+  "timestamp": "2026-08-24T18:47:00.000Z",
+  "from": "MCT-2600027-TR-20260824-1809Z",
+  "to": "MCT-2600027-TR-20260824-1847Z",
+  "parent_trace_id": "0c266c9785b7b9d7273cc55b17c7050261923e360e4c1e5f80276b1084c47e66",
+  "payload_id": "MCT-1700021",
+  "payload_head": "09b2bee1bcf9b9ebec04f6ffb80016d0b1dd4ce7",
+  "payload_label_stands": true,
+  "payload_superseded": false,
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "decided": "standalone",
+  "changes": [
+    "CHRONA node ingested: five-clock SoS palette kernel under nodes/chrona",
+    "SKILL.md body for chrona (coverage 2/13); HOLD, execute false",
+    "stack MCT-RC-BILO-ATM-FRAMEWORK-SOS SOS layer now includes nodes/chrona",
+    "ATM automaton_command execute still rejected",
+    "RC satellite MCT-2700026 pointer unchanged; live-write paper-false",
+    "HELLO Hallo",
+    "public routing only; no secrets; no live API keys"
+  ],
+  "mesh": [
+    "mct-agentic-trader",
+    "wohlstandsumverteilung-finance-manager",
+    "welfare-ibc-middleware",
+    "multilingual-greeting",
+    "grok-blackbox-history",
+    "grok-imagine-api",
+    "grok-imagine-full-history",
+    "imagine-media-access",
+    "kassenbeleg-parser",
+    "sat-track-3d-ios",
+    "telegram-ios-app",
+    "chrona"
+  ],
+  "execute": false,
+  "trace_id": "f5fefc630c756aa1d34510550578e32d69142351da599ed6b8e15fbdcb6db6e5"
+}

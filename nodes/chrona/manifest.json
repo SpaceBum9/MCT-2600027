@@ -1,0 +1,27 @@
+{
+  "node": "chrona",
+  "title": "Chrona",
+  "suite": "MCT-2600027",
+  "payload": "MCT-1700021",
+  "satellite": "MCT-2700026",
+  "sos": "3.0",
+  "framework": "GARAS SoS v3.0",
+  "stack": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
+  "systems": [
+    { "id": "i", "role": "tinte" },
+    { "id": "ii", "role": "erde" },
+    { "id": "iii", "role": "marke" },
+    { "id": "iv", "role": "dunst" },
+    { "id": "v", "role": "papier" }
+  ],
+  "overlays": [
+    { "id": "contrast", "label": "WCAG 2 / APCA" },
+    { "id": "vision", "label": "CVD Machado 2009" }
+  ],
+  "tokens": ["--sos-i", "--sos-ii", "--sos-iii", "--sos-iv", "--sos-v", "--sos-fg", "--sos-bg", "--sos-brand"],
+  "hold": true,
+  "execute": false,
+  "live_rail": false,
+  "secrets": "none",
+  "sync": "MCT-2600027-TR-20260824-1847Z"
+}

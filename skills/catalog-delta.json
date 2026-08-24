@@ -3,14 +3,14 @@
   "adoption": "optional",
   "forced_protocol": false,
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
-  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026; detectTargetNode maps generic mct/mesh to mct-170021 and 2600027 queries to mct-2600027-cmd. Reconfirmed 1801Z. crystal-galaxy last push still 2026-08-23T19:54:17Z. Payload MCT-1700021 ingested whole; label stands; not superseded.",
+  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026, Chrona. Reconfirmed 1847Z. Chrona is a node inside MCT-2600027, not a new public repo.",
   "add_nodes": [
     {
       "id": "mct-2600027",
       "title": "MCT-2600027",
       "kind": "mesh",
       "href": "https://github.com/SpaceBum9/MCT-2600027",
-      "summary": "System of Systems — Dual-Pol (HAL / Zero Telepath), para Border, Trace-ID Mesh. Host SoS v4.1 label; schema GARAS SoS v3.0.",
+      "summary": "System of Systems — Dual-Pol, para Border, Trace-ID Mesh, Chrona palette node. Host SoS v4.1 label; schema GARAS SoS v3.0.",
       "owner": "SpaceBum9",
       "lang": "Python"
     },
@@ -19,7 +19,7 @@
       "title": "MCT-1700021",
       "kind": "mesh",
       "href": "https://github.com/SpaceBum9/MCT-1700021",
-      "summary": "HOLD suite. SAI Trace archive. GARAS SoS v3.0. Whole public ingest 83 blobs. Payload label stands; not superseded.",
+      "summary": "HOLD suite. SAI Trace archive. GARAS SoS v3.0. Payload label stands; not superseded.",
       "owner": "SpaceBum9",
       "lang": null,
       "status": "payload_label_stands"
@@ -31,38 +31,36 @@
       "href": "https://github.com/SpaceBum9/MCT-Universe",
       "summary": "Gemini ingest pack + GitHub Konnektor blueprint. No credentials stored. Phase memory only.",
       "owner": "SpaceBum9",
-      "lang": null,
-      "created": "2026-08-23T18:52:04Z"
+      "lang": null
     },
     {
       "id": "mct-2700026",
       "title": "MCT-2700026",
       "kind": "mesh",
       "href": "https://github.com/SpaceBum9/MCT-2700026",
-      "summary": "Rapid Cycling — SAI orchestrator + prompt designer. execute:false. README: game is not paper. HOLD.md leftover REST. Satellite.",
+      "summary": "Rapid Cycling — SAI orchestrator + prompt designer. execute:false. Satellite.",
+      "owner": "SpaceBum9",
+      "lang": "TypeScript"
+    },
+    {
+      "id": "chrona",
+      "title": "Chrona",
+      "kind": "node",
+      "href": "https://github.com/SpaceBum9/MCT-2600027/tree/main/nodes/chrona",
+      "summary": "Five-clock SoS palette. Contrast coupling. CVD overlay. CSS/JSON tokens --sos-*. HOLD.",
       "owner": "SpaceBum9",
       "lang": "TypeScript",
-      "created": "2026-08-23T20:33:19Z"
+      "parent": "MCT-2600027"
     }
   ],
-  "add_to_GITHUB_REPOS": [
-    "MCT-2600027",
-    "MCT-1700021",
-    "MCT-Universe",
-    "MCT-2700026"
-  ],
-  "detectTargetNode_patch": "DEFAULT: every multimodal prompt loads MCT-RC-BILO-ATM-FRAMEWORK-SOS first (skills/default-mode.json). detectTargetNode is a sub-route after the stack. Prefer 2600027 core over 170021 for queries containing mct/mesh/sos; map universe/konnektor/gemini-ingest to mct-universe; map rapid-cycling/2700026/prompt-designer to mct-2700026; keep cmd only for lumen/apple-intelligence. Do not use CMD or 170021 as the prompt entry. MCT-1700021 remains a standing payload label, ingested whole, not a superseded node.",
-  "do_not_publish": [
-    "private repo contents",
-    "ECHOGLAS raw evidence",
-    "credentials"
-  ],
+  "add_to_GITHUB_REPOS": ["MCT-2600027", "MCT-1700021", "MCT-Universe", "MCT-2700026"],
+  "detectTargetNode_patch": "DEFAULT: every multimodal prompt loads MCT-RC-BILO-ATM-FRAMEWORK-SOS first. Map chrona/palette/wcag/apca/--sos- to chrona node under 2600027. Prefer 2600027 core over 170021 for mct/mesh/sos. Map rapid-cycling/2700026 to mct-2700026. ATM stays schema/automaton_command.json execute=rejected.",
+  "do_not_publish": ["private repo contents", "ECHOGLAS raw evidence", "credentials"],
   "hf": {
     "owner_profile": "https://huggingface.co/SpaceBum9",
     "status": "404",
-    "planned_space": "https://huggingface.co/spaces/SpaceBum9/kreuzkopplung",
     "space_status": "absent",
     "action": "do_not_publish_until_operator_creates_account"
   },
-  "sync": "MCT-2600027-TR-20260824-1801Z"
+  "sync": "MCT-2600027-TR-20260824-1847Z"
 }
