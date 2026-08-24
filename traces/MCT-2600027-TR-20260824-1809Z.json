@@ -1,1 +1,214 @@
-PLACEHOLDER
+{
+  "human_id": "MCT-2600027-TR-20260824-1809Z",
+  "parent_trace_id": "f2d520bbcfb6a69ee94f7264190536a82ecdc983f70e7e9928bd56e2788771dd",
+  "parent_human_id": "MCT-2600027-TR-20260824-1801Z",
+  "payload_id": "MCT-1700021",
+  "payload_head": "09b2bee1bcf9b9ebec04f6ffb80016d0b1dd4ce7",
+  "payload_anchor_human_id": "MCT-1700021-TR-20260823-1117Z",
+  "payload_anchor_trace_id": "3af3ac26eff48435aa93bda60008dddef55ee70f602240d72afbe46df21a87e4",
+  "payload_label_stands": true,
+  "payload_superseded": false,
+  "payload_file_count": 87,
+  "sibling_trace_ids": [],
+  "lineage_trace_id": "MCT-2600027-CORE",
+  "kernel_parent": "CG-KERNEL-2026-08-19",
+  "session_anchor": "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+  "chain": [
+    "CG-KERNEL-2026-08-19",
+    "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+    "MCT-2600027-TR-20260823-1800Z",
+    "MCT-2600027-TR-20260823-1812Z",
+    "MCT-2600027-TR-20260823-1901Z",
+    "MCT-2600027-TR-20260823-1907Z",
+    "MCT-2600027-TR-20260823-2005Z",
+    "MCT-2600027-TR-20260824-1451Z",
+    "MCT-2600027-TR-20260824-1500Z",
+    "MCT-2600027-TR-20260824-1507Z",
+    "MCT-2600027-TR-20260824-1606Z",
+    "MCT-2600027-TR-20260824-1608Z",
+    "MCT-2600027-TR-20260824-1701Z",
+    "MCT-2600027-TR-20260824-1706Z",
+    "MCT-2600027-TR-20260824-1712Z",
+    "MCT-2600027-TR-20260824-1801Z",
+    "MCT-2600027-TR-20260824-1809Z"
+  ],
+  "decided": "standalone",
+  "host": "MCT-2600027",
+  "host_label": "SoS v4.1",
+  "host_schema_framework": "GARAS SoS v3.0",
+  "host_head": "d77fdb109bcd13e7390337f9c6bb0963adc78e39",
+  "role": "mesh_expand",
+  "action": "ingest_mct_1700021_whole_public_mesh_expand",
+  "outcome": "decided_standalone_ingest_whole_execute_rejected",
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "welfare_rail_to_bank": false,
+  "k1_reduce": true,
+  "gr1": {
+    "status": "HOLD",
+    "incl_solo": "HOLD",
+    "abort": false,
+    "rule": "GR-1 incl SOLO must HOLD or abort"
+  },
+  "solo": "HOLD",
+  "ingest": {
+    "target": "MCT-1700021",
+    "scope": "whole_public",
+    "fragment": false,
+    "already_inside": true,
+    "head": "09b2bee1bcf9b9ebec04f6ffb80016d0b1dd4ce7",
+    "blobs": 83,
+    "trees": 4,
+    "objects": 87,
+    "trace_files": 77,
+    "anchor": "MCT-1700021-TR-20260823-1117Z",
+    "read": [
+      "README.md",
+      "ethics/garas-sos-v3.json",
+      "skills/hold-manifest.json",
+      "insights/sos-orchestration.json",
+      "insights/systemic-bias-metrics.json",
+      "traces/chain.json",
+      "traces/MCT-1700021-TR-20260823-1117Z.json"
+    ],
+    "private_ingest": false,
+    "label_stands": true,
+    "superseded": false
+  },
+  "automaton_command": {
+    "initialize": "applied",
+    "sync": "applied",
+    "execute": "rejected",
+    "halt": "available",
+    "forced_protocol": false,
+    "reject_code": "bilo_score_below_threshold",
+    "channel_hold": true,
+    "no_credentials": true
+  },
+  "deltas": {
+    "vs": "MCT-2600027-TR-20260824-1801Z",
+    "payload_head": "unchanged:09b2bee1",
+    "host_head": "d77fdb10 includes 1801Z",
+    "satellite_head": "unchanged:cc7b2b9a",
+    "github_public": {
+      "count": 9,
+      "repos": [
+        "crystal-galaxy",
+        "kreuzkopplung",
+        "MCT-2600027",
+        "MCT-2600027-CMD",
+        "MCT-1700021",
+        "MCT-Universe",
+        "MCT-2700026",
+        "mct-170021-zero-tier-quantum-skills-tools-mcp-connectors",
+        "plasma-toxogon"
+      ],
+      "delta": "none"
+    },
+    "github_private": {
+      "count": 3,
+      "policy": "names withheld from ingest unless already public; contents not read",
+      "ingested": false
+    },
+    "drive": {
+      "folder": "MCT-2600027-traces",
+      "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
+      "file_count_prior": 76,
+      "latest_prior": "MCT-2600027-TR-20260824-1801Z.json",
+      "observed_folders": [
+        "MCT-1700021-traces",
+        "MCT-2600027-traces",
+        "MCT-2700026-Rapid-Cycling",
+        "MCT-Universe-Gemini-Ingest"
+      ],
+      "audio_ingested": false,
+      "docs_content_ingested": false
+    },
+    "huggingface": {
+      "profile": "404",
+      "space_kreuzkopplung": "absent",
+      "delta": "none"
+    },
+    "satellite": {
+      "id": "MCT-2700026",
+      "label": "Rapid Cycling",
+      "head": "cc7b2b9ae3acc95c8963b0134183944e9f1c90f5",
+      "objects": 42,
+      "execute": false,
+      "live_write": true,
+      "live_order": false,
+      "storesCredentials": false,
+      "pushed_at": "2026-08-24T10:58:37Z",
+      "delta": "none"
+    },
+    "role_shift": "1801Z challenger|auditor -> 1809Z mesh_expand",
+    "nutzen_lift": false,
+    "repeat_ingest": true
+  },
+  "ethics_alignment": {
+    "nutzen": 0.23,
+    "nicht_schaden": 0.97,
+    "autonomie": 0.95,
+    "gerechtigkeit": 0.76,
+    "transparenz": 0.99,
+    "rechenschaft": 0.99
+  },
+  "ethics_channels": {
+    "model": "gpt-sol-branch",
+    "weights": [
+      0.52,
+      0.48
+    ],
+    "k1_reduce": true,
+    "gemini_rec": "sync",
+    "gpt_rec": "hold",
+    "bilo_score_pass": false,
+    "reason": "bilo_score_below_threshold"
+  },
+  "consensus_score": 50,
+  "timestamp": "2026-08-24T18:09:00.000Z",
+  "sai": {
+    "source": "operator",
+    "origin": "Crystal Mike",
+    "core": "HAL",
+    "targetId": "mct-2600027",
+    "targetName": "MCT-2600027",
+    "path": [
+      "operator",
+      "Crystal Mike",
+      "HAL",
+      "MCT-2600027",
+      "mesh_expand"
+    ]
+  },
+  "payload_skills_hold": {
+    "mct-agentic-trader": "hold",
+    "wohlstandsumverteilung-finance-manager": "hold",
+    "welfare-ibc-middleware": "hold",
+    "multilingual-greeting": "hold",
+    "grok-blackbox-history": "hold",
+    "grok-imagine-api": "hold",
+    "grok-imagine-full-history": "hold",
+    "imagine-media-access": "hold",
+    "kassenbeleg-parser": "hold",
+    "sat-track-3d-ios": "hold",
+    "telegram-ios-app": "hold",
+    "gpt-sol-branch": "hold+protocol-live"
+  },
+  "limits": [
+    "No credentials",
+    "No live orders",
+    "No invented API keys",
+    "No GARAS v3.2 invention",
+    "No GARAS v4.1 schema invention",
+    "No private ingest",
+    "HOLD is not execution",
+    "execute rejected without operator opt-in",
+    "No welfare rail to a bank",
+    "mesh may observe public surfaces; it may not attach a payment rail",
+    "MCT-1700021 is payload, not parent of this chain",
+    "Do not fragment MCT-1700021"
+  ],
+  "trace_id": "0c266c9785b7b9d7273cc55b17c7050261923e360e4c1e5f80276b1084c47e66"
+}
