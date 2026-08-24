@@ -1,0 +1,51 @@
+{
+  "schema": "mct.repository-consolidation.v1",
+  "generated_on": "2026-08-24",
+  "target": "SpaceBum9/MCT-2600027",
+  "target_visibility": "public",
+  "sources": [
+    {
+      "repository": "SpaceBum9/MCT-2600027-CMD",
+      "commit": "c6d5c3960cf49c3182ffba0242e8ebecbb14073e",
+      "destination": "apps/cmd",
+      "adaptations": [
+        "repository links"
+      ]
+    },
+    {
+      "repository": "SpaceBum9/kreuzkopplung",
+      "commit": "c82cdc3ee13637a6f85224aed468d08ae86fcd4f",
+      "destination": "apps/kreuzkopplung",
+      "adaptations": [
+        "repository links"
+      ]
+    },
+    {
+      "repository": "SpaceBum9/crystal-galaxy",
+      "commit": "5242d637b05fb20631d4ad1cecb7b9e05cba3712",
+      "destination": "packages/crystal-galaxy",
+      "adaptations": [
+        "repository links"
+      ]
+    },
+    {
+      "repository": "SpaceBum9/mct-170021-zero-tier-quantum-skills-tools-mcp-connectors",
+      "commit": "1ed8b52490b138680a0df0f162fb0b47102ae3be",
+      "destination": "packages/zero-tier-connectors",
+      "adaptations": [
+        "repository links"
+      ]
+    },
+    {
+      "repository": "SpaceBum9/plasma-toxogon",
+      "commit": "46dc31d888409835723e9a1de84e96d00a60e8a7",
+      "destination": "services/plasma-toxogon",
+      "adaptations": [
+        "repository links"
+      ]
+    }
+  ],
+  "private_content_imported": false,
+  "source_repositories_preserved": true,
+  "open_pr_heads_imported": false
+}
