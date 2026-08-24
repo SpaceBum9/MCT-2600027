@@ -3,133 +3,22 @@
   "mode": "HOLD",
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
   "vendor_live": false,
-  "note": "Trigger maps only. Not live SKILL.md. No APIs claimed. Default stack fires before these maps. skills_hold=11 suite; default-mode is stack not counted in 11.",
-  "sync": "MCT-2600027-TR-20260824-1507Z",
+  "live_rail": false,
+  "hello": "Hallo",
+  "note": "Trigger maps only. Not live SKILL.md. No APIs claimed. Default stack fires before these maps. skills_hold=11 suite; default-mode is stack not counted in 11. Skills do not open a live rail.",
+  "sync": "MCT-2600027-TR-20260824-1608Z",
   "skills": {
-    "default-mode": {
-      "hold": true,
-      "default": true,
-      "triggers": [
-        "multimodal",
-        "prompt",
-        "mct",
-        "rc",
-        "bilo",
-        "atm",
-        "framework",
-        "sos",
-        "garas"
-      ],
-      "runtime": "stack",
-      "execute": false,
-      "spec": "skills/default-mode.json",
-      "counted_in_skills_hold": false
-    },
-    "mct-agentic-trader": {
-      "hold": true,
-      "triggers": [
-        "trader",
-        "paper",
-        "agentic-trader"
-      ],
-      "runtime": "paper",
-      "execute": false
-    },
-    "wohlstandsumverteilung-finance-manager": {
-      "hold": true,
-      "triggers": [
-        "welfare",
-        "intent",
-        "wohlstandsumverteilung"
-      ],
-      "runtime": "schema",
-      "framework": "GARAS SoS v3.0 (v3.2 requested, absent)"
-    },
-    "welfare-ibc-middleware": {
-      "hold": true,
-      "triggers": [
-        "welfare",
-        "ibc",
-        "middleware"
-      ],
-      "runtime": "intent-only"
-    },
-    "multilingual-greeting": {
-      "hold": true,
-      "triggers": [
-        "greeting",
-        "locale",
-        "hallo"
-      ],
-      "runtime": "available",
-      "note": "no SKILL.md body"
-    },
-    "grok-blackbox-history": {
-      "hold": true,
-      "triggers": [
-        "trace",
-        "history",
-        "blackbox"
-      ],
-      "runtime": "traces"
-    },
-    "grok-imagine-api": {
-      "hold": true,
-      "triggers": [
-        "imagine",
-        "imagine-api",
-        "text-to-image"
-      ],
-      "runtime": "session",
-      "note": "workspace imagine skill listed this session; not a live vendor key"
-    },
-    "grok-imagine-full-history": {
-      "hold": true,
-      "triggers": [
-        "imagine-history",
-        "full-history",
-        "blackbox-media"
-      ],
-      "runtime": "session-store",
-      "note": "no durable imagine history store in mesh"
-    },
-    "imagine-media-access": {
-      "hold": true,
-      "triggers": [
-        "imagine-media",
-        "media-access",
-        "render_file"
-      ],
-      "runtime": "session",
-      "note": "session tools only; no persistent media catalog"
-    },
-    "kassenbeleg-parser": {
-      "hold": true,
-      "triggers": [
-        "kassenbeleg",
-        "DE receipt",
-        "beleg"
-      ],
-      "runtime": "session"
-    },
-    "sat-track-3d-ios": {
-      "hold": true,
-      "triggers": [
-        "sat-track",
-        "satellite",
-        "ios-3d"
-      ],
-      "runtime": "related-repo",
-      "note": "MCT-2600027-CMD has ios-apple-intelligence SKILL.md only; no sat-track SKILL.md"
-    },
-    "telegram-ios-app": {
-      "hold": true,
-      "triggers": [
-        "telegram",
-        "ios-app"
-      ],
-      "runtime": "intent-only",
-      "note": "no messenger IP clone"
-    }
+    "default-mode": {"hold": true, "default": true, "triggers": ["multimodal", "prompt", "mct", "rc", "bilo", "atm", "framework", "sos", "garas"], "runtime": "stack", "execute": false, "spec": "skills/default-mode.json", "counted_in_skills_hold": false},
+    "mct-agentic-trader": {"hold": true, "triggers": ["trader", "paper", "agentic-trader"], "runtime": "paper", "execute": false, "rail": "none"},
+    "wohlstandsumverteilung-finance-manager": {"hold": true, "triggers": ["welfare", "intent", "wohlstandsumverteilung"], "runtime": "schema", "framework": "GARAS SoS v3.0 (v3.2 requested, absent)", "rail": "none"},
+    "welfare-ibc-middleware": {"hold": true, "triggers": ["welfare", "ibc", "middleware"], "runtime": "intent-only", "rail": "none"},
+    "multilingual-greeting": {"hold": true, "triggers": ["greeting", "locale", "hallo"], "runtime": "available", "hello": "Hallo", "note": "no SKILL.md body; HELLO Hallo this run"},
+    "grok-blackbox-history": {"hold": true, "triggers": ["trace", "history", "blackbox"], "runtime": "traces"},
+    "grok-imagine-api": {"hold": true, "triggers": ["imagine", "imagine-api", "text-to-image"], "runtime": "session", "note": "workspace imagine skill listed this session; not a live vendor key"},
+    "grok-imagine-full-history": {"hold": true, "triggers": ["imagine-history", "full-history", "blackbox-media"], "runtime": "session-store", "note": "no durable imagine history store in mesh"},
+    "imagine-media-access": {"hold": true, "triggers": ["imagine-media", "media-access", "render_file"], "runtime": "session", "note": "session tools only; no persistent media catalog"},
+    "kassenbeleg-parser": {"hold": true, "triggers": ["kassenbeleg", "DE receipt", "beleg"], "runtime": "session"},
+    "sat-track-3d-ios": {"hold": true, "triggers": ["sat-track", "satellite", "ios-3d"], "runtime": "related-repo", "note": "MCT-2600027-CMD has ios-apple-intelligence SKILL.md only; no sat-track SKILL.md"},
+    "telegram-ios-app": {"hold": true, "triggers": ["telegram", "ios-app"], "runtime": "intent-only", "note": "no messenger IP clone"}
   }
 }
