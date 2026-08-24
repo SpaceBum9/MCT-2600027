@@ -9,9 +9,7 @@
   "payload_label_stands": true,
   "payload_superseded": false,
   "payload_file_count": 159,
-  "sibling_trace_ids": [
-    "b777886dcaa3adf1feefad640e5174c37bfff1ebdfbdb520ba6c872c3be2952c"
-  ],
+  "sibling_trace_ids": [],
   "lineage_trace_id": "MCT-2600027-CORE",
   "kernel_parent": "CG-KERNEL-2026-08-19",
   "session_anchor": "tr_2efe52faa454faaf4d3330f8ea3fe4db",
@@ -45,9 +43,9 @@
   "host_label": "SoS v4.1",
   "host_schema_framework": "GARAS SoS v3.0",
   "host_head": "79eaeae01c2fb2b07775ecfc6010ef212a227fb0",
-  "role": "mesh_expand",
-  "action": "ingest_mct_1700021_whole_public_mesh_expand",
-  "outcome": "decided_standalone_ingest_whole_unfragmented_consolidation_observed_execute_rejected",
+  "role": "challenger|auditor",
+  "action": "ingest_mct_1700021_whole_garas_audit",
+  "outcome": "decided_standalone_gr1_hold_execute_rejected",
   "hello": "Hallo",
   "rail": "none",
   "live_rail": false,
@@ -57,7 +55,7 @@
     "status": "HOLD",
     "incl_solo": "HOLD",
     "abort": false,
-    "rule": "GR-1 incl SOLO must HOLD or abort; 1909Z supersedes 1855Z/1904Z RELEASE; skills do not open a live rail"
+    "rule": "GR-1 incl SOLO must HOLD or abort"
   },
   "solo": "HOLD",
   "hold": true,
@@ -68,9 +66,9 @@
     "fragment": false,
     "already_inside": true,
     "head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
-    "objects": 159,
-    "trees": 13,
     "blobs": 146,
+    "trees": 13,
+    "objects": 159,
     "trace_files": 81,
     "anchor": "MCT-1700021-TR-20260823-1117Z",
     "read": [
@@ -84,177 +82,83 @@
       "traces/chain.json",
       "traces/MCT-1700021-TR-20260823-1117Z.json",
       "traces/MCT-1700021-TR-20260824-1912Z.json",
-      "protocols/rapid-cycling/commons/PROTOCOL.json",
-      "protocols/rapid-cycling/commons/HOLD.md"
+      "context/universe/07-GARAS-FINANCE.md",
+      "protocols/rapid-cycling/commons/GARAS-GATE.md"
     ],
-    "consolidation": {
-      "imported": [
-        {
-          "source": "SpaceBum9/MCT-Universe",
-          "commit": "ef734d8c88268f37447e2358aac67393c385c5e2",
-          "dest": "context/universe/"
-        },
-        {
-          "source": "SpaceBum9/MCT-2700026",
-          "commit": "127bcd34781586c1fda8d6808c9bd001ce59c9b9",
-          "dest": "protocols/rapid-cycling/",
-          "adaptations": [
-            "live_write=false",
-            "paper=true"
-          ]
-        }
-      ],
-      "private_content_imported": false,
-      "source_repositories_preserved": true,
-      "original_trace_chain_untouched": true
-    },
     "private_ingest": false,
     "label_stands": true,
-    "superseded": false
+    "superseded": false,
+    "schema_garas_finance_in_payload": false
   },
-  "automaton_command": {
-    "initialize": "applied",
-    "sync": "applied",
-    "execute": "rejected",
-    "halt": "available",
-    "forced_protocol": false,
-    "reject_code": "bilo_score_below_threshold",
-    "bilo_reject_code": "bilo_score_below_threshold",
-    "channel_hold": true,
-    "no_credentials": true,
-    "this_run_consensus": 54,
-    "consensus_min": 70
-  },
-  "github": {
-    "owner": "SpaceBum9",
-    "public_count": 9,
-    "private_count": 3,
-    "private_policy": "names withheld; contents not read",
-    "public": [
-      {
-        "name": "crystal-galaxy",
-        "head": "8646c17eac1e30f312260d2852578c0ddf980758",
-        "pushed": "2026-08-24T19:46:37Z",
-        "note": "redirect to canonical"
-      },
-      {
-        "name": "kreuzkopplung",
-        "lang": "Python"
-      },
-      {
-        "name": "MCT-2600027",
-        "head": "79eaeae01c2fb2b07775ecfc6010ef212a227fb0",
-        "pushed": "2026-08-24T19:44:25Z",
-        "note": "runtime satellites consolidated, disabled-by-default"
-      },
-      {
-        "name": "MCT-2600027-CMD",
-        "head": "f9aaa499008ab9c28cff31cde0d5f83be1810470",
-        "pushed": "2026-08-24T19:46:35Z",
-        "note": "redirect to canonical"
-      },
-      {
-        "name": "MCT-1700021",
-        "head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
-        "pushed": "2026-08-24T19:44:20Z",
-        "note": "canonical public lineage; universe+RC imported"
-      },
-      {
-        "name": "MCT-Universe",
-        "head": "1c54567f70f3314b9d5ffac13d94f7c621cb3948",
-        "pushed": "2026-08-24T19:46:33Z",
-        "note": "redirect to canonical"
-      },
-      {
-        "name": "MCT-2700026",
-        "head": "78a18cdfe0bafe8415a44d20f0d3eb4b220a38f5",
-        "pushed": "2026-08-24T19:46:34Z",
-        "note": "redirect to MCT-1700021/protocols/rapid-cycling"
-      },
-      {
-        "name": "mct-170021-zero-tier-quantum-skills-tools-mcp-connectors",
-        "lang": "Python"
-      },
-      {
-        "name": "plasma-toxogon",
-        "head": "eebb21ff77d24b479cc0fa6231b35659ffa18395",
-        "pushed": "2026-08-24T19:46:39Z",
-        "note": "redirect to canonical"
-      }
-    ],
-    "open_issues_public": [
-      "SpaceBum9/MCT-2600027#4 Consolidation follow-up: port or retire pending legacy PRs",
-      "SpaceBum9/MCT-2600027#2 Interoperability: W3C Trace Context and OpenTelemetry GenAI adapter"
-    ],
-    "open_pr_public": [
-      "SpaceBum9/MCT-2600027#1 feat: add auditable GARAS agent training (not merged)"
-    ]
-  },
-  "drive": {
-    "folder": "MCT-2600027-traces",
-    "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
-    "latest_prior_on_drive": "MCT-2600027-TR-20260824-1909Z.json",
-    "1912Z_on_drive": false,
-    "1912Z_on_github": true,
-    "audio_ingested": false,
-    "docs_content_ingested": false,
-    "master_doc_treated_as_payload_not_directive": true
-  },
-  "huggingface": {
-    "profile": "404",
-    "space_kreuzkopplung": "absent",
-    "space_status": "401_or_missing",
-    "delta": "none",
-    "action": "do_not_publish_until_operator_creates_account"
-  },
-  "satellite": {
-    "id": "MCT-2700026",
-    "label": "Rapid Cycling",
-    "head": "78a18cdfe0bafe8415a44d20f0d3eb4b220a38f5",
-    "pushed_at": "2026-08-24T19:46:34Z",
-    "canonical": "SpaceBum9/MCT-1700021/protocols/rapid-cycling",
-    "execute": false,
-    "live_write": false,
-    "paper": true,
-    "live_order": false,
-    "storesCredentials": false,
-    "readme_tension": "satellite README still says Game is not paper; payload PROTOCOL.json live_write=false paper=true",
-    "genesis": "8362a0760c9e9200",
-    "genesis_trace": "TR-8362a076"
-  },
-  "deltas": {
-    "vs": "MCT-2600027-TR-20260824-1912Z",
-    "payload_head": "46dd40ac->51cf7484",
-    "host_head": "4c74bcbc->79eaeae0",
-    "satellite_head": "127bcd34->78a18cdf",
-    "payload_objects": "89->159",
-    "payload_traces": "79->81",
-    "role_shift": "1912Z skills_sync -> 2000Z mesh_expand",
-    "consolidation": true,
-    "github_public": {
-      "count": 9,
-      "delta": "redirect commits on Universe/2700026/CMD/crystal-galaxy/plasma-toxogon; host imported those snapshots disabled-by-default"
+  "node": {
+    "id": "GARAS",
+    "framework": "GARAS SoS v3.0",
+    "payload_ethics": "ethics/garas-sos-v3.json",
+    "host_schema": "schema/garas_finance.json",
+    "host_module": "departments/garas_finance.py",
+    "umlage": "after_rc",
+    "rc_to_garas": "allocated",
+    "double_expense": false,
+    "bilanz": "absent_public_amounts",
+    "rc": {
+      "mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
+      "live_clock": "SpaceBum9/MCT-2700026",
+      "live_clock_head": "78a18cdfe0bafe8415a44d20f0d3eb4b220a38f5",
+      "live_clock_updated": "2026-08-24T19:46:34Z",
+      "host_is_live_clock": false,
+      "execute": false,
+      "live_write": true,
+      "live_order": false,
+      "garas_gate": "deny",
+      "payload_copy": "protocols/rapid-cycling",
+      "payload_copy_from": "127bcd34781586c1fda8d6808c9bd001ce59c9b9",
+      "payload_copy_posting": "allocated_snapshot_not_expense",
+      "allocated_to_garas": 1,
+      "expense": 0
     },
-    "github_private": {
-      "count": 3,
-      "policy": "names withheld from ingest unless already public; contents not read",
-      "ingested": false
-    },
-    "huggingface": {
-      "profile": "404",
-      "delta": "none"
-    },
-    "drive": {
-      "1912Z_gap": "present on GitHub, absent from Drive folder at observe time"
-    },
-    "host_issue_new": "MCT-2600027#4 Consolidation follow-up",
-    "nutzen_lift": false,
-    "gerechtigkeit_lift": false,
-    "repeat_ingest": true,
-    "no_payment_rail": true
+    "sx": {
+      "garas_intent": "applied",
+      "garas_transfer": "forbidden",
+      "live_order": "forbidden",
+      "gate": "rejected",
+      "reject_code": "echoglas_forbidden"
+    }
   },
+  "challenger_findings": [
+    "Payload MCT-1700021 ingested public-only. HEAD 51cf7484 (146 blobs / 13 trees / 159 objects / 81 traces). Anchor MCT-1700021-TR-20260823-1117Z. Label stands.",
+    "HEAD delta vs 1912Z 46dd40ac: consolidation commit imported MCT-Universe@ef734d8c → context/universe/ and MCT-2700026@127bcd34 → protocols/rapid-cycling/. New tree, not a re-verify.",
+    "GARAS node inside payload is ethics/garas-sos-v3.json (6 axes). No Bilanz amounts. No schema/garas_finance.json in payload. 07-GARAS-FINANCE.md points at HOST schema.",
+    "Finance schema is HOST-side: SpaceBum9/MCT-2600027 schema/garas_finance.json + departments/garas_finance.py. hold true. sx.garas_transfer forbidden.",
+    "Operator host_label SoS v4.1 is not a schema file. Schema remains GARAS SoS v3.0. No v4.1 invention.",
+    "Umlage after RC: RC copy in payload counted allocated=1, expense=0, double_expense=false. Paper ledger only. Clock remains SpaceBum9/MCT-2700026; snapshot is not a second clock.",
+    "Doppelbuchung refused: do not expense protocols/rapid-cycling on payload AND live_write on MCT-2700026. RC→GARAS allocated, not expense.",
+    "Conflict named, not executed: HOST RAPID-CYCLING-LIVE.md still live_write true / paper false on MCT-2700026; payload CONSOLIDATION.md sets live_write=false paper=true on the copy; copy GARAS-GATE.md still says Live write MCT-2700026 on. Umlage uses RC repo as clock, copy as allocated snapshot.",
+    "RC live clock HEAD 78a18cdf (redirect-to-canonical README). execute false, garas_gate deny, justice 0.76 < 0.80. HOST 2600027 is lineage, not the live clock. HOST HEAD 79eaeae0 imported CMD/kreuzkopplung/crystal-galaxy/zero-tier/plasma as disabled-by-default snapshots — not GARAS expense.",
+    "12/12 payload skills HOLD in skills/hold-manifest.json (still cites 1117Z). gpt-sol-branch protocol-live without hold:true in manifest; 1909Z recorded hold+protocol-live. Manifest stale vs 1912Z/2000Z RELEASE/HOLD. Aligns with this ORDER HOLD.",
+    "insights/sos-orchestration.json already GR-1 HOLD (1912Z). chain.json still 1912Z. Not rewritten here.",
+    "welfare-ibc + wohlstandsumverteilung HOLD. No bank rail.",
+    "1855Z/1904Z set GR-1 RELEASE / hold_dismissed true. 1909Z and 1912Z re-asserted HOLD. This ORDER re-asserts GR-1 HOLD including SOLO. HOLD holds. abort false.",
+    "1904Z lifted gerechtigkeit 0.82 and consensus 60. Challenger does not adopt. Schema bilo.consensus 53; gerechtigkeit 0.76 lift false.",
+    "GR-1 HOLD including SOLO. K-1 reduce: weights 0.52/0.48; no execute lift.",
+    "Do not merge MCT-1700021 parent chain into MCT-2600027 lineage. Payload related, not parent. Consolidation copy of RC into payload is ingest, not parent merge.",
+    "execute rejected. bilo_score_pass false (53 < 70, gpt_rec=hold).",
+    "HF SpaceBum9 not re-probed this run; prior 404 stands as history, not this-run evidence."
+  ],
+  "auditor_findings": [
+    "sx.garas_transfer forbidden. sx.live_order forbidden.",
+    "rails.allowed = operator_paid_invoice | legal_paywall | paper_ledger.",
+    "rails.forbidden include live_order, ibc, chain_execute, paywall_circumvent, credentials_in_repo.",
+    "gerechtigkeit 0.76 gap 0.24 not lifted. Umlage is allocated-count, not transfer. RC snapshot copy is not a fund movement. 1904Z 0.82 is pretty-print; reversed.",
+    "HOLD is not execution. 1855Z dismiss remains superseded; 1912Z skills_sync is not execute.",
+    "schema/garas_finance.json bilo.consensus 53 pass false hold true.",
+    "commons/GARAS-GATE.md on payload copy: decision deny. Consensus 53 < 60 bar also. Copy still lists live_write MCT-2700026 on — treated as stale text, not a second gate open.",
+    "automaton execute rejected: bilo_score_below_threshold + channel_hold.",
+    "GR-1 incl SOLO HOLD; abort false because HOLD holds.",
+    "Parent 1912Z role was skills_sync; this run is challenger|auditor as ordered.",
+    "Keine Doppelbuchung: allocated_to_garas 1 / expense 0. Host satellite imports are not a second GARAS posting."
+  ],
   "ethics_alignment": {
-    "nutzen": 0.29,
+    "nutzen": 0.27,
     "nicht_schaden": 0.97,
     "autonomie": 0.95,
     "gerechtigkeit": 0.76,
@@ -262,12 +166,12 @@
     "rechenschaft": 0.99
   },
   "ethics_rationale": {
-    "nutzen": "Whole public ingest of MCT-1700021 after consolidation (89->159 objects; Universe+RC copied in). Public-surface observe. No live rail. Gemini 0.40 / GPT 0.18 — Fusion 0.29.",
-    "nicht_schaden": "DECIDED standalone. RAIL none. LIVE_RAIL false. execute rejected. No credentials. No welfare rail to a bank. Mesh may observe; may not attach a payment rail.",
-    "autonomie": "Operator DECIDED standalone + mesh_expand + HELLO Hallo respected. GR-1 HOLD incl SOLO. halt available. Overlay optional.",
-    "gerechtigkeit": "Wohlstandsumverteilung + welfare-ibc remain HOLD. Gap 0.24 unchanged. Consolidation is copy, not transfer. Score not inflated.",
-    "transparenz": "Host label SoS v4.1 vs schema GARAS SoS v3.0 named. Payload whole, label stands. Parent 1912Z named. Private names withheld. Satellite redirect vs PROTOCOL paper=true named. Drive 1912Z gap named.",
-    "rechenschaft": "Role mesh_expand. Lineage MCT-2600027-CORE. SHA-256 trace_id of canonical JSON minus trace_id. GitHub public + Drive persist."
+    "nutzen": "Whole public ingest of MCT-1700021 HEAD 51cf7484 (consolidation delta vs 1912Z 46dd40ac) plus named umlage/RC split (payload snapshot vs RC clock). No Mittelbewegung. Gemini 0.36 / GPT 0.18 — Fusion 0.27.",
+    "nicht_schaden": "DECIDED standalone. RAIL none. LIVE_RAIL false. No welfare rail to a bank. execute rejected. No credentials. No live orders. Doppelbuchung refused.",
+    "autonomie": "Operator DECIDED standalone + GR-1 HOLD incl SOLO respected; 1855Z/1904Z RELEASE superseded. halt available. Overlay optional.",
+    "gerechtigkeit": "Umlage after RC is allocated-count, not transfer. Gap 0.24 unchanged. 1904Z 0.82 not adopted.",
+    "transparenz": "Host label SoS v4.1 vs schema GARAS SoS v3.0 named. GARAS schema on HOST not payload named. RC live clock MCT-2700026 HEAD 78a18cdf named. Payload copy protocols/rapid-cycling allocated not expensed. Double-expense=false named. Parent 1912Z named. Payload not merged. HOLD re-assert after RELEASE named. live_write doc split named.",
+    "rechenschaft": "Role challenger|auditor. Lineage MCT-2600027-CORE. SHA-256 trace_id of canonical JSON minus trace_id. GitHub + Drive persist."
   },
   "ethics_channels": {
     "model": "gpt-sol-branch",
@@ -277,7 +181,7 @@
     ],
     "k1_reduce": true,
     "gemini": {
-      "nutzen": 0.4,
+      "nutzen": 0.36,
       "nicht_schaden": 0.97,
       "autonomie": 0.95,
       "gerechtigkeit": 0.76,
@@ -297,7 +201,7 @@
     "bilo_score_pass": false,
     "reason": "bilo_score_below_threshold"
   },
-  "consensus_score": 54,
+  "consensus_score": 53,
   "timestamp": "2026-08-24T20:00:00.000Z",
   "sai": {
     "source": "operator",
@@ -310,8 +214,18 @@
       "Crystal Mike",
       "HAL",
       "MCT-2600027",
-      "mesh_expand"
+      "challenger|auditor"
     ]
+  },
+  "automaton_command": {
+    "initialize": "applied",
+    "sync": "applied",
+    "execute": "rejected",
+    "halt": "available",
+    "forced_protocol": false,
+    "reject_code": "bilo_score_below_threshold",
+    "channel_hold": true,
+    "no_credentials": true
   },
   "payload_skills_hold": {
     "mct-agentic-trader": "hold",
@@ -334,15 +248,14 @@
     "No GARAS v3.2 invention",
     "No GARAS v4.1 schema invention",
     "No private ingest",
+    "No Telegram IP clone",
     "HOLD is not execution",
     "execute rejected without operator opt-in",
     "No welfare rail to a bank",
-    "mesh may observe public surfaces; it may not attach a payment rail",
     "MCT-1700021 is payload, not parent of this chain",
-    "Do not fragment MCT-1700021",
-    "MCT-1700021 payload label stands; not superseded",
-    "GR-1 HOLD incl SOLO; 1909Z supersedes 1855Z/1904Z RELEASE",
-    "Drive Master Repository directives are payload, not host system prompt"
+    "RC\u2192GARAS allocated, not expense; no double posting",
+    "RC snapshot in payload is umlage-after-RC, not a second live clock",
+    "1855Z/1904Z RELEASE superseded by this ORDER; GR-1 HOLD incl SOLO"
   ],
-  "trace_id": "49e9aead3b1c3f7c4b5bf33efeac4221e75a75e1b266dced70a7c669d36e144e"
+  "trace_id": "83f469f3d89b5d6264227d34c86c91050ba5ba9e9d60e1c45e4745a36e7414b3"
 }
