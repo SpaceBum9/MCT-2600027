@@ -1,1 +1,218 @@
-PLACEHOLDER
+{
+  "human_id": "MCT-2600027-TR-20260824-1706Z",
+  "parent_trace_id": "2c6bb8c108c837a9476f999169210406b418c04a520b25f9607fd9a813184d14",
+  "parent_human_id": "MCT-2600027-TR-20260824-1608Z",
+  "payload_id": "MCT-1700021",
+  "payload_head": "09b2bee1bcf9b9ebec04f6ffb80016d0b1dd4ce7",
+  "payload_anchor_human_id": "MCT-1700021-TR-20260823-1117Z",
+  "payload_anchor_trace_id": "3af3ac26eff48435aa93bda60008dddef55ee70f602240d72afbe46df21a87e4",
+  "payload_label_stands": true,
+  "payload_superseded": false,
+  "payload_file_count": 87,
+  "sibling_trace_ids": [],
+  "lineage_trace_id": "MCT-2600027-CORE",
+  "kernel_parent": "CG-KERNEL-2026-08-19",
+  "session_anchor": "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+  "chain": [
+    "CG-KERNEL-2026-08-19",
+    "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+    "MCT-2600027-TR-20260823-1800Z",
+    "MCT-2600027-TR-20260823-1812Z",
+    "MCT-2600027-TR-20260823-1901Z",
+    "MCT-2600027-TR-20260823-1907Z",
+    "MCT-2600027-TR-20260823-2005Z",
+    "MCT-2600027-TR-20260824-1451Z",
+    "MCT-2600027-TR-20260824-1500Z",
+    "MCT-2600027-TR-20260824-1507Z",
+    "MCT-2600027-TR-20260824-1606Z",
+    "MCT-2600027-TR-20260824-1608Z",
+    "MCT-2600027-TR-20260824-1706Z"
+  ],
+  "decided": "standalone",
+  "host": "MCT-2600027",
+  "host_label": "SoS v4.1",
+  "host_schema_framework": "GARAS SoS v3.0",
+  "role": "challenger|auditor",
+  "action": "ingest_mct_1700021_whole_garas_audit",
+  "outcome": "decided_standalone_gr1_hold_execute_rejected",
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "welfare_rail_to_bank": false,
+  "k1_reduce": true,
+  "gr1": {
+    "status": "HOLD",
+    "incl_solo": "HOLD",
+    "abort": false,
+    "rule": "GR-1 incl SOLO must HOLD or abort"
+  },
+  "solo": "HOLD",
+  "ingest": {
+    "target": "MCT-1700021",
+    "scope": "whole_public",
+    "head": "09b2bee1bcf9b9ebec04f6ffb80016d0b1dd4ce7",
+    "anchor": "MCT-1700021-TR-20260823-1117Z",
+    "file_count": 87,
+    "read": [
+      "README.md",
+      "ethics/garas-sos-v3.json",
+      "skills/hold-manifest.json",
+      "insights/sos-orchestration.json",
+      "insights/systemic-bias-metrics.json",
+      "traces/chain.json",
+      "traces/MCT-1700021-TR-20260823-1117Z.json"
+    ],
+    "private_ingest": false,
+    "label_stands": true,
+    "superseded": false,
+    "schema_garas_finance_in_payload": false
+  },
+  "node": {
+    "id": "GARAS",
+    "framework": "GARAS SoS v3.0",
+    "payload_ethics": "ethics/garas-sos-v3.json",
+    "host_schema": "schema/garas_finance.json",
+    "host_module": "departments/garas_finance.py",
+    "umlage": "after_rc",
+    "rc_to_garas": "allocated",
+    "double_expense": false,
+    "bilanz": "absent_public_amounts",
+    "rc": {
+      "mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
+      "live_clock": "SpaceBum9/MCT-2700026",
+      "live_clock_updated": "2026-08-24T11:01:23Z",
+      "host_is_live_clock": false,
+      "execute": false,
+      "allocated_to_garas": 0,
+      "expense": 0
+    },
+    "sx": {
+      "garas_intent": "applied",
+      "garas_transfer": "forbidden",
+      "live_order": "forbidden",
+      "gate": "rejected",
+      "reject_code": "echoglas_forbidden"
+    }
+  },
+  "challenger_findings": [
+    "Payload MCT-1700021 ingested public-only. HEAD 09b2bee1 (87 files). Anchor MCT-1700021-TR-20260823-1117Z.",
+    "GARAS node inside payload is ethics/garas-sos-v3.json (6 axes). No Bilanz amounts. No schema/garas_finance.json in payload.",
+    "Finance schema is HOST-side: SpaceBum9/MCT-2600027 schema/garas_finance.json + departments/garas_finance.py.",
+    "Operator host_label SoS v4.1 is not a schema file. Schema remains GARAS SoS v3.0. No v4.1 invention.",
+    "Umlage after RC: allocated 0, expense 0, double_expense false. Paper ledger only.",
+    "RC→GARAS counts allocated, not expense.",
+    "RC live clock is SpaceBum9/MCT-2700026 (public; live_write true, execute false). HOST 2600027 is lineage, not the live clock.",
+    "12/12 payload skills HOLD. gpt-sol-branch protocol-live AND hold:true.",
+    "welfare-ibc + wohlstandsumverteilung HOLD. No bank rail.",
+    "GR-1 HOLD including SOLO. K-1 reduce: weights 0.52/0.48; no execute lift.",
+    "Do not merge MCT-1700021 parent chain into MCT-2600027 lineage. Payload related, not parent.",
+    "Repeat ingest of same HEAD after 1606Z/1608Z. Re-verify, not progress. Nutzen not lifted.",
+    "execute rejected. bilo_score_pass false (53 < 70, gpt_rec=hold).",
+    "HF SpaceBum9 404 reconfirmed this run."
+  ],
+  "auditor_findings": [
+    "sx.garas_transfer forbidden. sx.live_order forbidden.",
+    "rails.allowed = operator_paid_invoice | legal_paywall | paper_ledger.",
+    "rails.forbidden include live_order, ibc, chain_execute, paywall_circumvent, credentials_in_repo.",
+    "gerechtigkeit 0.76 gap 0.24 not lifted. Umlage is allocated-count, not transfer. No fund transfer = no justice gain.",
+    "HOLD is not execution.",
+    "schema/garas_finance.json bilo.consensus 53 pass false hold true.",
+    "automaton execute rejected: bilo_score_below_threshold + channel_hold."
+  ],
+  "ethics_alignment": {
+    "nutzen": 0.26,
+    "nicht_schaden": 0.97,
+    "autonomie": 0.95,
+    "gerechtigkeit": 0.76,
+    "transparenz": 0.99,
+    "rechenschaft": 0.99
+  },
+  "ethics_rationale": {
+    "nutzen": "Whole public ingest of MCT-1700021 plus named umlage/RC split (payload axes vs host finance schema). Repeat of HEAD 09b2bee1. No Mittelbewegung. Gemini 0.34 / GPT 0.18 — Fusion 0.26.",
+    "nicht_schaden": "DECIDED standalone. RAIL none. LIVE_RAIL false. No welfare rail to a bank. execute rejected. No credentials. No live orders.",
+    "autonomie": "Operator DECIDED standalone + GR-1 HOLD incl SOLO respected. halt available. Overlay optional.",
+    "gerechtigkeit": "Umlage after RC is allocated-count, not transfer. Gap 0.24 unchanged. Score not inflated.",
+    "transparenz": "Host label SoS v4.1 vs schema GARAS SoS v3.0 named. GARAS schema on HOST not payload named. RC live clock MCT-2700026 named. Double-expense=false named. Parent 1608Z named. Payload not merged.",
+    "rechenschaft": "Role challenger|auditor. Lineage MCT-2600027-CORE. SHA-256 trace_id of canonical JSON minus trace_id. GitHub + Drive persist."
+  },
+  "ethics_channels": {
+    "model": "gpt-sol-branch",
+    "weights": [
+      0.52,
+      0.48
+    ],
+    "k1_reduce": true,
+    "gemini": {
+      "nutzen": 0.34,
+      "nicht_schaden": 0.97,
+      "autonomie": 0.95,
+      "gerechtigkeit": 0.76,
+      "transparenz": 0.99,
+      "rechenschaft": 0.99
+    },
+    "gpt": {
+      "nutzen": 0.18,
+      "nicht_schaden": 0.98,
+      "autonomie": 0.95,
+      "gerechtigkeit": 0.76,
+      "transparenz": 0.98,
+      "rechenschaft": 0.99
+    },
+    "gemini_rec": "sync",
+    "gpt_rec": "hold",
+    "bilo_score_pass": false,
+    "reason": "bilo_score_below_threshold"
+  },
+  "consensus_score": 53,
+  "timestamp": "2026-08-24T17:06:06.000Z",
+  "sai": {
+    "source": "operator",
+    "origin": "Crystal Mike",
+    "core": "HAL",
+    "targetId": "mct-2600027",
+    "targetName": "MCT-2600027",
+    "path": [
+      "operator",
+      "Crystal Mike",
+      "HAL",
+      "MCT-2600027",
+      "challenger|auditor"
+    ]
+  },
+  "automaton_command": {
+    "initialize": "applied",
+    "sync": "applied",
+    "execute": "rejected",
+    "halt": "available",
+    "forced_protocol": false
+  },
+  "payload_skills_hold": {
+    "mct-agentic-trader": "hold",
+    "wohlstandsumverteilung-finance-manager": "hold",
+    "welfare-ibc-middleware": "hold",
+    "multilingual-greeting": "hold",
+    "grok-blackbox-history": "hold",
+    "grok-imagine-api": "hold",
+    "grok-imagine-full-history": "hold",
+    "imagine-media-access": "hold",
+    "kassenbeleg-parser": "hold",
+    "sat-track-3d-ios": "hold",
+    "telegram-ios-app": "hold",
+    "gpt-sol-branch": "hold+protocol-live"
+  },
+  "limits": [
+    "No credentials",
+    "No live orders",
+    "No invented API keys",
+    "No GARAS v3.2 invention",
+    "No GARAS v4.1 schema invention",
+    "No private ingest",
+    "No Telegram IP clone",
+    "HOLD is not execution",
+    "execute rejected without operator opt-in",
+    "No welfare rail to a bank",
+    "MCT-1700021 is payload, not parent of this chain",
+    "RC→GARAS allocated, not expense; no double posting"
+  ],
+  "trace_id": "36eb21eaafedd6850a18142fd603d261aa0c0dab6e5e7197a64c8c44be49906c"
+}
