@@ -1,0 +1,26 @@
+{
+  "op": "MESH_EXPAND",
+  "suite": "MCT-2600027",
+  "timestamp": "2026-08-24T19:04:00.000Z",
+  "from": "MCT-2600027-TR-20260824-1855Z",
+  "to": "MCT-2600027-TR-20260824-1904Z",
+  "parent_trace_id": "f5bcb3f7ae105f71ef3db3aabe5c0561ebd3e5818a8d5ea97c7d8be78cea0d4d",
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "hold": false,
+  "hold_dismissed": true,
+  "decided": "standalone",
+  "changes": [
+    "INGEST whole MCT-1700021 tree_sha 467e9a97 tree_count 89 fragment=false already_inside",
+    "payload_head 03ca3a71->467e9a97",
+    "host_head c0280ce5->821630d2",
+    "satellite_head cc7b2b9a->127bcd34",
+    "HF 404 unchanged",
+    "Drive folder lag vs git",
+    "ATM execute rejected consensus 60<70",
+    "No live rail; no credentials; no live orders"
+  ],
+  "execute": false,
+  "trace_id": "8fa3a615712f93f230ce0ce4d0575d7203d83f21a1f560eab928a80447d5068e"
+}
