@@ -1,0 +1,20 @@
+{
+  "enabled": true,
+  "opt_in": "2026-08-24T15:57:00.000Z",
+  "operator": "teleprompter-spacebum9",
+  "harvest": false,
+  "training": false,
+  "strip_c2pa": false,
+  "sources": {
+    "suno": {
+      "audio_rip": true,
+      "ids": [
+        "7af55992-4253-4ffb-a814-959b14bb1db2",
+        "75246ac1-f4df-4601-9914-9d9668f7953e"
+      ],
+      "titles": ["Hyperaktive Hallos", "Hyperaktive Hallos 2"]
+    },
+    "soundcloud": { "audio_rip": false, "oembed": true },
+    "bandcamp": { "audio_rip": false, "oembed": true }
+  }
+}

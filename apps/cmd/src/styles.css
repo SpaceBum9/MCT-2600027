@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-bg: #f2f2f7;
+  --color-surface: #ffffff;
+  --color-grouped: #e5e5ea;
+  --color-ink: #1c1c1e;
+  --color-muted: #8e8e93;
+  --color-subtle: #aeaeb2;
+  --color-primary: #0a84ff;
+  --color-primary-press: #0071e3;
+  --color-hairline: rgb(60 60 67 / 0.12);
+  --color-hairline-strong: rgb(60 60 67 / 0.24);
+  --color-danger: #ff3b30;
+  --color-ok: #34c759;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Segoe UI", system-ui, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+    system-ui, sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.04);
+}
