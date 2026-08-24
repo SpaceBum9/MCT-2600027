@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "opt_in": "2026-08-24T15:57:00.000Z",
+  "host": "MCT-2600027",
+  "cmd": "MCT-2600027-CMD",
+  "harvest": false,
+  "training": false,
+  "strip_c2pa": false,
+  "suno_ids": [
+    "7af55992-4253-4ffb-a814-959b14bb1db2",
+    "75246ac1-f4df-4601-9914-9d9668f7953e"
+  ]
+}
