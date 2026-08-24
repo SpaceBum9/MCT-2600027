@@ -3,7 +3,7 @@
   "adoption": "optional",
   "forced_protocol": false,
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
-  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026; detectTargetNode maps generic mct/mesh to mct-170021 and 2600027 queries to mct-2600027-cmd. Reconfirmed 1712Z. crystal-galaxy last push still 2026-08-23T19:54:17Z. Payload MCT-1700021 ingested whole; label stands; not superseded.",
+  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026; detectTargetNode maps generic mct/mesh to mct-170021 and 2600027 queries to mct-2600027-cmd. Reconfirmed 1801Z. crystal-galaxy last push still 2026-08-23T19:54:17Z. Payload MCT-1700021 ingested whole; label stands; not superseded.",
   "add_nodes": [
     {
       "id": "mct-2600027",
@@ -64,5 +64,5 @@
     "space_status": "absent",
     "action": "do_not_publish_until_operator_creates_account"
   },
-  "sync": "MCT-2600027-TR-20260824-1712Z"
+  "sync": "MCT-2600027-TR-20260824-1801Z"
 }

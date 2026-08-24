@@ -49,10 +49,10 @@
         "nicht_schaden_min": 0.9,
         "model": "gpt-sol-branch",
         "script": "ethics/bilo_scoring.py",
-        "this_run_consensus": 52,
+        "this_run_consensus": 51,
         "anchor_consensus": 53
       },
-      "reason": "dispatchLocal execute gated. Overlay + BILO score gate execute. Current consensus 52 < 70. channel_hold (gpt_rec=hold). Coercive unilateral activation rejected. Skills do not open a live rail. Mesh may observe public surfaces; may not attach a payment rail."
+      "reason": "dispatchLocal execute gated. Overlay + BILO score gate execute. Current consensus 51 < 70. channel_hold (gpt_rec=hold). Coercive unilateral activation rejected. Skills do not open a live rail. Mesh may observe public surfaces; may not attach a payment rail."
     },
     "halt": {
       "allowed": true,
@@ -71,5 +71,5 @@
     "no_destructive_private": true
   },
   "last_mesh_expand": "2026-08-24T17:01:00.000Z",
-  "last_skills_sync": "2026-08-24T17:12:00.000Z"
+  "last_skills_sync": "2026-08-24T18:01:00.000Z"
 }

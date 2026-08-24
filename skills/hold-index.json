@@ -6,7 +6,7 @@
   "live_rail": false,
   "hello": "Hallo",
   "note": "Trigger maps only. Not live SKILL.md. No APIs claimed. Default stack fires before these maps. skills_hold=11 suite; default-mode is stack not counted in 11. Skills do not open a live rail.",
-  "sync": "MCT-2600027-TR-20260824-1712Z",
+  "sync": "MCT-2600027-TR-20260824-1801Z",
   "skills": {
     "default-mode": {
       "hold": true,
