@@ -52,7 +52,7 @@
         "this_run_consensus": 55,
         "anchor_consensus": 53
       },
-      "reason": "dispatchLocal execute gated. Overlay + BILO score gate execute. Current consensus 55 < 70. Coercive unilateral activation rejected."
+      "reason": "dispatchLocal execute gated. Overlay + BILO score gate execute. Current consensus 55 < 70. Coercive unilateral activation rejected. gpt rec=hold."
     },
     "halt": {
       "allowed": true,
@@ -70,5 +70,6 @@
     "halt_on_jonas-g": true,
     "no_destructive_private": true
   },
-  "last_mesh_expand": "2026-08-23T20:05:00.000Z"
+  "last_mesh_expand": "2026-08-23T20:05:00.000Z",
+  "last_skills_sync": "2026-08-24T14:51:00.000Z"
 }

@@ -3,14 +3,14 @@
   "adoption": "optional",
   "forced_protocol": false,
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
-  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe; detectTargetNode maps generic mct/mesh to mct-170021 and 2600027 queries to mct-2600027-cmd. Reconfirmed after crystal-galaxy push 19:54:17Z.",
+  "drift": "catalog GITHUB_REPOS and GALAXY_NODES omit MCT-2600027 core, MCT-1700021, MCT-Universe, MCT-2700026; detectTargetNode maps generic mct/mesh to mct-170021 and 2600027 queries to mct-2600027-cmd. Reconfirmed 1451Z (catalog.ts SHA b3318da1, crystal-galaxy HEAD 5242d637).",
   "add_nodes": [
     {
       "id": "mct-2600027",
       "title": "MCT-2600027",
       "kind": "mesh",
       "href": "https://github.com/SpaceBum9/MCT-2600027",
-      "summary": "System of Systems — Dual-Pol (HAL / Zero Telepath), para Border, Trace-ID Mesh.",
+      "summary": "System of Systems — Dual-Pol (HAL / Zero Telepath), para Border, Trace-ID Mesh. Lineage, not live clock.",
       "owner": "SpaceBum9",
       "lang": "Python"
     },
@@ -33,14 +33,25 @@
       "owner": "SpaceBum9",
       "lang": null,
       "created": "2026-08-23T18:52:04Z"
+    },
+    {
+      "id": "mct-2700026",
+      "title": "MCT-2700026",
+      "kind": "mesh",
+      "href": "https://github.com/SpaceBum9/MCT-2700026",
+      "summary": "Rapid Cycling — SAI orchestrator + prompt designer. Live-write clock. execute false. Paper protocol. HOLD is not execution.",
+      "owner": "SpaceBum9",
+      "lang": "TypeScript",
+      "created": "2026-08-23T20:33:19Z"
     }
   ],
   "add_to_GITHUB_REPOS": [
     "MCT-2600027",
     "MCT-1700021",
-    "MCT-Universe"
+    "MCT-Universe",
+    "MCT-2700026"
   ],
-  "detectTargetNode_patch": "DEFAULT: every multimodal prompt loads MCT-RC-BILO-ATM-FRAMEWORK-SOS first (skills/default-mode.json). detectTargetNode is a sub-route after the stack. Prefer 2600027 core over 170021 for queries containing mct/mesh/sos; map universe/konnektor/gemini-ingest to mct-universe; keep cmd only for lumen/apple-intelligence. Do not use CMD or 170021 as the prompt entry.",
+  "detectTargetNode_patch": "DEFAULT: every multimodal prompt loads MCT-RC-BILO-ATM-FRAMEWORK-SOS first (skills/default-mode.json). detectTargetNode is a sub-route after the stack. Prefer 2600027 core over 170021 for queries containing mct/mesh/sos; map universe/konnektor/gemini-ingest to mct-universe; map rapid/cycling/2700026/live-clock to mct-2700026; keep cmd only for lumen/apple-intelligence. Do not use CMD or 170021 as the prompt entry.",
   "do_not_publish": [
     "private repo contents",
     "ECHOGLAS raw evidence",
