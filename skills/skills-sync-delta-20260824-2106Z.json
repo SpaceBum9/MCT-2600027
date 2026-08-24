@@ -1,36 +1,48 @@
 {
+  "op": "SKILLS_SYNC",
   "suite": "MCT-2600027",
-  "mode": "HOLD",
-  "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
-  "vendor_live": false,
-  "live_rail": false,
+  "timestamp": "2026-08-24T21:06:00.000Z",
+  "from": "MCT-2600027-TR-20260824-2000Z",
+  "to": "MCT-2600027-TR-20260824-2106Z",
+  "parent_trace_id": "83f469f3d89b5d6264227d34c86c91050ba5ba9e9d60e1c45e4745a36e7414b3",
+  "payload_id": "MCT-1700021",
+  "payload_head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+  "payload_label_stands": true,
+  "payload_superseded": false,
   "hello": "Hallo",
-  "note": "2106Z skills_sync. Parent 2000Z GR-1 HOLD incl SOLO. Payload ingested whole. 11 HOLD maps patched standalone+public_routing; skills do not open a live rail. Execute false.",
-  "sync": "MCT-2600027-TR-20260824-2106Z",
+  "rail": "none",
+  "live_rail": false,
   "hold": true,
   "hold_dismissed": false,
-  "skills": {
-    "default-mode": {
-      "hold": false,
-      "default": true,
-      "triggers": [
-        "multimodal",
-        "prompt",
-        "mct",
-        "rc",
-        "bilo",
-        "atm",
-        "framework",
-        "sos",
-        "garas"
-      ],
-      "runtime": "stack",
-      "execute": false,
-      "spec": "skills/default-mode.json",
-      "counted_in_skills_hold": false,
-      "standalone": true,
-      "live_rail": false
-    },
+  "decided": "standalone",
+  "gr1": "HOLD",
+  "solo": "HOLD",
+  "public_routing": true,
+  "secrets": "none",
+  "changes": [
+    "INGEST whole MCT-1700021 public HEAD 51cf7484 (already_inside after 2000Z; 146/13/159; label stands; not superseded)",
+    "skill mesh after payload: 11 HOLD maps patched standalone+public_routing+rail=none; no live rail; no SKILL.md invention",
+    "HELLO Hallo (multilingual-greeting HOLD, runtime available)",
+    "parent 2000Z challenger|auditor GR-1 HOLD incl SOLO; 1855Z/1904Z RELEASE not restored",
+    "catalog-delta chrona summary HOLD (stale HOLD dismissed patched)",
+    "hold-index + default-mode + catalog-delta + mesh-manifest sync stamp 2106Z",
+    "public routing only; no secrets; no live API keys",
+    "automaton_command last_skills_sync=2106Z; execute still rejected (consensus 51 < 70; channel_hold)"
+  ],
+  "mesh": [
+    "mct-agentic-trader",
+    "wohlstandsumverteilung-finance-manager",
+    "welfare-ibc-middleware",
+    "multilingual-greeting",
+    "grok-blackbox-history",
+    "grok-imagine-api",
+    "grok-imagine-full-history",
+    "imagine-media-access",
+    "kassenbeleg-parser",
+    "sat-track-3d-ios",
+    "telegram-ios-app"
+  ],
+  "patches": {
     "mct-agentic-trader": {
       "hold": true,
       "runtime": "paper",
@@ -184,31 +196,8 @@
         "ios-app"
       ],
       "note": "no messenger IP clone"
-    },
-    "chrona": {
-      "hold": true,
-      "triggers": [
-        "chrona",
-        "palette",
-        "farbe",
-        "contrast",
-        "wcag",
-        "apca",
-        "sos-token"
-      ],
-      "runtime": "hold",
-      "execute": false,
-      "rail": "none",
-      "spec": "skills/chrona/SKILL.md",
-      "node": "nodes/chrona",
-      "note": "GR-1 HOLD; CSS/JSON export only; no live rail",
-      "standalone": true,
-      "live_rail": false,
-      "public_routing": true,
-      "secrets": "none"
     }
   },
-  "decided": "standalone",
-  "gr1": "HOLD",
-  "solo": "HOLD"
+  "execute": false,
+  "trace_id": "6ca90031b74bc96484d3dd16666261793f204e4d80ea2ad0c728f0922f701888"
 }
