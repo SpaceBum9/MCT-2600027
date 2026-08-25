@@ -1,36 +1,24 @@
 {
-  "suite": "MCT-2600027",
+  "human_id": "MCT-2600027-TR-20260825-1106Z",
+  "role": "skills_sync",
+  "parent_human_id": "MCT-2600027-TR-20260825-1009Z",
+  "parent_trace_id": "f03d9354811129c79e2d00a18c4ab712ab728fad11c185e987e8c928b8304480",
   "mode": "HOLD",
-  "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
-  "vendor_live": false,
+  "public_routing": true,
+  "secrets": "none",
   "live_rail": false,
+  "skill_md_bodies": "not_invented",
+  "runtime": "trigger_maps_only",
+  "count": 11,
   "hello": "Hallo",
-  "note": "1106Z skills_sync. Parent 1009Z mesh_expand. Payload ingested whole. 11 HOLD maps re-affirmed standalone+public_routing; skills do not open a live rail. Execute false. No secrets. No live API keys.",
-  "sync": "MCT-2600027-TR-20260825-1106Z",
-  "hold": true,
-  "hold_dismissed": false,
-  "skills": {
-    "default-mode": {
-      "hold": false,
-      "default": true,
-      "triggers": [
-        "multimodal",
-        "prompt",
-        "mct",
-        "rc",
-        "bilo",
-        "atm",
-        "framework",
-        "sos",
-        "garas"
-      ],
-      "runtime": "stack",
-      "execute": false,
-      "spec": "skills/default-mode.json",
-      "counted_in_skills_hold": false,
-      "standalone": true,
-      "live_rail": false
-    },
+  "rail": "none",
+  "execute": "rejected",
+  "host_head": "c0a44ece8837fa4fff043dc079ef87ef75e960f9",
+  "payload_head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+  "decided": "standalone",
+  "gr1": "HOLD",
+  "solo": "HOLD",
+  "patches": {
     "mct-agentic-trader": {
       "hold": true,
       "runtime": "paper",
@@ -184,31 +172,7 @@
         "ios-app"
       ],
       "note": "no messenger IP clone"
-    },
-    "chrona": {
-      "hold": true,
-      "triggers": [
-        "chrona",
-        "palette",
-        "farbe",
-        "contrast",
-        "wcag",
-        "apca",
-        "sos-token"
-      ],
-      "runtime": "hold",
-      "execute": false,
-      "rail": "none",
-      "spec": "skills/chrona/SKILL.md",
-      "node": "nodes/chrona",
-      "note": "GR-1 HOLD; CSS/JSON export only; no live rail",
-      "standalone": true,
-      "live_rail": false,
-      "public_routing": true,
-      "secrets": "none"
     }
   },
-  "decided": "standalone",
-  "gr1": "HOLD",
-  "solo": "HOLD"
+  "trace_id": "b8627a086b507ed4ffcd377c70efe3a7a2c4a809250721f4fc35dcaccd693438"
 }

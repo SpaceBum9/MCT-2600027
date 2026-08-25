@@ -42,7 +42,7 @@
     "folder": "MCT-2600027-traces",
     "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
     "universe_pack_folder_id": "1WMOCO228dPtywucly2Xfha0ibQrHvkhl",
-    "latest_pack": "20260825-0915Z",
+    "latest_pack": "20260825-1106Z",
     "audio_trace_metadata_only": {
       "name": "MCT-2600027-TR-20260823-1952Z.mp3",
       "file_id": "1YlRgVe0LtnBIudqbnjC8rgj_7k0xiSav",
@@ -52,7 +52,7 @@
   "huggingface": {
     "profile": "404",
     "space_kreuzkopplung": "absent",
-    "this_run": "not_reprobed"
+    "this_run": "reprobed_404"
   },
   "skills_live": [
     "mct-2600027-core"
@@ -65,9 +65,11 @@
   "hello": "Hallo",
   "rail": "none",
   "live_rail": false,
-  "sync": "MCT-2600027-TR-20260825-0915Z",
+  "sync": "MCT-2600027-TR-20260825-1106Z",
   "hold_dismissed": false,
   "decided": "standalone",
   "gr1": "HOLD",
-  "solo": "HOLD"
+  "solo": "HOLD",
+  "host_head": "c0a44ece8837fa4fff043dc079ef87ef75e960f9",
+  "trace_id": "b8627a086b507ed4ffcd377c70efe3a7a2c4a809250721f4fc35dcaccd693438"
 }
