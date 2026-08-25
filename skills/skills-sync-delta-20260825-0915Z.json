@@ -1,36 +1,25 @@
 {
-  "suite": "MCT-2600027",
+  "human_id": "MCT-2600027-TR-20260825-0915Z",
+  "role": "skills_sync",
+  "parent_human_id": "MCT-2600027-TR-20260825-0909Z",
+  "parent_trace_id": "4ded3d0297a4b61bf08a719c7f47187a57d110853be1e4a0e0f4c2eb863d7caa",
   "mode": "HOLD",
-  "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
-  "vendor_live": false,
+  "public_routing": true,
+  "secrets": "none",
   "live_rail": false,
+  "skill_md_bodies": "not_invented",
+  "runtime": "trigger_maps_only",
+  "count": 11,
   "hello": "Hallo",
-  "note": "0915Z skills_sync. Parent 0909Z skills_sync (local journal persist this run). Payload ingested whole. 11 HOLD maps re-affirmed standalone+public_routing; skills do not open a live rail. Execute false.",
-  "sync": "MCT-2600027-TR-20260825-0915Z",
-  "hold": true,
-  "hold_dismissed": false,
-  "skills": {
-    "default-mode": {
-      "hold": false,
-      "default": true,
-      "triggers": [
-        "multimodal",
-        "prompt",
-        "mct",
-        "rc",
-        "bilo",
-        "atm",
-        "framework",
-        "sos",
-        "garas"
-      ],
-      "runtime": "stack",
-      "execute": false,
-      "spec": "skills/default-mode.json",
-      "counted_in_skills_hold": false,
-      "standalone": true,
-      "live_rail": false
-    },
+  "rail": "none",
+  "execute": "rejected",
+  "persist_0909Z": true,
+  "host_head": "20687f27ce85de869b8d586d2d5e615e629e660e",
+  "payload_head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+  "decided": "standalone",
+  "gr1": "HOLD",
+  "solo": "HOLD",
+  "patches": {
     "mct-agentic-trader": {
       "hold": true,
       "runtime": "paper",
@@ -184,31 +173,7 @@
         "ios-app"
       ],
       "note": "no messenger IP clone"
-    },
-    "chrona": {
-      "hold": true,
-      "triggers": [
-        "chrona",
-        "palette",
-        "farbe",
-        "contrast",
-        "wcag",
-        "apca",
-        "sos-token"
-      ],
-      "runtime": "hold",
-      "execute": false,
-      "rail": "none",
-      "spec": "skills/chrona/SKILL.md",
-      "node": "nodes/chrona",
-      "note": "GR-1 HOLD; CSS/JSON export only; no live rail",
-      "standalone": true,
-      "live_rail": false,
-      "public_routing": true,
-      "secrets": "none"
     }
   },
-  "decided": "standalone",
-  "gr1": "HOLD",
-  "solo": "HOLD"
+  "trace_id": "9ed36353d1038b078e95176bde9f806a428a0500fee7fe00b0f3fa1a15a30e0c"
 }

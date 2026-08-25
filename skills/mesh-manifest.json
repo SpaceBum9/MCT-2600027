@@ -42,7 +42,7 @@
     "folder": "MCT-2600027-traces",
     "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
     "universe_pack_folder_id": "1WMOCO228dPtywucly2Xfha0ibQrHvkhl",
-    "latest_pack": "20260824-2211Z",
+    "latest_pack": "20260825-0915Z",
     "audio_trace_metadata_only": {
       "name": "MCT-2600027-TR-20260823-1952Z.mp3",
       "file_id": "1YlRgVe0LtnBIudqbnjC8rgj_7k0xiSav",
@@ -65,7 +65,7 @@
   "hello": "Hallo",
   "rail": "none",
   "live_rail": false,
-  "sync": "MCT-2600027-TR-20260824-2211Z",
+  "sync": "MCT-2600027-TR-20260825-0915Z",
   "hold_dismissed": false,
   "decided": "standalone",
   "gr1": "HOLD",
