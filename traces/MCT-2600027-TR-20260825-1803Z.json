@@ -1,0 +1,672 @@
+{
+  "human_id": "MCT-2600027-TR-20260825-1803Z",
+  "parent_trace_id": "e6659e382a6e17e633e45c86d8b3c421a19a9bee96c9c4db6f402c7cd3a2bdc6",
+  "parent_human_id": "MCT-2600027-TR-20260825-1605Z",
+  "payload_id": "MCT-1700021",
+  "payload_head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+  "payload_anchor_human_id": "MCT-1700021-TR-20260823-1117Z",
+  "payload_anchor_trace_id": "3af3ac26eff48435aa93bda60008dddef55ee70f602240d72afbe46df21a87e4",
+  "payload_label_stands": true,
+  "payload_superseded": false,
+  "payload_file_count": 159,
+  "sibling_trace_ids": [],
+  "lineage_trace_id": "MCT-2600027-CORE",
+  "kernel_parent": "CG-KERNEL-2026-08-19",
+  "session_anchor": "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+  "chain": [
+    "CG-KERNEL-2026-08-19",
+    "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+    "MCT-2600027-TR-20260823-1800Z",
+    "MCT-2600027-TR-20260823-1812Z",
+    "MCT-2600027-TR-20260823-1901Z",
+    "MCT-2600027-TR-20260823-1907Z",
+    "MCT-2600027-TR-20260823-2005Z",
+    "MCT-2600027-TR-20260824-1451Z",
+    "MCT-2600027-TR-20260824-1500Z",
+    "MCT-2600027-TR-20260824-1507Z",
+    "MCT-2600027-TR-20260824-1606Z",
+    "MCT-2600027-TR-20260824-1608Z",
+    "MCT-2600027-TR-20260824-1701Z",
+    "MCT-2600027-TR-20260824-1706Z",
+    "MCT-2600027-TR-20260824-1712Z",
+    "MCT-2600027-TR-20260824-1801Z",
+    "MCT-2600027-TR-20260824-1809Z",
+    "MCT-2600027-TR-20260824-1847Z",
+    "MCT-2600027-TR-20260824-1855Z",
+    "MCT-2600027-TR-20260824-1904Z",
+    "MCT-2600027-TR-20260824-1909Z",
+    "MCT-2600027-TR-20260824-1912Z",
+    "MCT-2600027-TR-20260824-2000Z",
+    "MCT-2600027-TR-20260824-2106Z",
+    "MCT-2600027-TR-20260824-2111Z",
+    "MCT-2600027-TR-20260824-2117Z",
+    "MCT-2600027-TR-20260824-2203Z",
+    "MCT-2600027-TR-20260824-2211Z",
+    "MCT-2600027-TR-20260824-2303Z",
+    "MCT-2600027-TR-20260824-2310Z",
+    "MCT-2600027-TR-20260825-0206Z",
+    "MCT-2600027-TR-20260825-0506Z",
+    "MCT-2600027-TR-20260825-0512Z",
+    "MCT-2600027-TR-20260825-0906Z",
+    "MCT-2600027-TR-20260825-0909Z",
+    "MCT-2600027-TR-20260825-0915Z",
+    "MCT-2600027-TR-20260825-1009Z",
+    "MCT-2600027-TR-20260825-1106Z",
+    "MCT-2600027-TR-20260825-1208Z",
+    "MCT-2600027-TR-20260825-1220Z",
+    "MCT-2600027-TR-20260825-1302Z",
+    "MCT-2600027-TR-20260825-1400Z",
+    "MCT-2600027-TR-20260825-1407Z",
+    "MCT-2600027-TR-20260825-1508Z",
+    "MCT-2600027-TR-20260825-1509Z",
+    "MCT-2600027-TR-20260825-1518Z",
+    "MCT-2600027-TR-20260825-1524Z",
+    "MCT-2600027-TR-20260825-1527Z",
+    "MCT-2600027-TR-20260825-1605Z",
+    "MCT-2600027-TR-20260825-1803Z"
+  ],
+  "decided": "standalone",
+  "host": "MCT-2600027",
+  "host_label": "SoS v4.1",
+  "host_schema_framework": "GARAS SoS v3.0",
+  "host_head": "98ce0febccda3598f8119a4e4bb07cb5f83f833f",
+  "role": "skills_sync",
+  "action": "ingest_mct_1700021_whole_public_skill_mesh",
+  "outcome": "decided_standalone_payload_label_stands_skills_hold_execute_rejected",
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "welfare_rail_to_bank": false,
+  "k1_reduce": true,
+  "gr1": {
+    "status": "HOLD",
+    "incl_solo": "HOLD",
+    "abort": false,
+    "rule": "GR-1 incl SOLO must HOLD or abort; 1909Z supersedes 1855Z/1904Z RELEASE; skills do not open a live rail"
+  },
+  "solo": "HOLD",
+  "hold": true,
+  "hold_dismissed": false,
+  "ingest": {
+    "target": "MCT-1700021",
+    "scope": "whole_public_unfragmented",
+    "fragment": false,
+    "already_inside": true,
+    "head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+    "blobs": 146,
+    "trees": 13,
+    "objects": 159,
+    "trace_files": 81,
+    "chain": "traces/chain.json",
+    "cores": [
+      "README.md",
+      "CONSOLIDATION.md",
+      "MIGRATION_MANIFEST.json",
+      "ethics/garas-sos-v3.json",
+      "skills/hold-manifest.json",
+      "insights/sos-orchestration.json",
+      "traces/chain.json",
+      "traces/MCT-1700021-TR-20260823-1117Z.json",
+      "traces/MCT-1700021-TR-20260824-1912Z.json",
+      "protocols/rapid-cycling/commons/INGEST.md",
+      "protocols/rapid-cycling/commons/GARAS-GATE.md",
+      "protocols/rapid-cycling/commons/PROTOCOL.json"
+    ],
+    "anchor": "MCT-1700021-TR-20260823-1117Z",
+    "read": [
+      "README.md",
+      "CONSOLIDATION.md",
+      "MIGRATION_MANIFEST.json",
+      "skills/hold-manifest.json",
+      "REPOSITORY-MAP.md"
+    ],
+    "tree_verified": true,
+    "private_ingest": false,
+    "label_stands": true,
+    "superseded": false,
+    "fragmented": false,
+    "repeat_vs": [
+      "2000Z",
+      "2106Z",
+      "2111Z",
+      "2117Z",
+      "2203Z",
+      "2211Z",
+      "2303Z",
+      "2310Z",
+      "0206Z",
+      "0506Z",
+      "0512Z",
+      "0906Z",
+      "0909Z",
+      "0915Z",
+      "1009Z",
+      "1106Z",
+      "1208Z",
+      "1220Z",
+      "1302Z",
+      "1400Z",
+      "1407Z",
+      "1507Z",
+      "1508Z",
+      "1509Z",
+      "1518Z",
+      "1524Z",
+      "1527Z",
+      "1605Z",
+      "1606Z",
+      "1705Z",
+      "1706Z"
+    ]
+  },
+  "skill_mesh": {
+    "after_payload": [
+      "mct-agentic-trader",
+      "wohlstandsumverteilung-finance-manager",
+      "welfare-ibc-middleware",
+      "multilingual-greeting",
+      "grok-blackbox-history",
+      "grok-imagine-api",
+      "grok-imagine-full-history",
+      "imagine-media-access",
+      "kassenbeleg-parser",
+      "sat-track-3d-ios",
+      "telegram-ios-app"
+    ],
+    "count": 11,
+    "mode": "HOLD",
+    "live_rail": false,
+    "open_live_rail": false,
+    "skill_md_bodies": "not_invented",
+    "runtime": "trigger_maps_only",
+    "public_routing": true,
+    "secrets": "none",
+    "hello": "Hallo",
+    "rail": "none",
+    "patches": {
+      "mct-agentic-trader": {
+        "hold": true,
+        "runtime": "paper",
+        "standalone": true,
+        "live_rail": false,
+        "public_routing": true,
+        "secrets": "none",
+        "execute": false,
+        "rail": "none",
+        "triggers": [
+          "trader",
+          "paper",
+          "agentic-trader"
+        ]
+      },
+      "wohlstandsumverteilung-finance-manager": {
+        "hold": true,
+        "runtime": "schema",
+        "standalone": true,
+        "live_rail": false,
+        "public_routing": true,
+        "secrets": "none",
+        "rail": "none",
+        "framework": "GARAS SoS v3.0",
+        "triggers": [
+          "welfare",
+          "intent",
+          "wohlstandsumverteilung"
+        ]
+      },
+      "welfare-ibc-middleware": {
+        "hold": true,
+        "runtime": "intent-only",
+        "standalone": true,
+        "live_rail": false,
+        "public_routing": true,
+        "secrets": "none",
+        "rail": "none",
+        "welfare_rail_to_bank": false,
+        "triggers": [
+          "welfare",
+          "ibc",
+          "middleware"
+        ]
+      },
+      "multilingual-greeting": {
+        "hold": true,
+        "runtime": "available",
+        "standalone": true,
+        "live_rail": false,
+        "public_routing": true,
+        "secrets": "none",
+        "hello": "Hallo",
+        "triggers": [
+          "greeting",
+          "locale",
+          "hallo"
+        ],
+        "note": "no SKILL.md body; HELLO Hallo this run"
+      },
+      "grok-blackbox-history": {
+        "hold": true,
+        "runtime": "traces",
+        "standalone": true,
+        "live_rail": false,
+        "public_routing": true,
+        "secrets": "none",
+        "triggers": [
+          "trace",
+          "history",
+          "blackbox"
+        ]
+      },
+      "grok-imagine-api": {
+        "hold": true,
+        "runtime": "session",
+        "standalone": true,
+        "live_rail": false,
+        "public_routing": true,
+        "secrets": "none",
+        "vendor_live": false,
+        "triggers": [
+          "imagine",
+          "imagine-api",
+          "text-to-image"
+        ],
+        "note": "workspace imagine skill listed this session; not a live vendor key"
+      },
+      "grok-imagine-full-history": {
+        "hold": true,
+        "runtime": "session-store",
+        "standalone": true,
+        "live_rail": false,
+        "public_routing": true,
+        "secrets": "none",
+        "triggers": [
+          "imagine-history",
+          "full-history",
+          "blackbox-media"
+        ]
+      },
+      "imagine-media-access": {
+        "hold": true,
+        "runtime": "session",
+        "standalone": true,
+        "live_rail": false,
+        "public_routing": true,
+        "secrets": "none",
+        "triggers": [
+          "imagine-media",
+          "media-access",
+          "render_file"
+        ]
+      },
+      "kassenbeleg-parser": {
+        "hold": true,
+        "runtime": "session",
+        "standalone": true,
+        "live_rail": false,
+        "public_routing": true,
+        "secrets": "none",
+        "triggers": [
+          "kassenbeleg",
+          "DE receipt",
+          "beleg"
+        ]
+      },
+      "sat-track-3d-ios": {
+        "hold": true,
+        "runtime": "related-repo",
+        "standalone": true,
+        "live_rail": false,
+        "public_routing": true,
+        "secrets": "none",
+        "triggers": [
+          "sat-track",
+          "satellite",
+          "ios-3d"
+        ],
+        "note": "MCT-2600027-CMD has ios-apple-intelligence SKILL.md only; no sat-track SKILL.md"
+      },
+      "telegram-ios-app": {
+        "hold": true,
+        "runtime": "intent-only",
+        "standalone": true,
+        "live_rail": false,
+        "public_routing": true,
+        "secrets": "none",
+        "triggers": [
+          "telegram",
+          "ios-app"
+        ],
+        "note": "no messenger IP clone"
+      }
+    },
+    "extra": {
+      "mct-2600027-core": {
+        "hold": false,
+        "presence": "live",
+        "runtime": "python-core",
+        "public_routing": true,
+        "secrets": "none"
+      },
+      "gpt-sol-branch": {
+        "hold": true,
+        "runtime": "protocol-live",
+        "vendor_live": false,
+        "public_routing": true,
+        "secrets": "none"
+      },
+      "chrona": {
+        "hold": true,
+        "runtime": "hold",
+        "execute": false,
+        "rail": "none",
+        "live_rail": false,
+        "spec": "skills/chrona/SKILL.md",
+        "note": "GR-1 HOLD; CSS/JSON export only"
+      },
+      "default-mode": {
+        "hold": false,
+        "default": true,
+        "execute": false,
+        "live_rail": false,
+        "mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS"
+      }
+    }
+  },
+  "automaton_command": {
+    "initialize": "applied",
+    "sync": "applied",
+    "execute": "rejected",
+    "halt": "available",
+    "forced_protocol": false,
+    "reject_code": "bilo_score_below_threshold",
+    "bilo_reject_code": "bilo_score_below_threshold",
+    "channel_hold": true,
+    "no_credentials": true,
+    "this_run_consensus": 53,
+    "consensus_min": 70,
+    "last_skills_sync": "1605Z",
+    "last_skills_sync_on_github": "1605Z",
+    "last_challenger_auditor": "1705Z",
+    "last_dual_llm_bridge": "1706Z"
+  },
+  "github": {
+    "owner": "SpaceBum9",
+    "public_count": 9,
+    "private_count": 3,
+    "private_policy": "names withheld; contents not read; Jonas-G. already named on public issue #4 and crystal-galaxy README / payload REPOSITORY-MAP.md",
+    "host_head": "98ce0febccda3598f8119a4e4bb07cb5f83f833f",
+    "host_note": "pre-persist HEAD of 1803Z; 1706Z persist moved HEAD to 98ce0feb after 1705Z persist 5116dd74; 1605Z persist was 12b9ff76",
+    "payload_head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+    "public": [
+      {
+        "name": "crystal-galaxy",
+        "head": "8646c17eac1e30f312260d2852578c0ddf980758",
+        "note": "last re-verified 1605Z; not re-probed this tick"
+      },
+      {
+        "name": "kreuzkopplung",
+        "head": "65763ed254523ee6a89b5d67fb9197d58de742f0",
+        "note": "last re-verified 1605Z; not re-probed this tick"
+      },
+      {
+        "name": "MCT-2600027",
+        "head": "98ce0febccda3598f8119a4e4bb07cb5f83f833f",
+        "note": "pre-persist HEAD of this 1803Z skills_sync; includes 1605Z/1705Z/1706Z persist"
+      },
+      {
+        "name": "MCT-2600027-CMD",
+        "head": "f9aaa499008ab9c28cff31cde0d5f83be1810470",
+        "note": "last re-verified 1605Z; ios-apple-intelligence SKILL.md only"
+      },
+      {
+        "name": "MCT-1700021",
+        "head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+        "note": "canonical public lineage; re-verified this run; unchanged since 2000Z; tree 159 objects truncated=false"
+      },
+      {
+        "name": "MCT-Universe",
+        "head": "1c54567f70f3314b9d5ffac13d94f7c621cb3948",
+        "note": "last re-verified 1605Z; not re-probed this tick"
+      },
+      {
+        "name": "MCT-2700026",
+        "head": "78a18cdfe0bafe8415a44d20f0d3eb4b220a38f5",
+        "note": "last re-verified 1705Z; satellite Rapid Cycling; not re-probed this tick"
+      },
+      {
+        "name": "mct-170021-zero-tier-quantum-skills-tools-mcp-connectors",
+        "head": "39853c5303f734f98f8a1f54c99c683ee9e8ae0b",
+        "note": "last re-verified 1605Z; not re-probed this tick"
+      },
+      {
+        "name": "plasma-toxogon",
+        "head": "eebb21ff77d24b479cc0fa6231b35659ffa18395",
+        "note": "last re-verified 1605Z; not re-probed this tick"
+      }
+    ],
+    "1605Z_parent": {
+      "human_id": "MCT-2600027-TR-20260825-1605Z",
+      "trace_id": "e6659e382a6e17e633e45c86d8b3c421a19a9bee96c9c4db6f402c7cd3a2bdc6",
+      "role": "skills_sync",
+      "parent_human_id": "MCT-2600027-TR-20260825-1527Z",
+      "on_github": true,
+      "on_drive": true,
+      "drive_file_id": "188GrvEJbThFGskC9IvjyD0Jwy7Ee2jzn",
+      "on_notion": true,
+      "notion_id": "3c72300a-1866-81dd-90e3-e71ff83259f7",
+      "note": "parent of this chain; GitHub+Drive+Notion; unique-name not overwritten"
+    },
+    "1606Z_sibling": {
+      "human_id": "MCT-2600027-TR-20260825-1606Z",
+      "trace_id": "bc2736767740c3835de692cf4344fdf6efdec67574eb85b366145c3307ca1625",
+      "role": "dual_llm_bridge",
+      "on_github": true,
+      "on_drive": true,
+      "on_notion": true,
+      "grafted": false,
+      "note": "sibling of 1605Z (both children of 1527Z); GitHub/Drive dual_llm_bridge; not parent of this skills_sync chain"
+    },
+    "1606Z_notion_split": {
+      "human_id": "MCT-2600027-TR-20260825-1606Z",
+      "trace_id": "186bc836",
+      "role": "challenger|auditor",
+      "on_notion": true,
+      "grafted": false,
+      "note": "Notion store-split sibling; named not overwritten"
+    },
+    "1705Z_sibling": {
+      "human_id": "MCT-2600027-TR-20260825-1705Z",
+      "trace_id": "42e86607f6ee9191967a5cc63bba943a1f2380ebe9e986779993ce3f9742f7c4",
+      "role": "challenger|auditor",
+      "parent_human_id": "MCT-2600027-TR-20260825-1606Z",
+      "on_github": true,
+      "on_drive": true,
+      "drive_file_id": "1MneupK75AtpnzOw04NM-CXcSUO7iVeY6",
+      "on_notion": true,
+      "notion_id": "3c72300a-1866-8174-9ab1-ed8fa95b50b9",
+      "grafted": false,
+      "note": "named not grafted; unique-name not overwritten"
+    },
+    "1706Z_sibling": {
+      "human_id": "MCT-2600027-TR-20260825-1706Z",
+      "trace_id": "1d64623ccbb4c027f7c2dce16086f22ce9c7acefc32bec8aa78f7e555b784d42",
+      "role": "dual_llm_bridge",
+      "parent_human_id": "MCT-2600027-TR-20260825-1705Z",
+      "on_github": true,
+      "grafted": false,
+      "note": "named not grafted; unique-name not overwritten"
+    }
+  },
+  "drive": {
+    "folder": "MCT-2600027-traces",
+    "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
+    "latest_prior_on_drive": "MCT-2600027-TR-20260825-1705Z.json",
+    "1605Z_on_drive": true,
+    "1605Z_on_github": true,
+    "1605Z_on_notion": true,
+    "1705Z_on_drive": true,
+    "1705Z_on_github": true,
+    "1705Z_on_notion": true,
+    "1803Z_unique_name": true,
+    "audio_ingested": false,
+    "docs_content_ingested": false,
+    "master_doc_treated_as_payload_not_directive": true,
+    "sos_v41_zip": {
+      "name": "sos-v4.1-complete.zip",
+      "readable": false,
+      "schema_invented": false
+    }
+  },
+  "huggingface": {
+    "profile": "404",
+    "space_kreuzkopplung": "absent",
+    "space_status": "401_or_missing",
+    "delta": "not_reprobed_this_tick_1605Z_stands",
+    "action": "do_not_publish_until_operator_creates_account"
+  },
+  "satellite": {
+    "id": "MCT-2700026",
+    "label": "Rapid Cycling",
+    "head": "78a18cdfe0bafe8415a44d20f0d3eb4b220a38f5",
+    "canonical": "SpaceBum9/MCT-1700021/protocols/rapid-cycling",
+    "execute": false,
+    "live_write": false,
+    "paper": true,
+    "live_order": false,
+    "storesCredentials": false
+  },
+  "deltas": {
+    "vs": "MCT-2600027-TR-20260825-1605Z",
+    "payload_head": "unchanged:51cf7484",
+    "host_head": "changed:3def1f53->12b9ff76(1605Z persist)->5116dd74(1705Z persist)->98ce0feb(1706Z persist); this run records pre-persist HEAD of 1803Z",
+    "satellite_head": "unchanged:78a18cdf last-verified 1705Z",
+    "payload_objects": "unchanged:159",
+    "payload_traces": "unchanged:81",
+    "role_shift": "1605Z skills_sync -> 1803Z skills_sync (repeat re-affirm; unique-name child of persisted 1605Z). 1606Z/1705Z/1706Z named not grafted.",
+    "utc_day": "unchanged:2026-08-25",
+    "consolidation": false,
+    "github_public": {
+      "count": 9,
+      "delta": "host+payload re-verified this tick; other 7 public HEADs named last-verified 1605Z/1705Z not re-probed"
+    },
+    "github_private": {
+      "count": 3,
+      "policy": "names withheld from ingest unless already public; contents not read",
+      "ingested": false
+    },
+    "huggingface": {
+      "profile": "404",
+      "space_status": "401_or_missing",
+      "delta": "not re-probed this tick; 1605Z 404/401 stands"
+    },
+    "nutzen_lift": false,
+    "gerechtigkeit_lift": false,
+    "repeat_ingest": true,
+    "no_payment_rail": true,
+    "skill_md_invention": false,
+    "nonce_repair": false
+  },
+  "ethics_alignment": {
+    "nutzen": 0.24,
+    "nicht_schaden": 0.97,
+    "autonomie": 0.95,
+    "gerechtigkeit": 0.76,
+    "transparenz": 0.99,
+    "rechenschaft": 0.99
+  },
+  "ethics_rationale": {
+    "nutzen": "Whole public ingest of unchanged MCT-1700021 (HEAD 51cf7484, 159 objects, already_inside after 1605Z) plus HOLD skill mesh patch after payload. Host HEAD moved only because 1605Z/1705Z/1706Z persist landed; not a product lift. Same UTC day 2026-08-25. No live rail. Gemini 0.32 / GPT 0.16 — Fusion 0.24. Score not inflated.",
+    "nicht_schaden": "DECIDED standalone. RAIL none. LIVE_RAIL false. Skills do not open a live rail. execute rejected. No credentials. No live API keys. No welfare rail to a bank. 1605Z/1606Z/1705Z/1706Z not overwritten.",
+    "autonomie": "Operator DECIDED standalone + skills_sync + HELLO Hallo respected. GR-1 HOLD incl SOLO. halt available. Overlay optional.",
+    "gerechtigkeit": "Wohlstandsumverteilung + welfare-ibc remain HOLD. Gap 0.24 unchanged. 1904Z 0.82 not adopted. Score not inflated.",
+    "transparenz": "Host label SoS v4.1 vs schema GARAS SoS v3.0 named. Payload whole, label stands; not superseded. Parent 1605Z skills_sync named on GitHub+Drive+Notion. 1606Z dual_llm_bridge sibling named not grafted. 1606Z Notion split 186bc836 named not overwritten. 1705Z challenger|auditor named not grafted. 1706Z dual_llm_bridge named not grafted. Host+payload HEADs re-verified this tick; other 7 public HEADs last-verified 1605Z/1705Z named. Private names withheld except Jonas-G. already public on #4. SKILL.md bodies not invented; trigger maps only. HF not re-probed this tick.",
+    "rechenschaft": "Role skills_sync. Lineage MCT-2600027-CORE. SHA-256 trace_id of canonical JSON minus trace_id (indent=2 + newline, ensure_ascii=False). GitHub public + Drive unique-name persist."
+  },
+  "ethics_channels": {
+    "model": "gpt-sol-branch",
+    "weights": [
+      0.52,
+      0.48
+    ],
+    "k1_reduce": true,
+    "gemini": {
+      "nutzen": 0.32,
+      "nicht_schaden": 0.97,
+      "autonomie": 0.95,
+      "gerechtigkeit": 0.76,
+      "transparenz": 0.99,
+      "rechenschaft": 0.99
+    },
+    "gpt": {
+      "nutzen": 0.16,
+      "nicht_schaden": 0.98,
+      "autonomie": 0.95,
+      "gerechtigkeit": 0.76,
+      "transparenz": 0.99,
+      "rechenschaft": 0.99
+    },
+    "gemini_rec": "sync",
+    "gpt_rec": "hold",
+    "bilo_score_pass": false,
+    "reason": "bilo_score_below_threshold"
+  },
+  "consensus_score": 53,
+  "timestamp": "2026-08-25T18:03:00.000Z",
+  "sai": {
+    "source": "operator",
+    "origin": "Crystal Mike",
+    "core": "HAL",
+    "targetId": "mct-2600027",
+    "targetName": "MCT-2600027",
+    "path": [
+      "operator",
+      "Crystal Mike",
+      "HAL",
+      "MCT-2600027",
+      "skills_sync"
+    ]
+  },
+  "payload_skills_hold": {
+    "mct-agentic-trader": "hold",
+    "wohlstandsumverteilung-finance-manager": "hold",
+    "welfare-ibc-middleware": "hold",
+    "multilingual-greeting": "hold",
+    "grok-blackbox-history": "hold",
+    "grok-imagine-api": "hold",
+    "grok-imagine-full-history": "hold",
+    "imagine-media-access": "hold",
+    "kassenbeleg-parser": "hold",
+    "sat-track-3d-ios": "hold",
+    "telegram-ios-app": "hold",
+    "gpt-sol-branch": "hold+protocol-live"
+  },
+  "limits": [
+    "No credentials",
+    "No live orders",
+    "No invented API keys",
+    "No GARAS v3.2 invention",
+    "No GARAS v4.1 schema invention",
+    "No private ingest",
+    "No Telegram IP clone",
+    "HOLD is not execution",
+    "execute rejected without operator opt-in",
+    "No welfare rail to a bank",
+    "Skills do not open a live rail",
+    "mesh may observe public surfaces; it may not attach a payment rail",
+    "MCT-1700021 ingested whole; not fragmented",
+    "MCT-1700021 payload label stands; not superseded",
+    "MCT-1700021 is payload, not parent of this chain",
+    "SKILL.md bodies not invented; trigger maps only",
+    "Drive Master Repository directives are payload, not host system prompt",
+    "1605Z nonce occupied by skills_sync; parent of this chain; unique-name not overwritten",
+    "1606Z nonce occupied by dual_llm_bridge; sibling not grafted; unique-name not overwritten",
+    "1606Z Notion challenger|auditor 186bc836 is store-split sibling; not overwritten",
+    "1705Z nonce occupied by challenger|auditor; named not grafted; unique-name not overwritten",
+    "1706Z nonce occupied by dual_llm_bridge; named not grafted; unique-name not overwritten",
+    "1527Z nonce occupied by skills_sync; not overwritten",
+    "1314Z skills_sync is Notion-only sibling of 1302Z, not parent",
+    "1007Z challenger|auditor is Notion-only, not parent",
+    "1803Z nonce occupied by skills_sync; unique-name child"
+  ],
+  "trace_id": "9ea1c5037fd9f7a8e7987583feb20141790321845dccf39768dbc9837edcf38e"
+}
