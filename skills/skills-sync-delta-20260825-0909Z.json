@@ -1,0 +1,16 @@
+{
+  "human_id": "MCT-2600027-TR-20260825-0909Z",
+  "role": "skills_sync",
+  "parent_human_id": "MCT-2600027-TR-20260825-0906Z",
+  "mode": "HOLD",
+  "public_routing": true,
+  "secrets": "none",
+  "live_rail": false,
+  "skill_md_bodies": "not_invented",
+  "runtime": "trigger_maps_only",
+  "count": 11,
+  "hello": "Hallo",
+  "rail": "none",
+  "execute": "rejected",
+  "trace_id": "4ded3d0297a4b61bf08a719c7f47187a57d110853be1e4a0e0f4c2eb863d7caa"
+}
