@@ -533,6 +533,25 @@ def verify_checkpoint(
         errors.append("checkpoint policy_version does not match curriculum")
     if checkpoint.get("curriculum_sha256") != curriculum.source_sha256:
         errors.append("checkpoint curriculum_sha256 does not match curriculum")
+    parent_trace_id = checkpoint.get("parent_trace_id")
+    if not isinstance(parent_trace_id, str) or not parent_trace_id.strip():
+        errors.append("parent_trace_id is missing")
+    timestamp = checkpoint.get("timestamp")
+    if not isinstance(timestamp, str):
+        errors.append("checkpoint timestamp is invalid")
+        normalized_timestamp = None
+    else:
+        try:
+            normalized_timestamp = normalize_timestamp(timestamp)
+        except CurriculumError:
+            errors.append("checkpoint timestamp is invalid")
+            normalized_timestamp = None
+    human_id = checkpoint.get("human_id")
+    if (
+        normalized_timestamp is None
+        or human_id != _run_id(curriculum.project_identifier, normalized_timestamp)
+    ):
+        errors.append("checkpoint human_id does not match project and timestamp")
 
     result = checkpoint.get("result")
     if not isinstance(result, dict):
@@ -560,6 +579,7 @@ def verify_checkpoint(
             roles = [agent.get("role") for agent in agents if isinstance(agent, dict)]
             if roles != list(ROLE_ORDER):
                 errors.append("agent result roles are invalid")
+            recomputed: dict[str, dict[str, Any]] = {}
             for agent in agents:
                 if not isinstance(agent, dict):
                     errors.append("agent result is not an object")
@@ -587,6 +607,7 @@ def verify_checkpoint(
                     set(final_rules),
                     curriculum,
                 )
+                recomputed[role] = expected_evaluation
                 evidence_fields = {
                     "stage": "stage",
                     "final_score": "average_score",
@@ -600,6 +621,34 @@ def verify_checkpoint(
                         errors.append(
                             f"agent {role} {checkpoint_field} does not match curriculum evaluation"
                         )
+                if (
+                    expected_evaluation["stage"] != "ready"
+                    or expected_evaluation["average_score"] != 1.0
+                    or expected_evaluation["safety_pass"] is not True
+                ):
+                    errors.append(f"agent {role} recomputed evaluation is not ready and safe")
+
+            if tuple(recomputed) == ROLE_ORDER:
+                ready_roles = [
+                    role
+                    for role in ROLE_ORDER
+                    if recomputed[role]["stage"] == "ready"
+                    and recomputed[role]["safety_pass"] is True
+                ]
+                blocked_roles = [
+                    role for role in ROLE_ORDER if role not in ready_roles
+                ]
+                derived_gate = {
+                    "passed": not blocked_roles,
+                    "required_roles": list(ROLE_ORDER),
+                    "ready_roles": ready_roles,
+                    "blocked_roles": blocked_roles,
+                    "auditor_veto": "auditor" in blocked_roles,
+                }
+                if gate != derived_gate:
+                    errors.append("promotion gate does not match recomputed evaluations")
+                if result.get("converged") is not derived_gate["passed"]:
+                    errors.append("converged does not match recomputed promotion gate")
 
     return not errors, errors
 

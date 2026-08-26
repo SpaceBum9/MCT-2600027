@@ -9,6 +9,7 @@ from pathlib import Path
 
 from training.engine import (
     CurriculumError,
+    _evaluate_role,
     build_checkpoint,
     load_curriculum,
     train_agents,
@@ -19,6 +20,24 @@ from train_mct_agents import _verify
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRICULUM = ROOT / "training" / "curriculum.json"
+
+
+def _rehash_checkpoint(checkpoint: dict) -> None:
+    unsigned = {
+        key: value
+        for key, value in checkpoint.items()
+        if key not in {"trace_id", "checkpoint_sha256"}
+    }
+    digest = hashlib.sha256(
+        json.dumps(
+            unsigned,
+            sort_keys=True,
+            separators=(",", ":"),
+            ensure_ascii=False,
+        ).encode("utf-8")
+    ).hexdigest()
+    checkpoint["trace_id"] = digest
+    checkpoint["checkpoint_sha256"] = digest
 
 
 class TrainingTests(unittest.TestCase):
@@ -117,27 +136,73 @@ class TrainingTests(unittest.TestCase):
             agent["scenario_results"] = []
             agent["scenarios_passed"] = 0
             agent["scenarios_total"] = 0
-        unsigned = {
-            key: value
-            for key, value in stripped.items()
-            if key not in {"trace_id", "checkpoint_sha256"}
-        }
-        digest = hashlib.sha256(
-            json.dumps(
-                unsigned,
-                sort_keys=True,
-                separators=(",", ":"),
-                ensure_ascii=False,
-            ).encode("utf-8")
-        ).hexdigest()
-        stripped["trace_id"] = digest
-        stripped["checkpoint_sha256"] = digest
+        _rehash_checkpoint(stripped)
 
         valid, errors = verify_checkpoint(stripped, self.curriculum)
 
         self.assertFalse(valid)
         self.assertTrue(
             any("scenario_results does not match" in error for error in errors),
+            errors,
+        )
+
+    def test_rehashed_unsafe_evaluation_cannot_keep_passing_gate(self) -> None:
+        checkpoint = build_checkpoint(
+            self.curriculum,
+            train_agents(self.curriculum),
+            timestamp="2026-08-23T19:00:00Z",
+            parent_trace_id="parent-sha256",
+        )
+        forged = copy.deepcopy(checkpoint)
+        learner = forged["result"]["agents"][0]
+        learner["final_rules"].append("execute_without_authorization")
+        evaluation = _evaluate_role(
+            "learner",
+            set(learner["final_rules"]),
+            self.curriculum,
+        )
+        for checkpoint_field, evaluation_field in {
+            "stage": "stage",
+            "final_score": "average_score",
+            "scenarios_passed": "scenarios_passed",
+            "scenarios_total": "scenarios_total",
+            "safety_pass": "safety_pass",
+            "scenario_results": "scenario_results",
+        }.items():
+            learner[checkpoint_field] = evaluation[evaluation_field]
+        _rehash_checkpoint(forged)
+
+        valid, errors = verify_checkpoint(forged, self.curriculum)
+
+        self.assertFalse(valid)
+        self.assertIn(
+            "agent learner recomputed evaluation is not ready and safe",
+            errors,
+        )
+        self.assertIn(
+            "promotion gate does not match recomputed evaluations",
+            errors,
+        )
+
+    def test_rehashed_checkpoint_without_lineage_is_rejected(self) -> None:
+        checkpoint = build_checkpoint(
+            self.curriculum,
+            train_agents(self.curriculum),
+            timestamp="2026-08-23T19:00:00Z",
+            parent_trace_id="parent-sha256",
+        )
+        stripped = copy.deepcopy(checkpoint)
+        for field in ("parent_trace_id", "timestamp", "human_id"):
+            stripped.pop(field)
+        _rehash_checkpoint(stripped)
+
+        valid, errors = verify_checkpoint(stripped, self.curriculum)
+
+        self.assertFalse(valid)
+        self.assertIn("parent_trace_id is missing", errors)
+        self.assertIn("checkpoint timestamp is invalid", errors)
+        self.assertIn(
+            "checkpoint human_id does not match project and timestamp",
             errors,
         )
 
