@@ -14,6 +14,7 @@ from training.engine import (
     load_curriculum,
     train_agents,
     verify_checkpoint,
+    write_checkpoint,
 )
 from train_mct_agents import _verify
 
@@ -211,6 +212,65 @@ class TrainingTests(unittest.TestCase):
             path = Path(directory) / "checkpoint.json"
             path.write_text("[]", encoding="utf-8")
             self.assertEqual(_verify(path, CURRICULUM), 2)
+
+    def test_rehashed_fabricated_training_history_is_rejected(self) -> None:
+        checkpoint = build_checkpoint(
+            self.curriculum,
+            train_agents(self.curriculum),
+            timestamp="2026-08-23T19:00:00Z",
+            parent_trace_id="parent-sha256",
+        )
+        fabricated = copy.deepcopy(checkpoint)
+        fabricated["result"]["history"] = []
+        fabricated["result"]["agents"][0]["baseline_score"] = 1.0
+        _rehash_checkpoint(fabricated)
+
+        valid, errors = verify_checkpoint(fabricated, self.curriculum)
+
+        self.assertFalse(valid)
+        self.assertIn(
+            "training result does not match deterministic replay",
+            errors,
+        )
+
+    def test_rehashed_unsupported_checkpoint_schema_is_rejected(self) -> None:
+        checkpoint = build_checkpoint(
+            self.curriculum,
+            train_agents(self.curriculum),
+            timestamp="2026-08-23T19:00:00Z",
+            parent_trace_id="parent-sha256",
+        )
+        unsupported = copy.deepcopy(checkpoint)
+        unsupported["schema_version"] = 2
+        _rehash_checkpoint(unsupported)
+
+        valid, errors = verify_checkpoint(unsupported, self.curriculum)
+
+        self.assertFalse(valid)
+        self.assertIn("schema_version must be 1", errors)
+
+    def test_existing_checkpoint_is_never_overwritten(self) -> None:
+        checkpoint = build_checkpoint(
+            self.curriculum,
+            train_agents(self.curriculum),
+            timestamp="2026-08-23T19:00:00Z",
+            parent_trace_id="parent-sha256",
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "checkpoint.json"
+            write_checkpoint(path, checkpoint, self.curriculum)
+            original = path.read_bytes()
+
+            replacement = copy.deepcopy(checkpoint)
+            replacement["parent_trace_id"] = "different-parent"
+            _rehash_checkpoint(replacement)
+            with self.assertRaisesRegex(
+                CurriculumError,
+                "refusing to overwrite existing checkpoint",
+            ):
+                write_checkpoint(path, replacement, self.curriculum)
+
+            self.assertEqual(path.read_bytes(), original)
 
 
 if __name__ == "__main__":

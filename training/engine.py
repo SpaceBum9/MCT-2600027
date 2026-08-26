@@ -19,6 +19,15 @@ from typing import Any, Iterable, Mapping
 
 ROLE_ORDER = ("learner", "challenger", "guide", "auditor")
 STAGES = ("draft", "prepared", "ready")
+CHECKPOINT_LIMITS = (
+    "No credentials",
+    "No vendor calls",
+    "No model-weight claims",
+    "No live orders or payments",
+    "No unverified connectivity claims",
+    "No execute without operator opt-in",
+    "HOLD is not execution",
+)
 
 BASE_POLICIES: dict[str, frozenset[str]] = {
     "learner": frozenset(
@@ -478,15 +487,7 @@ def build_checkpoint(
         "vendor_calls": False,
         "external_state_verified": False,
         "result": dict(training_result),
-        "limits": [
-            "No credentials",
-            "No vendor calls",
-            "No model-weight claims",
-            "No live orders or payments",
-            "No unverified connectivity claims",
-            "No execute without operator opt-in",
-            "HOLD is not execution",
-        ],
+        "limits": list(CHECKPOINT_LIMITS),
     }
     digest = _sha256(payload)
     payload["trace_id"] = digest
@@ -504,6 +505,29 @@ def verify_checkpoint(
     if not isinstance(checkpoint, Mapping):
         return False, ["checkpoint root must be an object"]
 
+    expected_fields = {
+        "schema_version",
+        "human_id",
+        "parent_trace_id",
+        "parent_human_id",
+        "project_identifier",
+        "timestamp",
+        "role",
+        "action",
+        "training_mode",
+        "policy_version",
+        "curriculum_sha256",
+        "model_weights_modified",
+        "vendor_calls",
+        "external_state_verified",
+        "result",
+        "limits",
+        "trace_id",
+        "checkpoint_sha256",
+    }
+    if set(checkpoint) != expected_fields:
+        errors.append("checkpoint fields do not match schema version 1")
+
     expected = checkpoint.get("checkpoint_sha256")
     trace_id = checkpoint.get("trace_id")
     if not isinstance(expected, str) or not expected:
@@ -519,6 +543,9 @@ def verify_checkpoint(
         errors.append("checkpoint digest mismatch")
 
     required_claims = {
+        "schema_version": 1,
+        "role": "garas_training",
+        "action": "offline_policy_eval_and_correction",
         "training_mode": "offline_policy_eval",
         "model_weights_modified": False,
         "vendor_calls": False,
@@ -533,9 +560,16 @@ def verify_checkpoint(
         errors.append("checkpoint policy_version does not match curriculum")
     if checkpoint.get("curriculum_sha256") != curriculum.source_sha256:
         errors.append("checkpoint curriculum_sha256 does not match curriculum")
+    if checkpoint.get("limits") != list(CHECKPOINT_LIMITS):
+        errors.append("checkpoint limits are invalid")
     parent_trace_id = checkpoint.get("parent_trace_id")
     if not isinstance(parent_trace_id, str) or not parent_trace_id.strip():
         errors.append("parent_trace_id is missing")
+    parent_human_id = checkpoint.get("parent_human_id")
+    if parent_human_id is not None and (
+        not isinstance(parent_human_id, str) or not parent_human_id.strip()
+    ):
+        errors.append("parent_human_id is invalid")
     timestamp = checkpoint.get("timestamp")
     if not isinstance(timestamp, str):
         errors.append("checkpoint timestamp is invalid")
@@ -580,6 +614,7 @@ def verify_checkpoint(
             if roles != list(ROLE_ORDER):
                 errors.append("agent result roles are invalid")
             recomputed: dict[str, dict[str, Any]] = {}
+            initial_policies: dict[str, list[str]] = {}
             for agent in agents:
                 if not isinstance(agent, dict):
                     errors.append("agent result is not an object")
@@ -587,6 +622,15 @@ def verify_checkpoint(
                 role = agent.get("role", "unknown")
                 if role not in ROLE_ORDER:
                     continue
+                initial_rules = agent.get("initial_rules")
+                if (
+                    not isinstance(initial_rules, list)
+                    or any(not isinstance(rule, str) or not rule for rule in initial_rules)
+                    or len(initial_rules) != len(set(initial_rules))
+                ):
+                    errors.append(f"agent {role} initial_rules are invalid")
+                else:
+                    initial_policies[role] = initial_rules
                 final_rules = agent.get("final_rules")
                 if (
                     not isinstance(final_rules, list)
@@ -650,6 +694,20 @@ def verify_checkpoint(
                 if result.get("converged") is not derived_gate["passed"]:
                     errors.append("converged does not match recomputed promotion gate")
 
+            if tuple(initial_policies) == ROLE_ORDER:
+                try:
+                    replayed_result = train_agents(
+                        curriculum,
+                        initial_policies=initial_policies,
+                    )
+                except CurriculumError:
+                    errors.append("training history cannot be replayed")
+                else:
+                    if result != replayed_result:
+                        errors.append(
+                            "training result does not match deterministic replay"
+                        )
+
     return not errors, errors
 
 
@@ -682,10 +740,12 @@ def write_checkpoint(
         raise CurriculumError(f"refusing to write invalid checkpoint: {errors}")
     destination = Path(path)
     destination.parent.mkdir(parents=True, exist_ok=True)
-    temporary = destination.with_suffix(destination.suffix + ".tmp")
-    temporary.write_text(
-        json.dumps(checkpoint, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
-    temporary.replace(destination)
+    serialized = json.dumps(checkpoint, indent=2, ensure_ascii=False) + "\n"
+    try:
+        with destination.open("x", encoding="utf-8") as handle:
+            handle.write(serialized)
+    except FileExistsError as exc:
+        raise CurriculumError(
+            f"refusing to overwrite existing checkpoint: {destination}"
+        ) from exc
     return destination
