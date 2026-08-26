@@ -42,19 +42,21 @@ def _parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _verify(path: Path) -> int:
+def _verify(path: Path, curriculum_path: Path = DEFAULT_CURRICULUM) -> int:
     try:
         checkpoint = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
+        curriculum = load_curriculum(curriculum_path)
+    except (OSError, json.JSONDecodeError, CurriculumError) as exc:
         print(json.dumps({"valid": False, "errors": [str(exc)]}, indent=2))
         return 2
-    valid, errors = verify_checkpoint(checkpoint)
+    valid, errors = verify_checkpoint(checkpoint, curriculum)
+    checkpoint_object = checkpoint if isinstance(checkpoint, dict) else {}
     print(
         json.dumps(
             {
                 "valid": valid,
-                "human_id": checkpoint.get("human_id"),
-                "trace_id": checkpoint.get("trace_id"),
+                "human_id": checkpoint_object.get("human_id"),
+                "trace_id": checkpoint_object.get("trace_id"),
                 "errors": errors,
             },
             indent=2,
@@ -66,7 +68,7 @@ def _verify(path: Path) -> int:
 def main() -> int:
     args = _parser().parse_args()
     if args.verify:
-        return _verify(args.verify)
+        return _verify(args.verify, args.curriculum)
 
     try:
         curriculum = load_curriculum(args.curriculum)
@@ -87,7 +89,7 @@ def main() -> int:
         output = args.output
         if output is None:
             output = ROOT / "traces" / "training" / f"{checkpoint['human_id']}.json"
-        destination = write_checkpoint(output, checkpoint)
+        destination = write_checkpoint(output, checkpoint, curriculum)
     except CurriculumError as exc:
         print(json.dumps({"trained": False, "error": str(exc)}, indent=2))
         return 2

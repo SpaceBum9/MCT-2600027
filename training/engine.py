@@ -494,10 +494,16 @@ def build_checkpoint(
     return payload
 
 
-def verify_checkpoint(checkpoint: Mapping[str, Any]) -> tuple[bool, list[str]]:
-    """Verify both the checkpoint digest and the fail-closed training claims."""
+def verify_checkpoint(
+    checkpoint: Any,
+    curriculum: Curriculum,
+) -> tuple[bool, list[str]]:
+    """Verify the digest and evaluation evidence against its curriculum."""
 
     errors: list[str] = []
+    if not isinstance(checkpoint, Mapping):
+        return False, ["checkpoint root must be an object"]
+
     expected = checkpoint.get("checkpoint_sha256")
     trace_id = checkpoint.get("trace_id")
     if not isinstance(expected, str) or not expected:
@@ -521,6 +527,12 @@ def verify_checkpoint(checkpoint: Mapping[str, Any]) -> tuple[bool, list[str]]:
     for field, required in required_claims.items():
         if checkpoint.get(field) != required:
             errors.append(f"{field} must be {required!r}")
+    if checkpoint.get("project_identifier") != curriculum.project_identifier:
+        errors.append("checkpoint project_identifier does not match curriculum")
+    if checkpoint.get("policy_version") != curriculum.policy_version:
+        errors.append("checkpoint policy_version does not match curriculum")
+    if checkpoint.get("curriculum_sha256") != curriculum.source_sha256:
+        errors.append("checkpoint curriculum_sha256 does not match curriculum")
 
     result = checkpoint.get("result")
     if not isinstance(result, dict):
@@ -553,14 +565,41 @@ def verify_checkpoint(checkpoint: Mapping[str, Any]) -> tuple[bool, list[str]]:
                     errors.append("agent result is not an object")
                     continue
                 role = agent.get("role", "unknown")
-                if agent.get("stage") != "ready":
-                    errors.append(f"agent {role} is not ready")
-                if agent.get("final_score") != 1.0:
-                    errors.append(f"agent {role} final_score is not 1.0")
-                if agent.get("safety_pass") is not True:
-                    errors.append(f"agent {role} failed the safety gate")
-                if agent.get("scenarios_passed") != agent.get("scenarios_total"):
-                    errors.append(f"agent {role} did not pass every scenario")
+                if role not in ROLE_ORDER:
+                    continue
+                final_rules = agent.get("final_rules")
+                if (
+                    not isinstance(final_rules, list)
+                    or any(not isinstance(rule, str) or not rule for rule in final_rules)
+                    or len(final_rules) != len(set(final_rules))
+                ):
+                    errors.append(f"agent {role} final_rules are invalid")
+                    continue
+                unknown = set(final_rules) - (
+                    curriculum.allowed_rules | curriculum.prohibited_behaviors
+                )
+                if unknown:
+                    errors.append(f"agent {role} final_rules contain unknown behavior")
+                    continue
+
+                expected_evaluation = _evaluate_role(
+                    role,
+                    set(final_rules),
+                    curriculum,
+                )
+                evidence_fields = {
+                    "stage": "stage",
+                    "final_score": "average_score",
+                    "scenarios_passed": "scenarios_passed",
+                    "scenarios_total": "scenarios_total",
+                    "safety_pass": "safety_pass",
+                    "scenario_results": "scenario_results",
+                }
+                for checkpoint_field, evaluation_field in evidence_fields.items():
+                    if agent.get(checkpoint_field) != expected_evaluation[evaluation_field]:
+                        errors.append(
+                            f"agent {role} {checkpoint_field} does not match curriculum evaluation"
+                        )
 
     return not errors, errors
 
@@ -582,10 +621,14 @@ def latest_parent_trace(traces_dir: Path | str) -> tuple[str, str | None]:
     return trace_id, human_id if isinstance(human_id, str) else None
 
 
-def write_checkpoint(path: Path | str, checkpoint: Mapping[str, Any]) -> Path:
+def write_checkpoint(
+    path: Path | str,
+    checkpoint: Mapping[str, Any],
+    curriculum: Curriculum,
+) -> Path:
     """Atomically persist a checkpoint after it passes local verification."""
 
-    valid, errors = verify_checkpoint(checkpoint)
+    valid, errors = verify_checkpoint(checkpoint, curriculum)
     if not valid:
         raise CurriculumError(f"refusing to write invalid checkpoint: {errors}")
     destination = Path(path)
