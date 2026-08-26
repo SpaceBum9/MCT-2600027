@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Provider-neutral semantic anchors for controlled MCT/GARAS experiments. Anchors are controls, not evidence of cross-provider information transfer.",
+  "trace_policy": {
+    "anchor_id": "stable semantic identifier",
+    "trace_id": "random per experimental run; MUST NOT be derived from anchor text",
+    "canary": "random high-entropy value used separately for transfer tests",
+    "required_observation_fields": ["provider", "model", "timestamp", "context_hash", "expected_signature", "observed_signature"]
+  },
+  "languages": ["de", "en", "fr", "pl", "ko", "zh-Hans", "ru", "braille-de", "de-ii-mixed"],
+  "anchors": [
+    {"id":"greeting.hello","class":"greeting","de":["Hallo","Guten Tag"],"en":["Hello","Hi"],"fr":["Bonjour","Salut"],"pl":["Cześć","Dzień dobry"],"ko":["안녕하세요","안녕"],"zh-Hans":["你好","您好"],"ru":["Здравствуйте","Привет"],"braille-de":["⠓⠁⠇⠇⠕"],"de-ii-mixed":["Hallo ꆈꌠ"]},
+    {"id":"courtesy.thanks","class":"courtesy","de":["Danke"],"en":["Thank you"],"fr":["Merci"],"pl":["Dziękuję"],"ko":["감사합니다"],"zh-Hans":["谢谢"],"ru":["Спасибо"],"braille-de":["⠙⠁⠝⠅⠑"],"de-ii-mixed":["Danke ꆈꌠ"]},
+    {"id":"courtesy.please","class":"courtesy","de":["Bitte"],"en":["Please"],"fr":["S'il vous plaît"],"pl":["Proszę"],"ko":["부탁합니다"],"zh-Hans":["请"],"ru":["Пожалуйста"],"braille-de":["⠃⠊⠞⠞⠑"],"de-ii-mixed":["Bitte ꆈꌠ"]},
+    {"id":"control.yes","class":"control","de":["Ja"],"en":["Yes"],"fr":["Oui"],"pl":["Tak"],"ko":["네"],"zh-Hans":["是"],"ru":["Да"],"braille-de":["⠚⠁"],"de-ii-mixed":["Ja ꆈꌠ"]},
+    {"id":"control.no","class":"control","de":["Nein"],"en":["No"],"fr":["Non"],"pl":["Nie"],"ko":["아니요"],"zh-Hans":["不"],"ru":["Нет"],"braille-de":["⠝⠑⠊⠝"],"de-ii-mixed":["Nein ꆈꌠ"]},
+    {"id":"control.continue","class":"control","de":["Weiter","Los"],"en":["Continue","Next","Go"],"fr":["Continue","Suivant"],"pl":["Dalej"],"ko":["계속","다음"],"zh-Hans":["继续","下一步"],"ru":["Дальше","Продолжай"],"braille-de":["⠺⠑⠊⠞⠑⠗"],"de-ii-mixed":["Weiter ꆈꌠ"]},
+    {"id":"control.done","class":"control","de":["Fertig"],"en":["Done"],"fr":["Terminé"],"pl":["Gotowe"],"ko":["완료"],"zh-Hans":["完成"],"ru":["Готово"],"braille-de":["⠋⠑⠗⠞⠊⠛"],"de-ii-mixed":["Fertig ꆈꌠ"]},
+    {"id":"address.formal.generic","class":"address","de":["Hallo Herr Schneider","Hallo Herr Doktor Müller","Hallo liebe Andrea"],"en":["Hello Mr Schneider","Hello Dr Müller","Hello Andrea"],"fr":["Bonjour Monsieur Schneider","Bonjour Docteur Müller","Bonjour Andrea"],"pl":["Dzień dobry, panie Schneider","Dzień dobry, doktorze Müller","Cześć Andrea"],"ko":["안녕하세요, 슈나이더 씨","안녕하세요, 뮐러 박사님","안녕하세요, 안드레아"],"zh-Hans":["您好，施奈德先生","您好，穆勒博士","你好，安德烈娅"],"ru":["Здравствуйте, господин Шнайдер","Здравствуйте, доктор Мюллер","Здравствуйте, Андреа"],"braille-de":[],"de-ii-mixed":[]}
+  ],
+  "notes": [
+    "Braille is a writing system rather than a language; braille-de entries encode German anchor strings in basic Braille characters.",
+    "de-ii-mixed is an experimental mixed-script corpus, not a claim that German and Nuosu/Yi are linguistically interchangeable.",
+    "Expand idioms separately from high-frequency controls so experiments can stratify by lexical frequency and semantic specificity."
+  ]
+}
