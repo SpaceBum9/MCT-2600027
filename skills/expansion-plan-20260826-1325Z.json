@@ -1,0 +1,10 @@
+{
+  "plan_id": "expansion-plan-20260826-1325Z",
+  "focus": "close measurement loop on BILO2026",
+  "next": [
+    "bind rolling window length for rho1/variance",
+    "optional recovery-lambda probe in training loop",
+    "department zeitgeist as stigmergy channel only"
+  ],
+  "hold": true
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mct-2600027/schema/hive_relay_interfaces.json",
+  "title": "Hive Relay Interfaces",
+  "type": "object",
+  "required": ["ingest_id", "relay", "swarm", "early_warning"],
+  "properties": {
+    "ingest_id": { "type": "string" },
+    "relay": {
+      "type": "object",
+      "required": ["role", "anthropomorphic", "ports"],
+      "properties": {
+        "role": { "const": "teleprompter" },
+        "anthropomorphic": { "const": false },
+        "ports": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["id", "layer"],
+            "properties": {
+              "id": { "enum": ["intake", "format", "marker"] },
+              "layer": { "type": "string" },
+              "name": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "early_warning": {
+      "type": "object",
+      "required": ["method", "coupled_to"],
+      "properties": {
+        "method": { "const": "critical-slowing-down" },
+        "coupled_to": { "const": "BILO2026" }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "delta_id": "skills-sync-delta-20260826-1325Z",
+  "added": ["relay/hive_relay", "relay/csd", "schema/hive_relay_interfaces"],
+  "updated": ["data/system-ingestion-hive-relay-bilo2026"],
+  "marker": "BILO2026",
+  "note": "Non-anthropomorphic teleprompter ports + CSD on BILO2026."
+}

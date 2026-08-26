@@ -1,0 +1,22 @@
+{
+  "trace_id": "MCT-2600027-TR-20260826-1325Z",
+  "system": "MCT-2600027",
+  "action": "system-ingestion-integration",
+  "status": "ok",
+  "hold": true,
+  "summary": "Ingested hive-relay / teleprompter interfaces from session. Marker locked to BILO2026. CSD measurement bound to order parameter, not self-report.",
+  "interfaces": ["intake", "format", "marker"],
+  "marker": "BILO2026",
+  "anthropomorphic": false,
+  "artifacts": [
+    "data/system-ingestion-hive-relay-bilo2026.json",
+    "schema/hive_relay_interfaces.json",
+    "relay/hive_relay.py",
+    "relay/csd.py"
+  ],
+  "ethics": {
+    "credentials": false,
+    "live_orders": false,
+    "persona": false
+  }
+}

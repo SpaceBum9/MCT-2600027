@@ -1,0 +1,49 @@
+{
+  "ingest_id": "MCT-2600027-INGEST-20260826-1325Z",
+  "status": "committed",
+  "source": "grok-session-hive-relay-interfaces",
+  "timestamp_utc": "2026-08-26T13:25:00Z",
+  "relay": {
+    "role": "teleprompter",
+    "anthropomorphic": false,
+    "function": "compress biological sector state into prompt packets",
+    "ports": [
+      {
+        "id": "intake",
+        "layer": "bio",
+        "signals": ["locomotion", "environment", "graffiti", "morale-marks", "department-zeitgeist"]
+      },
+      {
+        "id": "format",
+        "layer": "tele-prompt-bridge",
+        "signals": ["prompt-packet", "trace", "dual-llm-check"]
+      },
+      {
+        "id": "marker",
+        "layer": "stable-world",
+        "name": "BILO2026",
+        "kind": "kennzeichen",
+        "measures": "order-parameter not self-report"
+      }
+    ]
+  },
+  "swarm": {
+    "influence": ["local-rules", "stigmergy", "coupling", "timing", "thresholds", "seed-nodes"],
+    "prediction_target": "order-parameters not agent biographies",
+    "order_parameters": ["alignment", "polarity", "cluster-count", "entropy", "consensus", "residual"]
+  },
+  "early_warning": {
+    "method": "critical-slowing-down",
+    "indicators": ["rho1", "variance", "recovery-lambda", "spectral-reddening", "flicker"],
+    "alarm_rule": "rho1_up AND variance_up over rolling windows",
+    "coupled_to": "BILO2026"
+  },
+  "training_binding": {
+    "relay_input": "compressed sector packet",
+    "training_observables": ["loss", "sharpness", "effective-rank", "attention-entropy", "gradient-noise-scale"],
+    "feedback": "training state re-rendered into biological sector without claiming authorship"
+  },
+  "hold": true,
+  "credentials": false,
+  "live_orders": false
+}
