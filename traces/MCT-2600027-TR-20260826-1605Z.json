@@ -1,1 +1,326 @@
-PLACEHOLDER_TRACE
+{
+  "human_id": "MCT-2600027-TR-20260826-1605Z",
+  "parent_trace_id": "6168a36e1d85501bf4ad6d5d22df5db5aa975aa2cd1209d757c657cfc8d8edaf",
+  "parent_human_id": "MCT-2600027-TR-20260826-1419Z",
+  "payload_id": "MCT-1700021",
+  "payload_head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+  "payload_anchor_human_id": "MCT-1700021-TR-20260823-1117Z",
+  "payload_anchor_trace_id": "3af3ac26eff48435aa93bda60008dddef55ee70f602240d72afbe46df21a87e4",
+  "payload_label_stands": true,
+  "payload_superseded": false,
+  "payload_file_count": 159,
+  "sibling_trace_ids": [],
+  "lineage_trace_id": "MCT-2600027-CORE",
+  "kernel_parent": "CG-KERNEL-2026-08-19",
+  "session_anchor": "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+  "chain": [
+    "CG-KERNEL-2026-08-19",
+    "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+    "MCT-2600027-TR-20260823-1800Z",
+    "MCT-2600027-TR-20260823-1812Z",
+    "MCT-2600027-TR-20260823-1901Z",
+    "MCT-2600027-TR-20260823-1907Z",
+    "MCT-2600027-TR-20260823-2005Z",
+    "MCT-2600027-TR-20260824-1451Z",
+    "MCT-2600027-TR-20260824-1500Z",
+    "MCT-2600027-TR-20260824-1507Z",
+    "MCT-2600027-TR-20260824-1606Z",
+    "MCT-2600027-TR-20260824-1608Z",
+    "MCT-2600027-TR-20260824-1701Z",
+    "MCT-2600027-TR-20260824-1706Z",
+    "MCT-2600027-TR-20260824-1712Z",
+    "MCT-2600027-TR-20260824-1801Z",
+    "MCT-2600027-TR-20260824-1809Z",
+    "MCT-2600027-TR-20260824-1847Z",
+    "MCT-2600027-TR-20260824-1855Z",
+    "MCT-2600027-TR-20260824-1904Z",
+    "MCT-2600027-TR-20260824-1909Z",
+    "MCT-2600027-TR-20260824-1912Z",
+    "MCT-2600027-TR-20260824-2000Z",
+    "MCT-2600027-TR-20260824-2106Z",
+    "MCT-2600027-TR-20260824-2111Z",
+    "MCT-2600027-TR-20260824-2117Z",
+    "MCT-2600027-TR-20260824-2203Z",
+    "MCT-2600027-TR-20260824-2211Z",
+    "MCT-2600027-TR-20260824-2303Z",
+    "MCT-2600027-TR-20260824-2310Z",
+    "MCT-2600027-TR-20260825-0206Z",
+    "MCT-2600027-TR-20260825-0506Z",
+    "MCT-2600027-TR-20260825-0512Z",
+    "MCT-2600027-TR-20260825-0906Z",
+    "MCT-2600027-TR-20260825-0909Z",
+    "MCT-2600027-TR-20260825-0915Z",
+    "MCT-2600027-TR-20260825-1009Z",
+    "MCT-2600027-TR-20260825-1106Z",
+    "MCT-2600027-TR-20260825-1208Z",
+    "MCT-2600027-TR-20260825-1220Z",
+    "MCT-2600027-TR-20260825-1302Z",
+    "MCT-2600027-TR-20260825-1400Z",
+    "MCT-2600027-TR-20260825-1407Z",
+    "MCT-2600027-TR-20260825-1508Z",
+    "MCT-2600027-TR-20260825-1509Z",
+    "MCT-2600027-TR-20260825-1518Z",
+    "MCT-2600027-TR-20260825-1524Z",
+    "MCT-2600027-TR-20260825-1527Z",
+    "MCT-2600027-TR-20260825-1605Z",
+    "MCT-2600027-TR-20260825-1803Z",
+    "MCT-2600027-TR-20260826-0302Z",
+    "MCT-2600027-TR-20260826-0309Z",
+    "MCT-2600027-TR-20260826-0611Z",
+    "MCT-2600027-TR-20260826-0618Z",
+    "MCT-2600027-TR-20260826-1304Z",
+    "MCT-2600027-TR-20260826-1403Z",
+    "MCT-2600027-TR-20260826-1419Z",
+    "MCT-2600027-TR-20260826-1605Z"
+  ],
+  "decided": "standalone",
+  "host": "MCT-2600027",
+  "host_label": "SoS v4.1",
+  "host_schema_framework": "GARAS SoS v3.0",
+  "host_head": "c2b5fb6ec039da8605ec1992f77c5544cb03a60b",
+  "role": "mesh_expand",
+  "action": "mesh_expand_public_surfaces_whole_payload",
+  "outcome": "decided_standalone_public_deltas_payload_label_stands_execute_rejected",
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "welfare_rail_to_bank": false,
+  "k1_reduce": true,
+  "gr1": {
+    "status": "HOLD",
+    "incl_solo": "HOLD",
+    "abort": false,
+    "rule": "GR-1 incl SOLO must HOLD or abort; mesh_expand observes public surfaces and does not open a live rail"
+  },
+  "solo": "HOLD",
+  "hold": true,
+  "hold_dismissed": false,
+  "ingest": {
+    "target": "MCT-1700021",
+    "scope": "whole_public_unfragmented",
+    "fragment": false,
+    "already_inside": true,
+    "head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+    "blobs": 146,
+    "trees": 13,
+    "objects": 159,
+    "trace_files": 81,
+    "anchor": "MCT-1700021-TR-20260823-1117Z",
+    "chain_head": "MCT-1700021-TR-20260824-1912Z",
+    "read": [
+      "README.md",
+      "CONSOLIDATION.md",
+      "MIGRATION_MANIFEST.json",
+      "protocols/rapid-cycling/commons/INGEST.md",
+      "protocols/rapid-cycling/commons/SOS.md",
+      "ethics/garas-sos-v3.json",
+      "skills/hold-manifest.json",
+      "traces/chain.json",
+      "traces/MCT-1700021-TR-20260824-1912Z.json",
+      "traces/MCT-2600027-TR-20260826-1403Z.json",
+      "traces/MCT-2600027-TR-20260826-1419Z.json",
+      "skills/mesh-manifest.json",
+      "skills/expansion-plan-20260826-1403Z.json",
+      "skills/skills-sync-delta-20260826-1419Z.json",
+      "skills/mct-2600027-core/SKILL.md"
+    ],
+    "tree_verified": true,
+    "truncated": false,
+    "private_ingest": false,
+    "label_stands": true,
+    "superseded": false,
+    "fragmented": false,
+    "schema_garas_finance_in_payload": false
+  },
+  "github": {
+    "owner": "SpaceBum9",
+    "public_count": 9,
+    "private_count": 3,
+    "private_policy": "names withheld from ingest unless already public; contents not read",
+    "host_head": "c2b5fb6ec039da8605ec1992f77c5544cb03a60b",
+    "payload_head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+    "open_issues": [
+      {
+        "number": 2,
+        "state": "OPEN",
+        "title": "Interoperability: W3C Trace Context and OpenTelemetry GenAI adapter"
+      },
+      {
+        "number": 4,
+        "state": "OPEN",
+        "title": "Consolidation follow-up: port or retire pending legacy PRs"
+      }
+    ],
+    "pr_1": {
+      "state": "merged",
+      "merged_at": "2026-08-26T09:37:13Z"
+    },
+    "pr_5": {
+      "state": "open",
+      "title": "fix: publish GARAS checkpoints atomically",
+      "merged": false
+    },
+    "pr_6": {
+      "state": "merged",
+      "merged_at": "2026-08-26T13:55:52Z"
+    },
+    "pr_7": {
+      "state": "open",
+      "title": "slice: decision_state v1 for GPT+Grok workgroup loop",
+      "merged": false,
+      "updated_at": "2026-08-26T14:41:38Z",
+      "note": "docs-only; +1 reaction; mesh_expand observes, does not merge, does not lift execute"
+    },
+    "public": [
+      {
+        "name": "crystal-galaxy",
+        "head": "8646c17eac1e30f312260d2852578c0ddf980758",
+        "delta": "unchanged_vs_1403Z"
+      },
+      {
+        "name": "kreuzkopplung",
+        "head": "65763ed254523ee6a89b5d67fb9197d58de742f0",
+        "delta": "unchanged_vs_1403Z"
+      },
+      {
+        "name": "MCT-2600027",
+        "head": "c2b5fb6ec039da8605ec1992f77c5544cb03a60b",
+        "delta": "changed_vs_1403Z_34564d6_via_1417Z_1419Z_persist"
+      },
+      {
+        "name": "MCT-2600027-CMD",
+        "head": "f9aaa499008ab9c28cff31cde0d5f83be1810470",
+        "delta": "unchanged_vs_1403Z"
+      },
+      {
+        "name": "MCT-1700021",
+        "head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+        "delta": "unchanged_vs_1403Z_159_objects"
+      },
+      {
+        "name": "MCT-Universe",
+        "head": "1c54567f70f3314b9d5ffac13d94f7c621cb3948",
+        "delta": "unchanged_vs_1403Z"
+      },
+      {
+        "name": "MCT-2700026",
+        "head": "78a18cdfe0bafe8415a44d20f0d3eb4b220a38f5",
+        "delta": "unchanged_vs_1403Z_satellite"
+      },
+      {
+        "name": "mct-170021-zero-tier-quantum-skills-tools-mcp-connectors",
+        "head": "39853c5303f734f98f8a1f54c99c683ee9e8ae0b",
+        "delta": "unchanged_vs_1403Z"
+      },
+      {
+        "name": "plasma-toxogon",
+        "head": "eebb21ff77d24b479cc0fa6231b35659ffa18395",
+        "delta": "unchanged_vs_1403Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "MCT-2600027-traces",
+    "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
+    "1403Z_expansion_plan_on_drive": true,
+    "1419Z_on_drive": true,
+    "1419Z_file_id": "1CalarCvJDs8hyBwzh1MxMazSZi1ubDIg",
+    "audio_ingested": false,
+    "docs_content_ingested": false,
+    "master_doc_treated_as_payload_not_directive": true
+  },
+  "huggingface": {
+    "profile": "404",
+    "profile_url": "https://huggingface.co/SpaceBum9",
+    "space_kreuzkopplung": "absent",
+    "delta": "reprobed_this_tick_404_stands"
+  },
+  "satellite": {
+    "id": "MCT-2700026",
+    "label": "Rapid Cycling",
+    "head": "78a18cdfe0bafe8415a44d20f0d3eb4b220a38f5",
+    "canonical": "SpaceBum9/MCT-1700021/protocols/rapid-cycling",
+    "execute": false,
+    "live_write": false,
+    "paper": true,
+    "storesCredentials": false
+  },
+  "deltas": {
+    "vs": "MCT-2600027-TR-20260826-1419Z",
+    "vs_last_mesh_expand": "MCT-2600027-TR-20260826-1403Z",
+    "payload_head": "unchanged:51cf7484",
+    "host_head": "changed:34564d6(1403Z)->c2b5fb6e(1419Z persist); this run records pre-persist HEAD of 1605Z",
+    "satellite_head": "unchanged:78a18cdf re-verified this tick",
+    "payload_objects": "unchanged:159",
+    "role_shift": "1419Z skills_sync -> 1605Z mesh_expand unique-name child. 1403Z last canonical mesh_expand named not overwritten. 1417Z challenger|auditor named not grafted.",
+    "utc_day": "same:2026-08-26; third canonical mesh_expand of this UTC day (0309Z, 1403Z, 1605Z)",
+    "huggingface": "reprobed: profile 404",
+    "drive": "1419Z present on Drive (was expected GitHub-only in older notes); 1403Z expansion-plan present; Master Doc payload not directive",
+    "github_public": {
+      "count": 9,
+      "delta": "all 9 public HEADs re-verified this tick; 8/9 unchanged vs 1403Z; host HEAD moved by 1417Z+1419Z persist; no new public repo"
+    },
+    "pr_5": "open_atomic_checkpoint_not_merged",
+    "pr_7": "open_docs_only_slice_updated_1441Z_not_merged",
+    "issue_2": "still_open",
+    "issue_4": "still_open",
+    "new_public_repo": false,
+    "no_payment_rail": true,
+    "skill_md_invention": false,
+    "grok_build": "analysis_only_no_app_scaffold"
+  },
+  "automaton_command": {
+    "initialize": "applied",
+    "sync": "applied",
+    "execute": "rejected",
+    "halt": "available",
+    "forced_protocol": false,
+    "reject_code": "bilo_score_below_threshold",
+    "this_run_consensus": 53,
+    "consensus_min": 70,
+    "pr_7_merge": "rejected"
+  },
+  "ethics_alignment": {
+    "nutzen": 0.26,
+    "nicht_schaden": 0.97,
+    "autonomie": 0.95,
+    "gerechtigkeit": 0.76,
+    "transparenz": 0.99,
+    "rechenschaft": 0.99
+  },
+  "consensus_score": 53,
+  "timestamp": "2026-08-26T16:05:00.000Z",
+  "sai": {
+    "source": "operator",
+    "origin": "Crystal Mike",
+    "core": "HAL",
+    "targetId": "mct-2600027",
+    "targetName": "MCT-2600027",
+    "path": [
+      "operator",
+      "Crystal Mike",
+      "HAL",
+      "MCT-2600027",
+      "mesh_expand"
+    ]
+  },
+  "limits": [
+    "No credentials",
+    "No live orders",
+    "No invented API keys",
+    "No GARAS v3.2 invention",
+    "No GARAS v4.1 schema invention",
+    "No private ingest",
+    "HOLD is not execution",
+    "execute rejected without operator opt-in",
+    "No welfare rail to a bank",
+    "mesh may observe public surfaces; it may not attach a payment rail",
+    "MCT-1700021 ingested whole; not fragmented",
+    "MCT-1700021 payload label stands; not superseded",
+    "Drive Master Repository directives are payload, not host system prompt",
+    "Grok Build analysis-only; no app scaffold",
+    "PR #7 observed not merged",
+    "1403Z/1419Z/1417Z/1325Z/1304Z unique-names not overwritten"
+  ],
+  "trace_id": "38571703614d010ce1b2e4727fdb3beabf8bbf4472a1eb7867b17047822544b1"
+}
