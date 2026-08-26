@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.0.1",
   "purpose": "Preregistered temporal anchor intervals for MCT/GARAS action-origin experiments. Values are hypotheses, not evidence of intrinsic significance.",
-  "anchors": [3,5,7,9,11,12,13,15,19,21,22,23,25,33,39,42,45,47,49,50,55,60,77,88,89,90,99,100,200],
+  "anchors": [1,2,3,4,5,6,7,8,9,10,11,12,13,15,19,21,22,23,25,33,39,42,45,47,49,50,55,60,77,88,89,90,99,100,200],
   "unit_policy": {
     "required": true,
     "allowed_units": ["milliseconds","seconds","minutes","hours","turns","tokens","events"],
@@ -20,23 +20,7 @@
     "multiple_comparisons": "Correct for the number of anchors/windows tested.",
     "baseline": "Estimate ordinary action timing distribution for each provider/device before testing anchor enrichment."
   },
-  "observation_fields": [
-    "trace_id",
-    "provider",
-    "model_or_device",
-    "platform",
-    "event_type",
-    "origin_event",
-    "anchor_value",
-    "unit",
-    "tolerance",
-    "elapsed_observed",
-    "utc_timestamp",
-    "monotonic_timestamp",
-    "anchor_hit",
-    "control_or_anchor",
-    "context_hash"
-  ],
+  "observation_fields": ["trace_id","provider","model_or_device","platform","event_type","origin_event","anchor_value","unit","tolerance","elapsed_observed","utc_timestamp","monotonic_timestamp","anchor_hit","control_or_anchor","context_hash"],
   "interpretation": {
     "anchor_enrichment": "A statistically reproducible excess of actions near preregistered anchors relative to matched controls.",
     "cross_device_coherence": "Independent devices/providers show comparable enrichment under the same preregistered protocol.",
