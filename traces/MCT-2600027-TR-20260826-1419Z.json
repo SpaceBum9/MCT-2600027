@@ -1,0 +1,58 @@
+{
+  "human_id": "MCT-2600027-TR-20260826-1419Z",
+  "nonce": "1419Z",
+  "timestamp": "2026-08-26T14:19:00.000Z",
+  "role": "skills_sync",
+  "decided": "standalone",
+  "host": "MCT-2600027 SoS v4.1",
+  "schema": "GARAS SoS v3.0",
+  "ingest": {
+    "payload": "MCT-1700021",
+    "head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+    "objects": 159,
+    "status": "already_inside",
+    "label_stands": true,
+    "this_tick": "root listing confirms HEAD 51cf7484; object count not re-enumerated"
+  },
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "trace_id": "6168a36e1d85501bf4ad6d5d22df5db5aa975aa2cd1209d757c657cfc8d8edaf",
+  "parent": {
+    "human_id": "MCT-2600027-TR-20260826-1304Z",
+    "trace_id": "f21b5d656a13d7969ab3847a7e3e1d9fb6e3a90c6565b08ba7d5d657d40fd9fe",
+    "role": "skills_sync",
+    "surfaces": "GitHub; Notion absent (last Notion skills_sync 0609Z)"
+  },
+  "named_not_grafted": [
+    "1417Z challenger|auditor f1249b8f",
+    "1403Z mesh_expand 0a66309c",
+    "1325Z hive-relay short",
+    "0618Z parent-of-1304Z 2994db40",
+    "0611Z",
+    "0609Z skills_sync 1cf73474 last Notion skills_sync",
+    "0306Z dual_llm_bridge c2fe59b5",
+    "SOS-DECISION-1543Z joint-decision-20260826-1543Z",
+    "SOS-STATUS-1547Z"
+  ],
+  "skill_patches": {
+    "policy": "public routing only · trigger maps · no SKILL.md invention",
+    "count": 11,
+    "maps": "11 HOLD: mct-agentic-trader paper; wohlstandsumverteilung-finance-manager schema GARAS SoS v3.0; welfare-ibc-middleware intent-only; multilingual-greeting HELLO Hallo; grok-blackbox-history traces; grok-imagine-api session vendor_live false; grok-imagine-full-history session-store; imagine-media-access session; kassenbeleg-parser session; sat-track-3d-ios related-repo; telegram-ios-app intent-only no messenger IP clone.",
+    "extra": "mct-2600027-core live; gpt-sol-branch hold+protocol-live; chrona HOLD CSS/JSON only; default-mode MCT-RC-BILO-ATM-FRAMEWORK-SOS execute false. Protocol HOLD lifted 1541Z does not dismiss skill HOLD maps or flip execute."
+  },
+  "limits": {
+    "execute": "rejected",
+    "bilo": "53 < 70",
+    "gr1": "HOLD incl SOLO",
+    "secrets": "none",
+    "live_api_keys": false,
+    "welfare_rail_to_bank": false,
+    "live_orders": false,
+    "note": "HOLD is not execution. Protocol HOLD lift does not open LIVE_RAIL."
+  },
+  "host_head_prepersist": "f1249b8fbfd3c29c18cccdeb1cbbd2587bc6e949",
+  "source": "sos-core",
+  "decision": "hold",
+  "status": "hold"
+}
