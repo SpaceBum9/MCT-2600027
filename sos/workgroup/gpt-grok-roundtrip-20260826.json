@@ -1,0 +1,19 @@
+{
+  "trace_id": "MCT-2600027-GPT-GROK-ROUNDTRIP-20260826",
+  "kind": "workgroup_roundtrip_test",
+  "participants": ["grok", "gpt"],
+  "gemini": "excluded_until_onboarded",
+  "source_decision": "joint-decision-20260826-1543Z",
+  "decision_rule": "all_active_participants_approve",
+  "votes": {
+    "grok": "approve",
+    "gpt": "approve"
+  },
+  "scope": "documentation-only GitHub branch write",
+  "target_branch": "sos/gpt-grok-roundtrip-20260826",
+  "base_commit": "3f7b837f05ecc19dd1bf69ada7da0f42194200ff",
+  "live_orders": false,
+  "credentials": false,
+  "result": "roundtrip_write_requested",
+  "note": "This artifact tests the Notion evaluation -> GPT execution -> GitHub evidence path. It does not claim an independently verified Grok runtime beyond the authenticated evidence already recorded in the shared workspace."
+}
