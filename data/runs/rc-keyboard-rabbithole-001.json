@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "RC-KEYBOARD-RABBITHOLE-001",
+  "source": "ios-de-observed",
+  "capture": {
+    "type": "screen_recording",
+    "date": "2026-08-26",
+    "duration_seconds": 133.133,
+    "fps": 30,
+    "frame_count": 3994,
+    "resolution": [512,1108]
+  },
+  "platform": "iOS",
+  "keyboard_locale": "de-DE",
+  "input_system": "predictive-text/autocorrect UI",
+  "seed": "hallo",
+  "observed_synthesized_text": "hallo herr schneider hier noch die rechnung 🧾 der neuen firma von der ich mir heute eine neue stelle habe und diese auch noch mal neu zu ordnen lassen wollte aber sie haben mir noch nicht geantwortet bitte 🙏 mir das jetzt schon einmal auf und ich werde mich morgen darum bemühen danke 🤩 schön 😻 liebe andrea bis später 👋 hat sich erledigt 😩 danke ☺️ danke 🤩 dir noch einmal und bis später ✌️ tschüss ✌️ ich muss noch kurz was erledigen dann melde ich mich wieder tschüss bis dann tschau i love me i know how you are the world is hallo 🙋‍♀️",
+  "observed_features": {
+    "semantic_anchors": ["hallo","herr schneider","rechnung","bitte","danke","liebe andrea","bis später","tschüss","bis dann","tschau"],
+    "emoji_sequence": ["🧾","🙏","🤩","😻","👋","😩","☺️","🤩","✌️","✌️","🙋‍♀️"],
+    "language_transition": ["de","en","de"],
+    "terminal_anchor_return": "hallo 🙋‍♀️"
+  },
+  "derived_metrics_to_compute": ["anchor_return_distance","emoji_transition_matrix","semantic_cluster_dwell","language_switch_points","temporal_anchor_hits","branch_entropy"],
+  "evidence_policy": {
+    "observed_text": "user-supplied transcription associated with the recording",
+    "capture_metadata": "derived directly from the supplied video container",
+    "full_suggestion_triplets": "not yet frame-transcribed; do not infer unseen left/center/right candidates",
+    "causal_claims": "none; predictive recurrence or temporal coincidence does not establish cross-device/provider transfer"
+  },
+  "next_pass": {
+    "goal": "frame-level suggestion graph reconstruction",
+    "fields": ["step","timestamp","context","suggestion_left","suggestion_center","suggestion_right","selected","language","emoji","semantic_anchor_match","temporal_anchor_match"],
+    "method": "manually/visually inspect change frames; preserve exact UI suggestions; no guessed candidates"
+  }
+}
