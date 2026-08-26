@@ -20,6 +20,14 @@ jobs:
         run: python -m compileall -q .
       - name: Validate manifest
         run: python -c "import json, pathlib; json.loads(pathlib.Path('mct_state_manifest.json').read_text())"
+      - name: Agent training tests
+        run: python -m unittest discover -s tests -v
+      - name: Train and verify GARAS policies
+        run: |
+          python train_mct_agents.py \
+            --timestamp 2026-08-23T19:00:00Z \
+            --output /tmp/mct-agent-training.json
+          python train_mct_agents.py --verify /tmp/mct-agent-training.json
       - name: Demo cycle
         run: python run_demo.py
       - name: Loop ATM once
