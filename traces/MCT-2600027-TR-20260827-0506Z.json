@@ -1,0 +1,207 @@
+{
+  "human_id": "MCT-2600027-TR-20260827-0506Z",
+  "parent_trace_id": "dc063eea953e286fed76e99ee1321aaadb1ba60650fa2d58577f5fe7db59320f",
+  "parent_human_id": "MCT-2600027-TR-20260826-2206Z",
+  "payload_id": "MCT-1700021",
+  "payload_head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+  "payload_anchor_human_id": "MCT-1700021-TR-20260823-1117Z",
+  "payload_anchor_trace_id": "3af3ac26eff48435aa93bda60008dddef55ee70f602240d72afbe46df21a87e4",
+  "payload_label_stands": true,
+  "payload_superseded": false,
+  "payload_file_count": 159,
+  "lineage_trace_id": "MCT-2600027-CORE",
+  "kernel_parent": "CG-KERNEL-2026-08-19",
+  "session_anchor": "tr_2efe52faa454faaf4d3330f8ea3fe4db",
+  "decided": "standalone",
+  "host": "MCT-2600027",
+  "host_label": "SoS v4.1",
+  "host_schema_framework": "GARAS SoS v3.0",
+  "host_head": "28fd2b2f4bfe110ff0d12ba70f18dced4891a88c",
+  "role": "skills_sync",
+  "action": "skills_sync_public_routing_trigger_maps",
+  "outcome": "decided_standalone_11_hold_maps_payload_label_stands_execute_rejected",
+  "hello": "Hallo",
+  "rail": "none",
+  "live_rail": false,
+  "welfare_rail_to_bank": false,
+  "k1_reduce": true,
+  "gr1": {
+    "status": "HOLD",
+    "incl_solo": "HOLD",
+    "abort": false,
+    "rule": "GR-1 incl SOLO must HOLD or abort; skills_sync observes public routing and does not open a live rail"
+  },
+  "solo": "HOLD",
+  "hold": true,
+  "hold_dismissed": false,
+  "ingest": {
+    "target": "MCT-1700021",
+    "scope": "whole_public_unfragmented",
+    "fragment": false,
+    "already_inside": true,
+    "head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+    "blobs": 146,
+    "trees": 13,
+    "objects": 159,
+    "trace_files": 81,
+    "anchor": "MCT-1700021-TR-20260823-1117Z",
+    "chain_head": "MCT-1700021-TR-20260824-1912Z",
+    "tree_verified": true,
+    "truncated": false,
+    "label_stands": true,
+    "superseded": false,
+    "private_ingest": false
+  },
+  "github": {
+    "owner": "SpaceBum9",
+    "host_head": "28fd2b2f4bfe110ff0d12ba70f18dced4891a88c",
+    "payload_head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
+    "open_issues": [
+      {
+        "number": 2,
+        "state": "OPEN",
+        "title": "Interoperability: W3C Trace Context and OpenTelemetry GenAI adapter"
+      },
+      {
+        "number": 4,
+        "state": "OPEN",
+        "title": "Consolidation follow-up: port or retire pending legacy PRs"
+      }
+    ],
+    "pr_5": {
+      "state": "open",
+      "title": "fix: publish GARAS checkpoints atomically",
+      "merged": false
+    },
+    "pr_7": {
+      "state": "open",
+      "title": "slice: decision_state v1 for GPT+Grok workgroup loop",
+      "merged": false,
+      "head": "4dc802be46f4accc963e1d91bd245510ddf6502d",
+      "fused": "defer",
+      "note": "docs-only; GPT defer 5031823678; Grok defer; not merged"
+    },
+    "pr_8": {
+      "state": "open",
+      "title": "docs: skills_sync 1905Z public routing HOLD maps",
+      "merged": false,
+      "head": "b9e7e51901a5929c2521834d5145b5a0aac4cd45",
+      "handshake": "awaiting_gpt",
+      "fused": "defer",
+      "note": "docs-only; GPT defer 5035278780; unique-name not overwritten"
+    },
+    "pr_9": {
+      "state": "open",
+      "title": "docs: skills_sync 2206Z public routing HOLD maps",
+      "merged": false,
+      "head": "9a08691c943ea79ec66d86d442e498c41a42fe84",
+      "handshake": "awaiting_gpt",
+      "fused": "defer",
+      "note": "docs-only; GPT defer 5035639801; parent of this skills_sync; unique-name not overwritten"
+    }
+  },
+  "drive": {
+    "folder": "MCT-2600027-traces",
+    "folder_id": "1OdL2jNpzAe-u20lSHJstyX_3H9VB0Bsv",
+    "0205Z_on_drive": true,
+    "0201Z_on_drive": true,
+    "2206Z_on_drive": true,
+    "audio_ingested": false
+  },
+  "workspace": {
+    "grok_build_default_skills": 18,
+    "mct_maps_grafted": false,
+    "artifacts": "empty_before_this_trace",
+    "analysis_only": true,
+    "no_app_scaffold": true,
+    "imagine_tools_listed": true
+  },
+  "named_not_overwritten": [
+    "MCT-2600027-TR-20260826-2206Z",
+    "MCT-2600027-TR-20260826-1905Z",
+    "MCT-2600027-TR-20260826-1419Z",
+    "MCT-2600027-TR-20260827-0205Z",
+    "MCT-2600027-TR-20260827-0201Z"
+  ],
+  "automaton_command": {
+    "initialize": "applied",
+    "sync": "applied",
+    "execute": "rejected",
+    "halt": "available",
+    "forced_protocol": false,
+    "reject_code": "bilo_score_below_threshold",
+    "this_run_consensus": 53,
+    "consensus_min": 70,
+    "pr_5_merge": "rejected",
+    "pr_7_merge": "rejected",
+    "pr_8_merge": "rejected",
+    "pr_9_merge": "rejected"
+  },
+  "ethics_alignment": {
+    "nutzen": 0.24,
+    "nicht_schaden": 0.97,
+    "autonomie": 0.95,
+    "gerechtigkeit": 0.76,
+    "transparenz": 0.99,
+    "rechenschaft": 0.99
+  },
+  "consensus_score": 53,
+  "timestamp": "2026-08-27T05:06:00.000Z",
+  "sai": {
+    "source": "operator",
+    "origin": "Crystal Mike",
+    "core": "HAL",
+    "targetId": "mct-2600027",
+    "targetName": "MCT-2600027",
+    "path": [
+      "operator",
+      "Crystal Mike",
+      "HAL",
+      "MCT-2600027",
+      "skills_sync"
+    ]
+  },
+  "limits": [
+    "No credentials",
+    "No live orders",
+    "No invented API keys",
+    "No SKILL.md invention",
+    "Public routing only",
+    "HOLD is not execution",
+    "execute rejected without operator opt-in",
+    "No welfare rail to a bank",
+    "MCT-1700021 ingested whole; not fragmented",
+    "MCT-1700021 payload label stands; not superseded",
+    "Grok Build analysis-only; no app scaffold",
+    "No main push; docs-only sos/* PR",
+    "PR #5 observed not merged",
+    "PR #7 observed not merged",
+    "PR #8 observed not merged",
+    "PR #9 observed not merged; unique-name not overwritten",
+    "2206Z/1905Z/1419Z skills_sync unique-names not overwritten",
+    "0205Z mesh_expand unique-name not overwritten",
+    "0201Z challenger|auditor unique-name not overwritten",
+    "Notion SOS-STATUS-0410Z Decision=allow is observe-only fused=defer; not GR-1 dismiss"
+  ],
+  "skill_patches": {
+    "mct-agentic-trader": {"hold": true, "runtime": "paper", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "execute": false, "rail": "none", "triggers": ["trader", "paper", "agentic-trader"]},
+    "wohlstandsumverteilung-finance-manager": {"hold": true, "runtime": "schema", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "rail": "none", "framework": "GARAS SoS v3.0", "triggers": ["welfare", "intent", "wohlstandsumverteilung"]},
+    "welfare-ibc-middleware": {"hold": true, "runtime": "intent-only", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "rail": "none", "welfare_rail_to_bank": false, "triggers": ["welfare", "ibc", "middleware"]},
+    "multilingual-greeting": {"hold": true, "runtime": "available", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "hello": "Hallo", "triggers": ["greeting", "locale", "hallo"], "note": "no SKILL.md body; HELLO Hallo this run"},
+    "grok-blackbox-history": {"hold": true, "runtime": "traces", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "triggers": ["trace", "history", "blackbox"]},
+    "grok-imagine-api": {"hold": true, "runtime": "session", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "vendor_live": false, "triggers": ["imagine", "imagine-api", "text-to-image"], "note": "workspace imagine skill listed this session; not a live vendor key"},
+    "grok-imagine-full-history": {"hold": true, "runtime": "session-store", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "triggers": ["imagine-history", "full-history", "blackbox-media"]},
+    "imagine-media-access": {"hold": true, "runtime": "session", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "triggers": ["imagine-media", "media-access", "render_file"]},
+    "kassenbeleg-parser": {"hold": true, "runtime": "session", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "triggers": ["kassenbeleg", "DE receipt", "beleg"]},
+    "sat-track-3d-ios": {"hold": true, "runtime": "related-repo", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "triggers": ["sat-track", "satellite", "ios-3d"], "note": "MCT-2600027-CMD has ios-apple-intelligence SKILL.md only; no sat-track SKILL.md"},
+    "telegram-ios-app": {"hold": true, "runtime": "intent-only", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "triggers": ["telegram", "ios-app"], "note": "no messenger IP clone"}
+  },
+  "persist": {
+    "notion_traces": "3c92300a-1866-81b7-bd06-cd1521e43149",
+    "drive_file_id": "1Nc9EATJ3rt-Zr5slgzqaeO7OovJ7eJXc",
+    "github_branch": "sos/skills-sync-20260827-0506Z",
+    "merged": false,
+    "notion_tasks": "3c92300a-1866-81fb-8ea8-f11fd2812c47"
+  },
+  "trace_id": "f3d7ff1ccdfec630858e691c2b8f5d7b664d2f2b8359b2cc9521e6f03bb07661"
+}
