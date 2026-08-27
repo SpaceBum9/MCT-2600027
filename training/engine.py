@@ -11,6 +11,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import tempfile
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -740,12 +742,39 @@ def write_checkpoint(
         raise CurriculumError(f"refusing to write invalid checkpoint: {errors}")
     destination = Path(path)
     destination.parent.mkdir(parents=True, exist_ok=True)
-    serialized = json.dumps(checkpoint, indent=2, ensure_ascii=False) + "\n"
+    serialized = (json.dumps(checkpoint, indent=2, ensure_ascii=False) + "\n").encode(
+        "utf-8"
+    )
+    descriptor, staged_name = tempfile.mkstemp(
+        dir=destination.parent,
+        prefix=f".{destination.name}.",
+        suffix=".tmp",
+    )
+    staged = Path(staged_name)
     try:
-        with destination.open("x", encoding="utf-8") as handle:
-            handle.write(serialized)
-    except FileExistsError as exc:
-        raise CurriculumError(
-            f"refusing to overwrite existing checkpoint: {destination}"
-        ) from exc
+        try:
+            offset = 0
+            while offset < len(serialized):
+                written = os.write(descriptor, serialized[offset:])
+                if written <= 0:
+                    raise OSError("checkpoint staging write made no progress")
+                offset += written
+            os.fsync(descriptor)
+            os.fchmod(descriptor, 0o644)
+        finally:
+            os.close(descriptor)
+
+        try:
+            os.link(staged, destination)
+        except FileExistsError as exc:
+            raise CurriculumError(
+                f"refusing to overwrite existing checkpoint: {destination}"
+            ) from exc
+        dir_fd = os.open(destination.parent, os.O_RDONLY)
+        try:
+            os.fsync(dir_fd)
+        finally:
+            os.close(dir_fd)
+    finally:
+        staged.unlink(missing_ok=True)
     return destination
