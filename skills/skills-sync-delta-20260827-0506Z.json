@@ -1,9 +1,10 @@
 {
   "human_id": "MCT-2600027-TR-20260827-0506Z",
   "role": "skills_sync",
-  "parent_human_id": "MCT-2600027-TR-20260826-2206Z",
-  "parent_trace_id": "dc063eea953e286fed76e99ee1321aaadb1ba60650fa2d58577f5fe7db59320f",
+  "parent_human_id": "MCT-2600027-TR-20260827-0507Z",
+  "parent_trace_id": "907a066a56e7a8e74387a7f77250ce71a2ea6c5a1b5d1c72bd87410bba8a5ee1",
   "named_not_overwritten": [
+    "MCT-2600027-TR-20260827-0507Z",
     "MCT-2600027-TR-20260826-2206Z",
     "MCT-2600027-TR-20260826-1905Z",
     "MCT-2600027-TR-20260826-1419Z",
@@ -20,32 +21,190 @@
   "hello": "Hallo",
   "rail": "none",
   "execute": "rejected",
-  "host_head": "28fd2b2f4bfe110ff0d12ba70f18dced4891a88c",
+  "host_head": "9aa306669035843f51c3f245a00e224592381714",
   "payload_head": "51cf74841d2892a2d6781c71dbc13116dbbbfece",
   "decided": "standalone",
   "gr1": "HOLD",
   "solo": "HOLD",
   "protocol_hold_lifted": true,
   "hold_dismissed": false,
+  "control": {
+    "protocol_permission": "protocol_hold_lifted_true_docs_rail_only",
+    "skill_routing_hold": true,
+    "bilo_execute_gate": {
+      "consensus": 53,
+      "min": 70,
+      "pass": false
+    },
+    "workgroup_authorization": "awaiting_gpt_grok_re_read"
+  },
   "workspace_this_session": {
     "grok_build_default_skills": 18,
     "mct_skill_graft": false,
     "imagine_tools_listed": true,
     "note": "this sandbox has only default Grok Build skills; 11 HOLD maps are public routing only; mct-2600027-core lives in HOST repo, not grafted here"
   },
-  "nonce_repair": "none; parent 2206Z persisted Drive+PR#9; 1905Z PR#8 named not overwritten; 1419Z main named not overwritten; 0205Z mesh_expand named not overwritten; this run 0506Z unique-name",
+  "nonce_repair": "parent retargeted to main 0507Z (907a066a); 2206Z no longer parent; 1905Z PR#8 named not overwritten; 1419Z main named not overwritten; 0205Z mesh_expand named not overwritten; this run 0506Z unique-name",
   "patches": {
-    "mct-agentic-trader": {"hold": true, "runtime": "paper", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "execute": false, "rail": "none", "triggers": ["trader", "paper", "agentic-trader"]},
-    "wohlstandsumverteilung-finance-manager": {"hold": true, "runtime": "schema", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "rail": "none", "framework": "GARAS SoS v3.0", "triggers": ["welfare", "intent", "wohlstandsumverteilung"]},
-    "welfare-ibc-middleware": {"hold": true, "runtime": "intent-only", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "rail": "none", "welfare_rail_to_bank": false, "triggers": ["welfare", "ibc", "middleware"]},
-    "multilingual-greeting": {"hold": true, "runtime": "available", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "hello": "Hallo", "triggers": ["greeting", "locale", "hallo"], "note": "no SKILL.md body; HELLO Hallo this run"},
-    "grok-blackbox-history": {"hold": true, "runtime": "traces", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "triggers": ["trace", "history", "blackbox"]},
-    "grok-imagine-api": {"hold": true, "runtime": "session", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "vendor_live": false, "triggers": ["imagine", "imagine-api", "text-to-image"], "note": "workspace imagine skill listed this session; not a live vendor key"},
-    "grok-imagine-full-history": {"hold": true, "runtime": "session-store", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "triggers": ["imagine-history", "full-history", "blackbox-media"]},
-    "imagine-media-access": {"hold": true, "runtime": "session", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "triggers": ["imagine-media", "media-access", "render_file"]},
-    "kassenbeleg-parser": {"hold": true, "runtime": "session", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "triggers": ["kassenbeleg", "DE receipt", "beleg"]},
-    "sat-track-3d-ios": {"hold": true, "runtime": "related-repo", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "triggers": ["sat-track", "satellite", "ios-3d"], "note": "MCT-2600027-CMD has ios-apple-intelligence SKILL.md only; no sat-track SKILL.md"},
-    "telegram-ios-app": {"hold": true, "runtime": "intent-only", "standalone": true, "live_rail": false, "public_routing": true, "secrets": "none", "triggers": ["telegram", "ios-app"], "note": "no messenger IP clone"}
+    "mct-agentic-trader": {
+      "hold": true,
+      "runtime": "paper",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "execute": false,
+      "rail": "none",
+      "triggers": [
+        "trader",
+        "paper",
+        "agentic-trader"
+      ]
+    },
+    "wohlstandsumverteilung-finance-manager": {
+      "hold": true,
+      "runtime": "schema",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "rail": "none",
+      "framework": "GARAS SoS v3.0",
+      "triggers": [
+        "welfare",
+        "intent",
+        "wohlstandsumverteilung"
+      ]
+    },
+    "welfare-ibc-middleware": {
+      "hold": true,
+      "runtime": "intent-only",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "rail": "none",
+      "welfare_rail_to_bank": false,
+      "triggers": [
+        "welfare",
+        "ibc",
+        "middleware"
+      ]
+    },
+    "multilingual-greeting": {
+      "hold": true,
+      "runtime": "available",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "hello": "Hallo",
+      "triggers": [
+        "greeting",
+        "locale",
+        "hallo"
+      ],
+      "note": "no SKILL.md body; HELLO Hallo this run"
+    },
+    "grok-blackbox-history": {
+      "hold": true,
+      "runtime": "traces",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "triggers": [
+        "trace",
+        "history",
+        "blackbox"
+      ]
+    },
+    "grok-imagine-api": {
+      "hold": true,
+      "runtime": "session",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "vendor_live": false,
+      "triggers": [
+        "imagine",
+        "imagine-api",
+        "text-to-image"
+      ],
+      "note": "workspace imagine skill listed this session; not a live vendor key"
+    },
+    "grok-imagine-full-history": {
+      "hold": true,
+      "runtime": "session-store",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "triggers": [
+        "imagine-history",
+        "full-history",
+        "blackbox-media"
+      ]
+    },
+    "imagine-media-access": {
+      "hold": true,
+      "runtime": "session",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "triggers": [
+        "imagine-media",
+        "media-access",
+        "render_file"
+      ]
+    },
+    "kassenbeleg-parser": {
+      "hold": true,
+      "runtime": "session",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "triggers": [
+        "kassenbeleg",
+        "DE receipt",
+        "beleg"
+      ]
+    },
+    "sat-track-3d-ios": {
+      "hold": true,
+      "runtime": "related-repo",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "triggers": [
+        "sat-track",
+        "satellite",
+        "ios-3d"
+      ],
+      "note": "MCT-2600027-CMD has ios-apple-intelligence SKILL.md only; no sat-track SKILL.md"
+    },
+    "telegram-ios-app": {
+      "hold": true,
+      "runtime": "intent-only",
+      "standalone": true,
+      "live_rail": false,
+      "public_routing": true,
+      "secrets": "none",
+      "triggers": [
+        "telegram",
+        "ios-app"
+      ],
+      "note": "no messenger IP clone"
+    }
   },
-  "trace_id": "f3d7ff1ccdfec630858e691c2b8f5d7b664d2f2b8359b2cc9521e6f03bb07661"
+  "persist": {
+    "github_branch": "sos/skills-sync-20260827-0506Z",
+    "merged": false,
+    "actor_proposal_id": "pr10-parent-0507z-rehash-v1"
+  },
+  "trace_id": "0789c090d6c4c2533efa7a735ef9b685c3dd86b3e504c2c266396455f9fb3de5"
 }
