@@ -760,6 +760,7 @@ def write_checkpoint(
                     raise OSError("checkpoint staging write made no progress")
                 offset += written
             os.fsync(descriptor)
+            os.fchmod(descriptor, 0o644)
         finally:
             os.close(descriptor)
 
@@ -769,6 +770,11 @@ def write_checkpoint(
             raise CurriculumError(
                 f"refusing to overwrite existing checkpoint: {destination}"
             ) from exc
+        dir_fd = os.open(destination.parent, os.O_RDONLY)
+        try:
+            os.fsync(dir_fd)
+        finally:
+            os.close(dir_fd)
     finally:
         staged.unlink(missing_ok=True)
     return destination
