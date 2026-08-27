@@ -3,9 +3,11 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from training.engine import (
     CurriculumError,
@@ -271,6 +273,41 @@ class TrainingTests(unittest.TestCase):
                 write_checkpoint(path, replacement, self.curriculum)
 
             self.assertEqual(path.read_bytes(), original)
+
+    def test_interrupted_write_does_not_reserve_checkpoint_name(self) -> None:
+        checkpoint = build_checkpoint(
+            self.curriculum,
+            train_agents(self.curriculum),
+            timestamp="2026-08-23T19:00:00Z",
+            parent_trace_id="parent-sha256",
+        )
+        original_write = os.write
+        interrupted = False
+
+        def interrupt_after_partial_write(descriptor: int, data: bytes) -> int:
+            nonlocal interrupted
+            if not interrupted:
+                interrupted = True
+                original_write(descriptor, data[:32])
+                raise OSError("simulated interrupted write")
+            return original_write(descriptor, data)
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "checkpoint.json"
+            with mock.patch(
+                "training.engine.os.write",
+                side_effect=interrupt_after_partial_write,
+            ):
+                with self.assertRaisesRegex(OSError, "simulated interrupted write"):
+                    write_checkpoint(path, checkpoint, self.curriculum)
+
+            self.assertFalse(path.exists())
+            self.assertEqual(list(Path(directory).glob(".checkpoint.json.*.tmp")), [])
+
+            write_checkpoint(path, checkpoint, self.curriculum)
+            persisted = json.loads(path.read_text(encoding="utf-8"))
+            valid, errors = verify_checkpoint(persisted, self.curriculum)
+            self.assertTrue(valid, errors)
 
 
 if __name__ == "__main__":
