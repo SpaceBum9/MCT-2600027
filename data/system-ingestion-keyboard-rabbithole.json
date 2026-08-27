@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Canonical ingestion contract for observed predictive-keyboard rabbithole runs into MCT/GARAS.",
+  "sources": [
+    "data/runs/rc-keyboard-rabbithole-001.json",
+    "data/semantic-anchor-lexicon.json",
+    "data/semantic-anchor-names.json",
+    "data/semantic-anchor-hi.json",
+    "data/emoji-anchor-lexicon.json",
+    "data/temporal-anchor-set.json",
+    "data/autocorrect-observation-schema.json"
+  ],
+  "ingestion_pipeline": [
+    "raw_observation",
+    "normalize_text_and_unicode",
+    "segment_prediction_steps",
+    "classify_language_and_script",
+    "extract_emoji",
+    "match_semantic_anchors",
+    "match_name_anchors",
+    "match_temporal_anchors",
+    "construct_suggestion_graph",
+    "compute_anchor_return_distance",
+    "attach_trace_id",
+    "store_evidence_and_provenance"
+  ],
+  "required_fields_per_step": [
+    "run_id",
+    "step_index",
+    "timestamp_or_elapsed",
+    "platform",
+    "keyboard",
+    "locale",
+    "context_before",
+    "suggestions_visible",
+    "selected_suggestion",
+    "context_after",
+    "language",
+    "script",
+    "emoji",
+    "semantic_anchor_matches",
+    "temporal_anchor_matches",
+    "trace_id",
+    "source_evidence"
+  ],
+  "evidence_policy": {
+    "observed_vs_inferred": "Observed values MUST be stored separately from inferred labels or reconstructed states.",
+    "no_fabricated_suggestions": true,
+    "screenshots_or_video": "When available, retain frame/time references for every reconstructed prediction step.",
+    "cross_device_claims": "Cross-device or cross-provider coherence requires independent observations and matched controls; shared semantics alone are insufficient.",
+    "transfer_claims": "Information transfer requires independent canary evidence and controlled exclusion of ordinary synchronization channels."
+  },
+  "graph_model": {
+    "node": "normalized context state",
+    "edge": "visible predictive suggestion",
+    "selected_edge": "user-selected or committed suggestion",
+    "edge_metadata": ["rank","emoji","language","elapsed","semantic_anchor_matches","temporal_anchor_matches"],
+    "derived_metrics": ["branch_depth","anchor_return_distance","language_switch_count","emoji_density","semantic_cluster_recurrence","temporal_anchor_enrichment"]
+  },
+  "status": {
+    "run_001": "registered; full framewise suggestion reconstruction pending",
+    "system_ingestion": "enabled by contract",
+    "execution_semantics": "ingestion records evidence; it does not imply autonomous execution or provider-to-provider communication"
+  }
+}

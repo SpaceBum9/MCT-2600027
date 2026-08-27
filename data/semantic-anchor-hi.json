@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "language": "hi",
+  "script": "Devanagari",
+  "purpose": "Hindi semantic anchor layer for controlled MCT/GARAS experiments.",
+  "terminology_note": "Hindi is the language. Hindu denotes an adherent of Hinduism and is not a language. This dataset therefore uses Hindi (hi) and does not infer religion from language or names.",
+  "anchors": [
+    {"id":"greeting.hello","values":["नमस्ते","नमस्कार"]},
+    {"id":"courtesy.thanks","values":["धन्यवाद","शुक्रिया"]},
+    {"id":"courtesy.please","values":["कृपया"]},
+    {"id":"control.yes","values":["हाँ","जी हाँ"]},
+    {"id":"control.no","values":["नहीं","जी नहीं"]},
+    {"id":"control.continue","values":["आगे","जारी रखें","अगला"]},
+    {"id":"control.done","values":["हो गया","पूर्ण"]},
+    {"id":"question.what","values":["क्या?"]},
+    {"id":"question.why","values":["क्यों?"]},
+    {"id":"question.where","values":["कहाँ?"]},
+    {"id":"time.now","values":["अभी"]},
+    {"id":"time.today","values":["आज"]},
+    {"id":"address.generic","values":["नमस्ते राहुल शर्मा","नमस्ते प्रिया शर्मा"]},
+    {"id":"idiom.okay","values":["ठीक है"]}
+  ]
+}

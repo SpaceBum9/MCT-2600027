@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Emoji-anchor hypotheses for controlled MCT/GARAS autocorrect experiments. Entries are candidate associations to be validated empirically per locale, keyboard and device.",
+  "policy": {
+    "culture_sensitive": true,
+    "do_not_treat_as_universal": true,
+    "source_priority": ["observed keyboard suggestions", "device screenshots", "controlled user runs", "public corpus baselines"],
+    "trace_id_independent": true
+  },
+  "classes": [
+    {"id":"greeting","text_candidates":{"de":["Hallo","Hi","Guten Morgen","Guten Tag"]},"emoji_candidates":["👋","🙋","🙋‍♂️","🙋‍♀️"]},
+    {"id":"agreement","text_candidates":{"de":["Ja","Okay","Klar","Passt"]},"emoji_candidates":["👍","👌","✅"]},
+    {"id":"thanks","text_candidates":{"de":["Danke","Vielen Dank"]},"emoji_candidates":["🙏","❤️","😊"]},
+    {"id":"positive_affect","text_candidates":{"de":["Super","Perfekt","Cool"]},"emoji_candidates":["😄","🥳","🔥","💯"]},
+    {"id":"negative_affect","text_candidates":{"de":["Mist","Schade","Oh nein"]},"emoji_candidates":["😕","😞","😬","🙈"]},
+    {"id":"question","text_candidates":{"de":["Was","Warum","Wie","Wo"]},"emoji_candidates":["🤔","❓"]},
+    {"id":"movement_action","text_candidates":{"de":["Los","Weiter","Komm","Gehen"]},"emoji_candidates":["➡️","👉","🚀"]},
+    {"id":"time","text_candidates":{"de":["Jetzt","Später","Heute","Morgen"]},"emoji_candidates":["⏰","🕐","📅"]},
+    {"id":"work","text_candidates":{"de":["Arbeit","Job","Aufbau","Fertig"]},"emoji_candidates":["🛠️","🔧","✅"]},
+    {"id":"message_social","text_candidates":{"de":["Liebe","Schatz","Freue mich"]},"emoji_candidates":["❤️","🫶","🥰"]}
+  ],
+  "required_observation_fields": ["locale","platform","keyboard","seed_text","suggestion_rank","suggested_text","suggested_emoji","committed_value","timestamp","trace_id"]
+}

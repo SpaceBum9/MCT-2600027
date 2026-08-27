@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Synthetic culturally typical name anchors for controlled semantic experiments. These are test fixtures, not identity claims or canonical representatives of a population.",
+  "policy": {
+    "synthetic_only": true,
+    "no_identity_resolution": true,
+    "trace_id": "random per run and independent of name",
+    "notes": "Names vary by region, generation, religion, ethnicity and transliteration. Keep locale and script metadata explicit."
+  },
+  "locales": {
+    "de-DE": {"male":"Max Mustermann","female":"Martina Mustermann","family":"Mustermann"},
+    "en-US": {"male":"John Smith","female":"Jane Smith","family":"Smith"},
+    "fr-FR": {"male":"Jean Dupont","female":"Marie Dupont","family":"Dupont"},
+    "pl-PL": {"male":"Jan Kowalski","female":"Anna Kowalska","family_male":"Kowalski","family_female":"Kowalska"},
+    "ko-KR": {"male":"김민준","female":"김서연","family":"김","romanized_examples":["Kim Min-jun","Kim Seo-yeon"]},
+    "zh-CN": {"male":"王伟","female":"王芳","family":"王","pinyin_examples":["Wang Wei","Wang Fang"]},
+    "ru-RU": {"male":"Иван Иванов","female":"Анна Иванова","family_male":"Иванов","family_female":"Иванова"},
+    "hi-IN": {"male":"राहुल शर्मा","female":"प्रिया शर्मा","family":"शर्मा","transliterated_examples":["Rahul Sharma","Priya Sharma"]}
+  }
+}

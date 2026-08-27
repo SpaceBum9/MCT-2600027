@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Capture autocorrect and predictive-text observations as provenance-bearing semantic signals for cross-device coherence experiments. This schema records observations; it does not treat suggestion overlap as proof of device-to-device transfer.",
+  "observation": {
+    "trace_id": "random per observation run; MUST NOT be derived from suggestion text",
+    "device_id": "pseudonymous local identifier; never hardware serial/IMEI",
+    "platform": "ios | android | other",
+    "os_version": "string",
+    "keyboard": "apple | gboard | samsung | swiftkey | other",
+    "keyboard_version": "string|null",
+    "locale": "BCP-47 language tag",
+    "input_mode": "typed | swipe | dictation | pasted | other",
+    "seed_text": "exact text entered before suggestions appeared",
+    "suggestions": ["ordered", "verbatim", "suggestion", "strings"],
+    "autocorrect_commit": "string|null",
+    "timestamp": "RFC3339",
+    "context_hash": "hash of normalized experimental context, excluding sensitive raw content",
+    "source": "manual_capture | screenshot_transcription | instrumented_keyboard | exported_log",
+    "capture_confidence": "high | medium | low",
+    "notes": "string|null"
+  },
+  "normalization": {
+    "preserve_raw": true,
+    "derive_fields": [
+      "unicode_nfkc",
+      "casefolded",
+      "token_count",
+      "script_set",
+      "language_guess",
+      "anchor_matches"
+    ],
+    "rule": "Raw suggestion strings are immutable evidence; normalized forms are derived alongside them, never replacements."
+  },
+  "coherence_metrics": {
+    "exact_overlap_at_k": "fraction of exact suggestion strings shared between devices at the same rank window",
+    "normalized_overlap_at_k": "same after Unicode/case normalization",
+    "semantic_similarity": "embedding-based comparison computed later with model/version recorded",
+    "rank_correlation": "compare relative ordering only where shared candidates exist",
+    "anchor_hit_rate": "rate of matches against the MCT semantic-anchor lexicon",
+    "canary_leak_rate": "pre-registered test only; random canaries must remain separate from ordinary anchors"
+  },
+  "controls": [
+    "same seed text, same locale, different device",
+    "same seed text, different locale",
+    "different seed text matched for length/frequency",
+    "fresh keyboard dictionary/profile where possible",
+    "offline vs online keyboard state where the platform permits it",
+    "repeat runs across time to estimate natural suggestion drift"
+  ],
+  "privacy": {
+    "default": "do not collect passwords, payment data, personal messages, contact names, health data, or other sensitive text",
+    "device_identifiers": "pseudonymous only",
+    "screenshots": "redact unrelated UI and personal content before archival",
+    "retention": "prefer derived hashes and minimal observation payloads over raw personal context"
+  },
+  "interpretation": {
+    "allowed": "Use repeated, controlled similarity as evidence of behavioral coherence under matched conditions.",
+    "not_allowed": "Do not infer hidden synchronization, provider communication, shared memory, or causal transfer from ordinary autocorrect overlap alone."
+  }
+}
