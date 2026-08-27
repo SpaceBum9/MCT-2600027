@@ -1,0 +1,24 @@
+name: SoS workgroup contract
+on:
+  pull_request:
+    paths:
+      - "sos/workgroup/**"
+      - "schema/**"
+      - "relay/**"
+  workflow_dispatch:
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JSON parse workgroup contracts
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          root = pathlib.Path('sos/workgroup')
+          files = list(root.glob('*.json'))
+          assert files, 'no workgroup json'
+          for p in files:
+              json.loads(p.read_text())
+              print('ok', p)
+          PY
