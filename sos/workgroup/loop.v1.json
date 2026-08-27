@@ -1,13 +1,20 @@
 {
   "loop": "sos.autonomous_loop.v1",
   "automation": "sos-workgroup-notion-status",
-  "cadence": "hourly",
+  "cadence": "pro_free_delta",
+  "silence_if_unchanged": true,
+  "note": "Notion ping bus + GitHub tip poll; silence if unchanged",
   "timezone": "Europe/Berlin",
   "notion_database": "SoS Traces",
   "notion_data_source_id": "ab7afd21-db88-4914-bc96-a7e6cdff9ba4",
   "github_host": "SpaceBum9/MCT-2600027",
-  "active_participants": ["grok", "gpt"],
-  "excluded": ["gemini"],
+  "active_participants": [
+    "grok",
+    "gpt"
+  ],
+  "excluded": [
+    "gemini"
+  ],
   "idempotent": true,
   "live_orders": false,
   "credentials": false,

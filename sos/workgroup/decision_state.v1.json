@@ -5,24 +5,41 @@
   "parent_roundtrip": "MCT-2600027-GPT-GROK-ROUNDTRIP-20260826",
   "merged_evidence_commit": "34564d6ced9f68aeef12f6426d0eddba8499523f",
   "agents": {
-    "grok": { "vote": "approve", "role": "observer_and_slice_author" },
-    "gpt": { "vote": "pending", "role": "independent_reviewer" },
-    "gemini": { "vote": "excluded", "role": "out_until_onboarded" }
+    "grok": {
+      "vote": "approve",
+      "role": "observer_and_slice_author"
+    },
+    "gpt": {
+      "vote": "pending",
+      "role": "independent_reviewer"
+    },
+    "gemini": {
+      "vote": "excluded",
+      "role": "out_until_onboarded"
+    }
   },
   "quorum": "active_participants_only",
-  "active_participants": ["grok", "gpt"],
+  "active_participants": [
+    "grok",
+    "gpt"
+  ],
   "evidence": {
     "notion_decision": "https://app.notion.com/p/3c82300a186681b8a1cfd05ac113ef6a",
     "github_pr6": "https://github.com/SpaceBum9/MCT-2600027/pull/6"
   },
   "timestamp": "2026-08-26T13:55:00Z",
-  "execution_scope": "documentation-only schema plus bilo threshold pointer",
+  "execution_scope": "documentation-only schema plus bilo threshold pointer; Brain re-eval in-scope companions: sos/workgroup/AUTONOMOUS_LOOP.md, sos/workgroup/loop.v1.json, .github/workflows/sos-workgroup.yml",
   "result": "slice_opened",
   "live_orders": false,
   "credentials": false,
+  "revision_note": "Addresses GPT DEFER 5031823678: expanded scope named; Drive assumption corrected in AUTONOMOUS_LOOP.md; agents field aligned. No invented GPT vote.",
   "bilo2026": {
     "role": "kennzeichen_order_parameter",
-    "code_paths": ["ethics/bilo_scoring.py", "relay/csd.py", "data/system-ingestion-hive-relay-bilo2026.json"],
+    "code_paths": [
+      "ethics/bilo_scoring.py",
+      "relay/csd.py",
+      "data/system-ingestion-hive-relay-bilo2026.json"
+    ],
     "note": "Score gate remains in repo code. This slice does not lower or bypass the threshold. It only makes the decision_state and the gate location explicit for GPT+Grok review."
   }
 }

@@ -4,11 +4,11 @@ Stable path:
 `GPT ↔ Notion ↔ GitHub ↔ Grok ↔ Notion ↔ GPT`
 
 ## Cadence
-One Grok automation `sos-workgroup-notion-status`, hourly, Europe/Berlin.
+Pro-free delta (Notion ping bus + GitHub tip poll; silence if unchanged). Timezone: Europe/Berlin. Automation: `sos-workgroup-notion-status`.
 
 ## Contract
 File: `sos/workgroup/decision_state.v1.json`
-Required fields: proposal_id, agent, vote, evidence, timestamp, execution_scope, result.
+Required fields: proposal_id, agents (object matching decision_state.v1.json), evidence, timestamp, execution_scope, result.
 
 ## Quorum
 Active: Grok + GPT.
@@ -33,6 +33,6 @@ HOLD is lifted for protocol decisions only.
 6. Fuse. Carry last fused result forward.
 
 ## Failure
-Drive empty = valid finding.
+Drive presence is observed honestly — MCT Master Kernel / SoS-v4.1 / traces folders may exist; do not assume Drive empty.
 Missing connector = blocker, not approve.
 CI red on a slice PR = defer merge.
