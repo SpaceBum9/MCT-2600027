@@ -11,12 +11,16 @@ from core.trace_treue import TraceTreue
 from border.protocol import ParaBorder
 from dual_pol.hal import HAL
 from dual_pol.zero_telepath import ZeroTelepath
+from integrations.nvidia_adapter import NvidiaCapabilityAdapter
 
 
 class Orchestrator:
     """
     Minimal autonomous wiring of the Dual-Pol system.
     Trace-Treue is enforced on every Zero Telepath regulatory act.
+
+    NVIDIA is attached only as an evidence/capability layer. It is never a
+    quorum member and cannot authorize merge or execution.
     """
 
     def __init__(self):
@@ -26,6 +30,7 @@ class Orchestrator:
         self.border = ParaBorder(self.trace_store)
         self.hal = HAL(self.border, self.trace_store)
         self.zero = ZeroTelepath(self.border, self.trace_store, treue=self.treue)
+        self.nvidia = NvidiaCapabilityAdapter()
 
         # Cross-register listeners so both poles see Border traffic
         self.border.register_listener(self.hal.on_border_message)
@@ -39,6 +44,7 @@ class Orchestrator:
             "open_collision_events": len(self.collision_handler.list_open_collisions()),
             "quarantine_count": len(self.collision_handler.list_quarantine()),
             "trace_treue": self.treue.summary(),
+            "nvidia": self.nvidia.health(),
         }
 
     def demo_cycle(self) -> None:
