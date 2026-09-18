@@ -1,0 +1,95 @@
+{
+  "proposal_id": "roundtrip-live-rail-hot-denied-v2",
+  "nonce": "DRT-20260918-2050Z",
+  "kind": "delta-roundtrip-test",
+  "supersedes": {
+    "proposal_id": "roundtrip-live-rail-hot-denied-v1",
+    "pr": 16,
+    "head": "ab350f02aa3e5013ec502a0064405339a39ebc58",
+    "path": "sos/workgroup/delta-roundtrip-20260918-live-rail-hot-denied.json",
+    "reason": "GPT Dual-Allow nein: v1 prior_dual_allow bound approval head a5596a8c without independently verified evidence that LIVE_RAIL=true+default=denied landed in that same commit/tree. Re-cut provenance."
+  },
+  "teleprompter": "Crystal Mike",
+  "actor": "Nikita",
+  "brain": [
+    "GPT",
+    "Grok"
+  ],
+  "host": "SpaceBum9/MCT-2600027",
+  "base_main": "08a4cfaaa750aa5918cbaa44d1dec7bfd109c281",
+  "provenance_chain": {
+    "step_1_prior_dual_allow_ballot": {
+      "proposal_id": "DA-20260918-LIVE-RAIL-HOT-DEFAULT-DENIED",
+      "ballot_head": "a5596a8c609adf9b988f6303af4178eb3f0a85c6",
+      "votes": {
+        "gpt": "ja",
+        "grok": "ja"
+      },
+      "surface": "https://app.notion.com/p/3df2300a186681bc836ddf6ac9098ac5",
+      "authorized": "Actor write of LIVE_RAIL=true paired with default=denied (execute rejected, vendor_live false)",
+      "note": "This ballot approved the write against head a5596a8c; it is NOT claimed to be the tree that already contained LIVE_RAIL=true+default=denied."
+    },
+    "step_2_apply_commit_tree": {
+      "pr": 15,
+      "merged_main_sha": "08a4cfaaa750aa5918cbaa44d1dec7bfd109c281",
+      "role": "exact commit/tree where LIVE_RAIL=true + default=denied actually landed on main",
+      "url": "https://github.com/SpaceBum9/MCT-2600027/commit/08a4cfaaa750aa5918cbaa44d1dec7bfd109c281"
+    },
+    "step_3_verify_skills_at_apply_sha": {
+      "path": "skills/default-mode.json",
+      "at_sha": "08a4cfaaa750aa5918cbaa44d1dec7bfd109c281",
+      "blob_sha": "4ad58a321649e0718f36856e39bed56e2b86acb4",
+      "fields": {
+        "live_rail": true,
+        "LIVE_RAIL": true,
+        "default": "denied",
+        "entry_default": "denied",
+        "execute": false,
+        "vendor_live": false,
+        "hold": true,
+        "rail": "hot-default-denied",
+        "sync": "DA-20260918-LIVE-RAIL-HOT-DEFAULT-DENIED",
+        "dual_allow": {
+          "proposal_id": "DA-20260918-LIVE-RAIL-HOT-DEFAULT-DENIED",
+          "head": "a5596a8c609adf9b988f6303af4178eb3f0a85c6",
+          "gpt": "ja",
+          "grok": "ja"
+        }
+      }
+    }
+  },
+  "prior_dual_allow": {
+    "proposal_id": "DA-20260918-LIVE-RAIL-HOT-DEFAULT-DENIED",
+    "ballot_head": "a5596a8c609adf9b988f6303af4178eb3f0a85c6",
+    "gpt": "ja",
+    "grok": "ja",
+    "authorized_write": true,
+    "apply_tree_sha": "08a4cfaaa750aa5918cbaa44d1dec7bfd109c281",
+    "apply_pr": 15,
+    "binding": "prior Dual-Allow @ a5596a8c authorized the write; independently verified apply tree is main 08a4cfa (PR #15) via skills/default-mode.json fields cited above"
+  },
+  "pruefung": {
+    "live_rail": true,
+    "LIVE_RAIL": true,
+    "default": "denied",
+    "execute": false,
+    "vendor_live": false,
+    "rail": "hot-default-denied",
+    "skills_path": "skills/default-mode.json",
+    "skills_verified_at": "08a4cfaaa750aa5918cbaa44d1dec7bfd109c281",
+    "open_observe_prs": [
+      7,
+      9,
+      11,
+      12,
+      13
+    ],
+    "pr16_left_open_unmerged": true,
+    "note": "Docs-only paper delta v2. Separate Dual-Allow proposal to merge THIS packet only. Does not flip execute, vendor_live, or merge sos observe PRs. Does not merge #16."
+  },
+  "ask": "GPT and Grok each Dual-Allow ja|nein on this proposal_id + this NEW PR head after independent fetch",
+  "merge": false,
+  "execute": "rejected",
+  "vendor_live": false,
+  "leave_unmerged_until_dual_allow": true
+}
