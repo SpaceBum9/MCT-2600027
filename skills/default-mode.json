@@ -14,7 +14,10 @@
   "forced_protocol": false,
   "execute": false,
   "vendor_live": false,
-  "live_rail": false,
+  "live_rail": true,
+  "LIVE_RAIL": true,
+  "default": "denied",
+  "entry_default": "denied",
   "storesCredentials": false,
   "credentialState": "not_stored",
   "hold": true,
@@ -32,6 +35,13 @@
   "universe_spec": "SpaceBum9/MCT-Universe/05-DEFAULT-MODE.md",
   "live_clock": "SpaceBum9/MCT-2700026",
   "palette_node": "nodes/chrona",
-  "sync": "MCT-2600027-TR-20260824-2211Z",
-  "decided": "standalone"
+  "sync": "DA-20260918-LIVE-RAIL-HOT-DEFAULT-DENIED",
+  "dual_allow": {
+    "proposal_id": "DA-20260918-LIVE-RAIL-HOT-DEFAULT-DENIED",
+    "head": "a5596a8c609adf9b988f6303af4178eb3f0a85c6",
+    "gpt": "ja",
+    "grok": "ja"
+  },
+  "decided": "standalone",
+  "rail": "hot-default-denied"
 }

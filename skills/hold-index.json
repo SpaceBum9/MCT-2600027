@@ -3,12 +3,22 @@
   "mode": "HOLD",
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
   "vendor_live": false,
-  "live_rail": false,
+  "live_rail": true,
+  "LIVE_RAIL": true,
+  "default": "denied",
+  "entry_default": "denied",
   "hello": "Hallo",
-  "note": "1106Z skills_sync. Parent 1009Z mesh_expand. Payload ingested whole. 11 HOLD maps re-affirmed standalone+public_routing; skills do not open a live rail. Execute false. No secrets. No live API keys.",
-  "sync": "MCT-2600027-TR-20260825-1106Z",
+  "note": "DA-20260918-LIVE-RAIL-HOT-DEFAULT-DENIED. Suite LIVE_RAIL hot + default denied. Skills stay HOLD / live_rail false / execute false. No secrets. No live API keys.",
+  "sync": "DA-20260918-LIVE-RAIL-HOT-DEFAULT-DENIED",
   "hold": true,
   "hold_dismissed": false,
+  "dual_allow": {
+    "proposal_id": "DA-20260918-LIVE-RAIL-HOT-DEFAULT-DENIED",
+    "head": "a5596a8c609adf9b988f6303af4178eb3f0a85c6",
+    "gpt": "ja",
+    "grok": "ja"
+  },
+  "rail": "hot-default-denied",
   "skills": {
     "default-mode": {
       "hold": false,
@@ -53,6 +63,7 @@
       "live_rail": false,
       "public_routing": true,
       "secrets": "none",
+      "execute": false,
       "rail": "none",
       "framework": "GARAS SoS v3.0",
       "triggers": [
