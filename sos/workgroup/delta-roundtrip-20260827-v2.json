@@ -1,0 +1,18 @@
+{
+  "proposal_id": "delta-roundtrip-test-v2",
+  "nonce": "DRT-20260827-1109Z",
+  "companion": "git-notion-sync-bus-v1",
+  "LIVE_RAIL": false,
+  "purpose": "Second three-way Pro-free delta bus proof + standing auto-sync rule",
+  "base_main": "626290b6cd7f804059002d6348e0e049ad434829",
+  "parent_roundtrip": {
+    "proposal_id": "delta-roundtrip-test-v1",
+    "pr": 11,
+    "head": "4aeea1eb6f2af068c03dda6fbb5b8603a46c633a",
+    "outcome": "observe handshake closed; left unmerged"
+  },
+  "ask": "Grok + GPT independently fetch this head and ping-packet ja/nein; leave unmerged",
+  "sync_rule_summary": "On commit/push/PR/merge: first seer writes compact Notion ping (head, pr#, ask, LIVE_RAIL=false); silence if unchanged",
+  "actors": ["Nikita", "GPT", "Grok"],
+  "teleprompter": "Crystal Mike"
+}
