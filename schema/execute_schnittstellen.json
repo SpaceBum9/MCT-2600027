@@ -1,12 +1,23 @@
 {
   "schema": "ExecuteSchnittstellen",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "suite": "MCT-2600027",
   "default_mode": "MCT-RC-BILO-ATM-FRAMEWORK-SOS",
+  "live_rail": true,
+  "LIVE_RAIL": true,
+  "default": "denied",
+  "entry_default": "denied",
+  "dual_allow": {
+    "proposal_id": "DA-20260918-LIVE-RAIL-HOT-DEFAULT-DENIED",
+    "head": "a5596a8c609adf9b988f6303af4178eb3f0a85c6"
+  },
   "scoring": {
     "model": "gpt-sol-branch",
     "script": "ethics/bilo_scoring.py",
-    "weights": [0.52, 0.48],
+    "weights": [
+      0.52,
+      0.48
+    ],
     "consensus_execute_min": 70,
     "anchor": "MCT-1700021-TR-20260823-1117Z",
     "anchor_consensus": 53,
@@ -41,17 +52,31 @@
     {
       "id": "sx.release_partial",
       "execute": "scored",
-      "require": ["operator_confirm", "para_border_pass", "dual_pol_ack", "bilo_score_pass"]
+      "require": [
+        "operator_confirm",
+        "para_border_pass",
+        "dual_pol_ack",
+        "bilo_score_pass"
+      ]
     },
     {
       "id": "sx.konnektor_write",
       "execute": "scored",
-      "require": ["phase_active", "operator_confirm", "para_border_pass", "dual_pol_ack", "bilo_score_pass"]
+      "require": [
+        "phase_active",
+        "operator_confirm",
+        "para_border_pass",
+        "dual_pol_ack",
+        "bilo_score_pass"
+      ]
     },
     {
       "id": "sx.catalog_apply",
       "execute": "scored",
-      "require": ["operator_confirm", "bilo_score_pass"]
+      "require": [
+        "operator_confirm",
+        "bilo_score_pass"
+      ]
     },
     {
       "id": "sx.garas_intent",
@@ -89,6 +114,7 @@
     "sx.garas_intent": "applied",
     "sx.garas_transfer": "forbidden",
     "sx.live_order": "forbidden",
-    "sx.release_partial": "rejected_bilo_score_below_threshold"
+    "sx.release_partial": "rejected_bilo_score_below_threshold",
+    "rail": "hot-default-denied"
   }
 }
