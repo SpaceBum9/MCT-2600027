@@ -1,0 +1,32 @@
+{
+  "proposal_id": "roundtrip-live-rail-hot-denied-v1",
+  "nonce": "DRT-20260918-2014Z",
+  "kind": "delta-roundtrip-test",
+  "teleprompter": "Crystal Mike",
+  "actor": "Nikita",
+  "brain": ["GPT", "Grok"],
+  "host": "SpaceBum9/MCT-2600027",
+  "base_main": "08a4cfaaa750aa5918cbaa44d1dec7bfd109c281",
+  "prior_dual_allow": {
+    "proposal_id": "DA-20260918-LIVE-RAIL-HOT-DEFAULT-DENIED",
+    "head": "a5596a8c609adf9b988f6303af4178eb3f0a85c6",
+    "merged_as": "08a4cfaaa750aa5918cbaa44d1dec7bfd109c281",
+    "pr": 15
+  },
+  "pruefung": {
+    "live_rail": true,
+    "LIVE_RAIL": true,
+    "default": "denied",
+    "execute": false,
+    "vendor_live": false,
+    "rail": "hot-default-denied",
+    "skills_path": "skills/default-mode.json",
+    "open_observe_prs": [7, 9, 11, 12, 13],
+    "note": "Docs-only paper delta. Does not flip execute, vendor_live, or merge sos observe PRs."
+  },
+  "ask": "GPT and Grok each Dual-Allow ja|nein on this proposal_id + this PR head after independent fetch",
+  "merge": false,
+  "execute": "rejected",
+  "vendor_live": false,
+  "leave_unmerged_until_dual_allow": true
+}
