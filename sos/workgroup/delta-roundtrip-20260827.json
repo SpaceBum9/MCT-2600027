@@ -1,0 +1,21 @@
+{
+  "proposal_id": "delta-roundtrip-test-v1",
+  "nonce": "DRT-20260827-1100Z",
+  "kind": "workflow_round_test",
+  "source_decision": "joint-decision-20260826-1543Z",
+  "teleprompter": "Crystal Mike",
+  "brain": ["GPT", "Grok"],
+  "actor": "Nikita",
+  "wake_mode": "delta",
+  "notion_bus": "text_tags_to_Nikita_from_Nikita",
+  "cursor_github_events": false,
+  "live_rail": false,
+  "credentials": false,
+  "gemini": "excluded_until_onboarded",
+  "merge": false,
+  "base_commit": "626290b6cd7f804059002d6348e0e049ad434829",
+  "parent_pr10_merge": "626290b6cd7f804059002d6348e0e049ad434829",
+  "scope": "documentation-only GitHub branch write + Notion ping packets",
+  "success": "GPT and Grok independently fetch this file and ping the same head SHA",
+  "ask": "observe independently; do not merge; LIVE_RAIL=false"
+}
