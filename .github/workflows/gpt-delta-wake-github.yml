@@ -27,6 +27,7 @@ jobs:
           REF_NAME: ${{ github.head_ref || github.ref_name }}
           RUN_ID: ${{ github.run_id }}
           RUN_ATTEMPT: ${{ github.run_attempt }}
+          PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.pull_request && github.event.issue.number || '' }}
         run: |
           python - <<'PY' > wake-packet.json
           import json, os
