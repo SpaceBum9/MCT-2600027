@@ -28,7 +28,7 @@ jobs:
           RUN_ID: ${{ github.run_id }}
           RUN_ATTEMPT: ${{ github.run_attempt }}
         run: |
-          python - <<'PY'
+          python - <<'PY' > wake-packet.json
           import json, os
           packet = {
               "schema": "sos.gpt-wake.v1",
@@ -43,7 +43,24 @@ jobs:
           }
           print(json.dumps(packet, sort_keys=True))
           PY
+          cat wake-packet.json
 
-      # Transport intentionally disabled in v1.
-      # Add an authorized wake adapter only after its endpoint/auth model is
-      # reviewed. Do not put credentials into the emitted packet.
+      - name: Deliver to authorized wake adapter
+        if: ${{ secrets.GPT_WAKE_URL != '' }}
+        env:
+          GPT_WAKE_URL: ${{ secrets.GPT_WAKE_URL }}
+          GPT_WAKE_TOKEN: ${{ secrets.GPT_WAKE_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "$GPT_WAKE_TOKEN" || { echo "GPT_WAKE_TOKEN missing; fail closed"; exit 1; }
+          curl --fail-with-body --silent --show-error \
+            --retry 2 --retry-all-errors \
+            --connect-timeout 5 --max-time 15 \
+            -X POST "$GPT_WAKE_URL" \
+            -H "Authorization: Bearer $GPT_WAKE_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data-binary @wake-packet.json
+
+      - name: Transport not configured
+        if: ${{ secrets.GPT_WAKE_URL == '' }}
+        run: echo "Wake packet built; transport disabled because GPT_WAKE_URL is not configured."
