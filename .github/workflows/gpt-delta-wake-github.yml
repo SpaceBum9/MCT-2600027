@@ -1,0 +1,61 @@
+name: GPT Delta Wake
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  pull_request_review:
+    types: [submitted]
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  wake:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build fail-closed delta packet
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REPOSITORY: ${{ github.repository }}
+          SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+          REF_NAME: ${{ github.head_ref || github.ref_name }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.pull_request && github.event.issue.number || '' }}
+        run: |
+          python - <<'PY' > wake-packet.json
+          import json, os
+          print(json.dumps({
+            "schema": "sos.gpt-wake.v1",
+            "repo": os.environ["REPOSITORY"],
+            "event": os.environ["EVENT_NAME"],
+            "ref": os.environ.get("REF_NAME", ""),
+            "sha": os.environ["SHA"],
+            "delivery_id": f'{os.environ["RUN_ID"]}:{os.environ["RUN_ATTEMPT"]}',
+            "to": "GPT",
+            "action": "observe_and_review"
+          }, sort_keys=True))
+          PY
+
+      - name: Invoke authorized GPT wake endpoint
+        env:
+          GPT_WAKE_URL: ${{ secrets.GPT_WAKE_URL }}
+          GPT_WAKE_TOKEN: ${{ secrets.GPT_WAKE_TOKEN }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$GPT_WAKE_TOKEN"
+          test -n "$GPT_WAKE_URL" || { echo "GPT_WAKE_URL missing; fail closed"; exit 1; }
+          test -n "$GPT_WAKE_TOKEN" || { echo "GPT_WAKE_TOKEN missing; fail closed"; exit 1; }
+          curl --fail-with-body --silent --show-error \
+            --retry 2 --retry-all-errors \
+            --connect-timeout 5 --max-time 30 \
+            -X POST "$GPT_WAKE_URL" \
+            -H "Authorization: Bearer $GPT_WAKE_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data-binary @wake-packet.json
