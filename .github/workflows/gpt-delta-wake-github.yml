@@ -49,6 +49,7 @@ jobs:
           GPT_WAKE_TOKEN: ${{ secrets.GPT_WAKE_TOKEN }}
         run: |
           set -euo pipefail
+          echo "::add-mask::$GPT_WAKE_TOKEN"
           test -n "$GPT_WAKE_URL" || { echo "GPT_WAKE_URL missing; fail closed"; exit 1; }
           test -n "$GPT_WAKE_TOKEN" || { echo "GPT_WAKE_TOKEN missing; fail closed"; exit 1; }
           curl --fail-with-body --silent --show-error \
