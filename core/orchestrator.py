@@ -23,14 +23,18 @@ class Orchestrator:
     quorum member and cannot authorize merge or execution.
     """
 
-    def __init__(self):
+    def __init__(self, *, nvidia_adapter: NvidiaCapabilityAdapter | None = None):
         self.trace_store = TraceStore()
         self.collision_handler = CollisionHandler(self.trace_store)
         self.treue = TraceTreue(self.trace_store)
         self.border = ParaBorder(self.trace_store)
         self.hal = HAL(self.border, self.trace_store)
         self.zero = ZeroTelepath(self.border, self.trace_store, treue=self.treue)
-        self.nvidia = NvidiaCapabilityAdapter()
+        # The caller owns probe/transport wiring; default construction does not
+        # install network clients or grant vendor/merge/execute authority.
+        self.nvidia = (
+            nvidia_adapter if nvidia_adapter is not None else NvidiaCapabilityAdapter()
+        )
 
         # Cross-register listeners so both poles see Border traffic
         self.border.register_listener(self.hal.on_border_message)

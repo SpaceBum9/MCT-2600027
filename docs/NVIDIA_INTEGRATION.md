@@ -85,6 +85,29 @@ Hard invariants:
 The transport is deliberately abstract. A later slice can bind verified NVIDIA
 NIM/NeMo endpoints without changing MCT's authorization boundary.
 
+## Orchestrator wiring and verification
+
+`Orchestrator(nvidia_adapter=adapter)` accepts an explicitly constructed
+`NvidiaCapabilityAdapter(environ=..., health_probe=..., transport=...)`.
+The caller supplies and owns those callbacks. `Orchestrator()` remains compatible
+with existing callers: it constructs an adapter without callbacks. A configured
+endpoint with credentials but no probe remains `UNKNOWN`.
+
+`status()` calls only the adapter's health probe, never its request transport.
+An injected probe may perform caller-defined I/O; it must be bounded and must
+not change governance state. No concrete HTTP client or live service is wired
+by this PR. Deployment of such callbacks remains a separate runtime slice.
+
+`tests/test_orchestrator_nvidia.py` exercises the real Orchestrator with synthetic
+configuration and mock callbacks. It checks available, failed and ambiguous
+health, successful evidence transport, and fail-closed guard transport errors.
+It checks runtime HOLD, trace/collision state, environment, and unchanged policy
+file bytes across these calls. The checked-in policy is hot/default-denied
+(`LIVE_RAIL=true`, `execute=false`, `hold=true`, `vendor_live=false`); the tests
+preserve that state rather than treating a hot rail as execution permission.
+
+Run: `python -m unittest discover -s tests -p 'test_orchestrator_nvidia.py' -v`.
+
 ## Current boundary
 
 This slice changes observation/evidence plumbing only.
